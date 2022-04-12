@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  post: one
+  date: 2022-04-12
+
+two:
+  post: two
+  date: 2022-04-12
