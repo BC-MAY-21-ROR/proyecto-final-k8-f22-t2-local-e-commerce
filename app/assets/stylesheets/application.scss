@@ -1,10 +1,11 @@
-@import "bootstrap/scss/bootstrap";
-@import "bootstrap-icons/font/bootstrap-icons";
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
 @import 'base/reset';
 @import 'base/typography';
 @import 'utils/variables';
 @import 'base/globals';
 @import 'components/buttons';
+@import 'components/session_form';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'utils/helpers';
