@@ -1,0 +1,141 @@
+.footer {
+  background-color: black;
+  width: 100%;
+  height: 260px;
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  grid-template:
+          "about nav contact social" 90%
+          "copyrigth copyrigth copyrigth copyrigth" 10%/
+          40% 20% 20% 20%;
+  padding: 32px 50px 16px 50px;
+
+
+
+  .footer-about {
+    grid-area: about;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    gap: 0;
+
+    &__box {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    &__icon {
+      width: 40px;
+      max-width: 100%;
+      height: 40px;
+    }
+
+    &__text {
+      width: 70%;
+      text-align: justify;
+      color: white;
+    }
+  }
+
+  .footer-nav {
+    grid-area: nav;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: start;
+
+    &__text {
+      color: white;
+      width: 100%;
+      margin-bottom: 16px;
+
+      &--yellow {
+        color: $yellowFF;
+        width: 100%;
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 12px;
+    }
+  }
+
+  .footer-contact {
+    grid-area: contact;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+
+    &__box {
+      display: flex;
+      width: 100%;
+      margin: 15px 0;
+      align-items: center;
+    }
+
+    &__icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__text {
+      color: white;
+      width: fit-content;
+      margin-left: 15px;
+
+      &--title {
+        color: white;
+      }
+    }
+
+  }
+
+  .footer-social {
+    grid-area: social;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+
+    &__text {
+      color: white;
+      width: 100%;
+    }
+
+    &__box {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100px;
+      height: 100px;
+      gap: 22px;
+
+    }
+
+    &__icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .footer-copyrigth {
+    grid-area: copyrigth;
+    &__text {
+      text-align: center;
+      color: white;
+    }
+  }
+
+  &__box{
+    width: 40px;
+    height: fit-content;
+    position: absolute;
+    right: 16px;
+    bottom: 50px;
+  }
+}
+
