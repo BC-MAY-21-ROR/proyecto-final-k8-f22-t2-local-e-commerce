@@ -79,7 +79,9 @@
 
     &__icon {
       width: 30px;
+      font-size: 30px;
       height: 30px;
+      color: $yellowFF;
     }
 
     &__text {
@@ -119,6 +121,8 @@
     &__icon {
       width: 30px;
       height: 30px;
+      font-size: 30px;
+      color: $yellowFF;
     }
   }
 
@@ -130,11 +134,11 @@
     }
   }
 
-  &__box{
+  &__box {
     width: 40px;
     height: fit-content;
     position: absolute;
-    right: 16px;
+    right: 50px+16px;
     bottom: 50px;
   }
 }
