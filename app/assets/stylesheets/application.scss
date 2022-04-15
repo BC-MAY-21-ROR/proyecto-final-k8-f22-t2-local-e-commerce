@@ -5,7 +5,12 @@
 @import 'utils/variables';
 @import 'base/globals';
 @import 'components/buttons';
+@import 'components/logo';
 @import 'components/session_form';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'utils/helpers';
+
+main{
+    background-color: $gray;
+}
