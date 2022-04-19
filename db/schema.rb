@@ -10,9 +10,102 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_11_233742) do
+
+ActiveRecord::Schema[7.0].define(version: 2022_04_12_233742) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "price"
+    t.bigint "post_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_carts_on_post_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_details", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "post_id", null: false
+    t.integer "price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_details_on_order_id"
+    t.index ["post_id"], name: "index_order_details_on_post_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_categories", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_post_categories_on_category_id"
+    t.index ["post_id"], name: "index_post_categories_on_post_id"
+  end
+
+  create_table "post_comments", force: :cascade do |t|
+    t.string "comment"
+    t.integer "ranking"
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_post_comments_on_post_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "picture"
+    t.integer "price"
+    t.bigint "type_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id"], name: "index_posts_on_type_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_reservations_on_post_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.date "start_time"
+    t.date "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_schedules_on_post_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.boolean "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_comments", force: :cascade do |t|
+    t.string "comment"
+    t.integer "ranking"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "statuses", force: :cascade do |t|
     t.string "status"
@@ -38,4 +131,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_233742) do
   end
 
   add_foreign_key "users", "statuses"
+  add_foreign_key "carts", "posts"
+  add_foreign_key "order_details", "orders"
+  add_foreign_key "order_details", "posts"
+  add_foreign_key "post_categories", "categories"
+  add_foreign_key "post_categories", "posts"
+  add_foreign_key "post_comments", "posts"
+  add_foreign_key "posts", "types"
+  add_foreign_key "reservations", "posts"
+  add_foreign_key "schedules", "posts"
 end
