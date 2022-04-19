@@ -6,13 +6,12 @@
 
 # Ignore bundler config.
 /.bundle
-/.idea
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+.idea/
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
