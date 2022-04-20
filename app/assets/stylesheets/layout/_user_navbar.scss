@@ -1,0 +1,47 @@
+.user_navbar{
+  display: flex;
+  width: 320px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: start;
+  background-color: $red892;
+  height: 100vh;
+  padding: 24px 16px;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &__box{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .nav_section{
+width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin-top: 50px;
+    gap: 45px;
+    cursor: pointer;
+    padding-left: 1rem;
+    &__item{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 20px;
+
+    }
+    &__icon{
+   font-size: 40px;
+      color: white;
+    }
+    &__text{
+      font-size:24px ;
+      color: white;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}
