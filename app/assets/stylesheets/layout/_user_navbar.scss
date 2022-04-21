@@ -16,12 +16,17 @@
     width: 100%;
     justify-content: center;
   }
+  &__image{
+    width: 120px;
+    height: 120px;
+    clip-path: circle();
+  }
   .nav_section{
 width: 100%;
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 40px;
     gap: 45px;
     cursor: pointer;
     padding-left: 1rem;
