@@ -1,17 +1,8 @@
-<%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :picture, as: :file%>
+  <%= f.input :price %>
+  <%= f.association :type, as: :radio_buttons,  collection: [[1, 'Producto'], [2, 'Servicio']], label_method: :second, value_method: :first %>
+  <%= f.button :submit %>
 <% end %>
