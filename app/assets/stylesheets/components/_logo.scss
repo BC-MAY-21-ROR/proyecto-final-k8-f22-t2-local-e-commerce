@@ -1,0 +1,16 @@
+.logo {
+  align-items: center;
+  background-color: $logo-yellow;
+  border: $logo-border;
+  border-radius: 8%;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  margin: 0% auto 15% auto;
+  width: 70px;
+  
+  h2 {
+    color: $gray;
+    text-shadow: $text-black-border;
+  }
+}

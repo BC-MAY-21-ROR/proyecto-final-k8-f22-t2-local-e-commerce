@@ -1,7 +1,22 @@
 // Colors
+
 $links: #FFCD1C;
 $border: #E1E1E1;
+$active-red: #db4d4d;
+$black: #000000;
+$gray: #E5E5E5;
+$logo-yellow: #D89F0E;
+$red: #C64E4E;
+$text-gray: #909090;
+$white: #ffffff;
 // Font Family
 // Text sizes
 //ViewPorts
 $mobile: 700px
+
+//Borders
+$card-border: 1px solid #00000020;
+$logo-border: 2px solid #0000004d;
+$text-black-border: $black 1px 0px 0px, $black 0.540302px 0.841471px 0px, $black -0.416147px 0.909297px 0px,
+              $black -0.989992px 0.14112px 0px, $black -0.653644px -0.756802px 0px, 
+              $black 0.283662px -0.958924px 0px, $black 0.96017px -0.279415px 0px;
