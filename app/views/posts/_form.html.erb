@@ -1,0 +1,8 @@
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :picture, as: :file%>
+  <%= f.input :price %>
+  <%= f.association :type, as: :radio_buttons,  collection: [[1, 'Producto'], [2, 'Servicio']], label_method: :second, value_method: :first %>
+  <%= f.button :submit %>
+<% end %>
