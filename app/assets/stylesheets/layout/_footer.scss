@@ -69,7 +69,7 @@
       width: 100%;
 
       &--yellow {
-        color: $yellowFF;
+        color: $links;
         cursor: pointer;
         width: 100%;
       }
@@ -105,7 +105,7 @@
     }
 
     &__icon {
-      color: $yellowFF;
+      color: $links;
       font-size: 30px;
       height: 30px;
       width: 30px;
@@ -136,7 +136,7 @@
 
       &__text {
         color: white;
-        color: $yellowFF;
+        color: $links;
         margin: 0;
         width: fit-content;
 
@@ -172,7 +172,7 @@
 
 
     &__icon {
-      color: $yellowFF;
+      color: $links;
       cursor: pointer;
       font-size: 30px;
       height: 30px;
@@ -206,7 +206,7 @@
     }
 
     @media screen and (max-width: $mobile) {
-      border-top: 1px solid $graye1;
+      border-top: 1px solid $border;
       padding-top: 16px;
     }
 
