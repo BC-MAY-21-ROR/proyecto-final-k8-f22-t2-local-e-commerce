@@ -1,0 +1,228 @@
+.footer {
+  background-color: black;
+  bottom: 0;
+  display: grid;
+  grid-template:
+          "about nav contact social" 90%
+          "copyrigth copyrigth copyrigth copyrigth" 10%/
+          40% 20% 20% 20%;
+  height: 260px;
+  padding: 32px 50px 16px 50px;
+  position: absolute;
+  width: 100%;
+  @media screen and (max-width: $mobile) {
+    gap: 40px;
+    grid-template:
+          "about" auto
+          "nav" auto
+          "contact" auto
+          "social" auto
+          "copyrigth" 50px/
+          100%;
+    height: fit-content;
+    justify-content: center;
+    padding: 16px;
+  }
+
+
+  .footer-about {
+    align-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    grid-area: about;
+
+    &__box {
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    &__icon {
+      height: 40px;
+      max-width: 100%;
+      width: 40px;
+    }
+
+    &__text {
+      color: white;
+      text-align: justify;
+      width: 70%;
+    }
+
+    @media screen and (max-width: $mobile) {
+      &__text {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-nav {
+    align-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: nav;
+    justify-content: center;
+
+    &__text {
+      color: white;
+      margin-bottom: 24px;
+      width: 100%;
+
+      &--yellow {
+        color: $links;
+        cursor: pointer;
+        width: 100%;
+      }
+    }
+
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      width: 100%;
+    }
+
+    @media screen and (max-width: $mobile) {
+      text-align: center;
+      &__links {
+        gap: 20px;
+      }
+    }
+
+  }
+
+  .footer-contact {
+    align-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: contact;
+
+    &__box {
+      align-items: center;
+      display: flex;
+      margin: 15px 0;
+      width: 100%;
+    }
+
+    &__icon {
+      color: $links;
+      font-size: 30px;
+      height: 30px;
+      width: 30px;
+    }
+
+    &__text {
+      color: white;
+      margin-left: 15px;
+      width: fit-content;
+
+      &--title {
+        color: white;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      justify-content: center;
+      text-align: center;
+
+      &__icon {
+        display: none;
+      }
+
+      &__box {
+        justify-content: center;
+        margin: 0 0 16px 0;
+      }
+
+      &__text {
+        color: white;
+        color: $links;
+        margin: 0;
+        width: fit-content;
+
+        &--title {
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+  }
+
+  .footer-social {
+    align-content: start;
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: social;
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 22px;
+      height: 100px;
+      margin-top: 16px;
+      width: 100px;
+
+    }
+
+    &__text {
+      color: white;
+      width: 100%;
+    }
+
+
+    &__icon {
+      color: $links;
+      cursor: pointer;
+      font-size: 30px;
+      height: 30px;
+      width: 30px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      justify-content: center;
+
+      &__text {
+        display: none;
+      }
+
+      &__box {
+        flex-direction: row;
+        gap: 30px;
+        height: fit-content;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-copyrigth {
+    grid-area: copyrigth;
+
+    &__text {
+      color: white;
+      margin: 0;
+      text-align: center;
+    }
+
+    @media screen and (max-width: $mobile) {
+      border-top: 1px solid $border;
+      padding-top: 16px;
+    }
+
+
+  }
+
+  &__box {
+    bottom: 50px;
+    height: fit-content;
+    position: absolute;
+    right: 50px+16px;
+    width: 40px;
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+}
+
