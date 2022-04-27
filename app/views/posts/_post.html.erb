@@ -1,7 +1,9 @@
 <div id="<%= dom_id post %>">
     <%= post.title%>
     <%= post.description%>
-    <%= post.picture%>
+    <% post.picture.each do |file| %>
+        <%= image_tag url_for(file) %>
+    <% end %>
     <%= post.price%>
-    <%= post.type_id ? "Producto": "Servicio" %>
+    <%= post.type_id==1 ? "Producto": "Servicio" %>
 </div>
