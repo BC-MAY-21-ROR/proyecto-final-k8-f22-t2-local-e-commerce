@@ -1,0 +1,21 @@
+<h3 class="info__text info__text--title"><%= @post.title %></h3>
+<p class="info__text info__text--description"><%= @post.description %></p>
+<div class="info__ranking">
+  <%4.times do %>
+    <i class="fa-solid fa-star info__icon info__icon--yellow"></i>
+  <% end %>
+  28 opiniones
+</div>
+<p class="info__text info__text--price">$ <%= @post.price %></p>
+<div class="info__detail">
+  <i class="fa-solid fa-location-dot info__icon info__icon--gray"></i>
+  <p class="info__text">Tecoman, Col</p>
+</div>
+<div class="info__detail">
+  <i class="fa-solid fa-truck info__icon--green"></i>
+  <p class="info__text info__text--green">Punto medio disponible</p>
+</div>
+<div class="info__actions">
+  <%=link_to "Comprar", edit_post_path(@post), class:"info__button info__button--dark" %>
+  <%=link_to "Agregar al carrito", edit_post_path(@post), class:"info__button info__button--light" %>
+</div>
