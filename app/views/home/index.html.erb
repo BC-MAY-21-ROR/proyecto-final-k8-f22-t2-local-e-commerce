@@ -1,24 +1,96 @@
-<div>
-  <%=render "user_navbar" %>
-</div>
+<%# <div> %>
+  <%# <%=render "user_navbar" %>
+<%# </div> %>
 <h1>Home</h1>
 
-<div class="">
-  <div class="">
-    <%=image_tag("brooms.png", alt: "brooms image") %>
-    <h2>escobas don chuy</h2>
-    <div class="">
-      <i class="fa-solid fa-tag"></i>
-      <p>Hogar</p>
-      <p>Limpieza </p>
+<div class="container">
+  <div class="container__card">
+
+    <div class="card">
+      <%=image_tag("brooms.png", alt: "brooms image") %>
+      <h2>escobas don chuy</h2>
+      <div class="card__features">
+        <i class="fa-solid fa-tag"></i>
+        <p>Hogar,</p>
+        <p>Limpieza </p>
+      </div>
+      <div class="card__container-price">
+        <span class="card--price">$25.00</span>
+        <p>x 1</p>
+      </div>
+      <div class="stars">
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star-half star"></i>
+      </div>
+      <img src="" alt="">
+      <p class="card--info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
+        earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
+
+      <div class="card__more-info">
+        <%= link_to "Ver mas", "/desconocido"%>
+        <i class="fa-solid fa-circle-arrow-down"></i>
+      </div>
+
     </div>
-    <div class="">
-      <span>$25.00</span>
-      <p>x 1</p>
+
+    <div class="card">
+      <%=image_tag("brooms.png", alt: "brooms image") %>
+      <h2>escobas don chuy</h2>
+      <div class="card__features">
+        <i class="fa-solid fa-tag"></i>
+        <p>Hogar,</p>
+        <p>Limpieza </p>
+      </div>
+      <div class="card__container-price card_price">
+        <span class="card--price">$25.00</span>
+        <p>x 1</p>
+      </div>
+      <div class="stars">
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star-half star"></i>
+      </div>
+      <img src="" alt="">
+      <p class="card--info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
+        earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
+      <div class="card__more-info">
+        <%= link_to "Ver mas", "/desconocido"%>
+        <i class="fa-solid fa-circle-arrow-down"></i>
+      </div>
+
     </div>
-    <img src="" alt="">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
-       earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
-    <button>Ver mas <img src="" alt=""></button>
+
+    <div class="card">
+      <%=image_tag("brooms.png", alt: "brooms image") %>
+      <h2>escobas don chuy</h2>
+      <div class="card__features">
+        <i class="fa-solid fa-tag"></i>
+        <p>Hogar,</p>
+        <p>Limpieza </p>
+      </div>
+      <div class="card__container-price">
+        <span class="card--price">$25.00</span>
+        <p>x 1</p>
+      </div>
+      <div class="stars">
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star star"></i>
+        <i class="fa-solid fa-star-half star"></i>
+      </div>
+      <img src="" alt="">
+      <p class="card__info--resumen">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
+        earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
+      <div class="card__more-info">
+        <%= link_to "Ver mas", "/desconocido"%>
+        <i class="fa-solid fa-circle-arrow-down"></i>
+      </div>
+    </div>
   </div>
 </div>
