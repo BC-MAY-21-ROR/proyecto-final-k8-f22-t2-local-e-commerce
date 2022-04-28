@@ -1,6 +1,5 @@
 .footer {
   background-color: black;
-  bottom: 0;
   display: grid;
   grid-template:
           "about nav contact social" 90%
@@ -8,7 +7,7 @@
           40% 20% 20% 20%;
   height: 260px;
   padding: 32px 50px 16px 50px;
-  position: absolute;
+  position: relative;
   width: 100%;
   @media screen and (max-width: $mobile) {
     gap: 40px;
