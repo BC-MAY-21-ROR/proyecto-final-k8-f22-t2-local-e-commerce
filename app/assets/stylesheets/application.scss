@@ -12,6 +12,8 @@
 @import "utils/helpers";
 @import "layout/user_navbar";
 @import "components/info_post";
+@import "components/image";
+@import "pages/post";
 main {
   background-color: $gray;
 }
