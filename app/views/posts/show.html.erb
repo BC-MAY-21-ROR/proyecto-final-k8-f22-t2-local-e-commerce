@@ -1,26 +1,16 @@
-<p style="color: green"><%= notice %></p>
-<div class="info">
-  <h3 class="info__text info__text--title"><%= @post.title %></h3>
-  <p class="info__text info__text--description"><%= @post.description %></p>
-  <div class="info__ranking">
-    <%4.times do %>
-      <i class="fa-solid fa-star info__icon info__icon--yellow"></i>
-    <% end %>
-    28 opiniones
+<div class="post">
+  <div class="post__image">
+    <%= image_tag('postpng.png', class: "image") %>
   </div>
-  <p class="info__text info__text--price">$ <%= @post.price %></p>
-  <div class="info__detail">
-    <i class="fa-solid fa-location-dot info__icon info__icon--gray"></i>
-    <p class="info__text">Tecoman, Col</p>
+  <div class="info">
+    <%= render 'posts/post_info' %>
   </div>
-  <div class="info__detail">
-    <i class="fa-solid fa-truck info__icon--green"></i>
-    <p class="info__text info__text--green">Punto medio disponible</p>
+  <div class="post__features">
+    <h1>Principales caracteristicas</h1>
+  </div>
+  <div class="post__reviews">
+    <h1>Aqui van las reviews</h1>
   </div>
 </div>
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
