@@ -1,0 +1,15 @@
+
+<%= simple_form_for(@post_comment) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :comment %>
+    <%= f.input :post_id %>
+    <%= f.input :ranking, as: :radio_buttons, collection:[[1, '1'], [2, '2'], [3, '3'], [4, '4'], [5, '5']], label_method: :second, value_method: :first  %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
