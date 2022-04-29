@@ -1,0 +1,8 @@
+<h3>Reviews</h3>
+<%= link_to "Añadir Review", new_comment_path(id: post_id) %>
+
+<div id="post_comments">
+  <% comments.each do |post_comment| %>
+    <%= render post_comment %>
+  <% end %>
+</div>
