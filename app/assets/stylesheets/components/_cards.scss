@@ -1,0 +1,72 @@
+.container__card {
+  display: flex;
+  gap: 2rem;
+}
+
+.card {
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 400px;
+
+  h2 {
+    font-weight: 700;
+    margin-top: 1rem;
+    text-transform: capitalize;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .card {
+    margin-bottom: 1rem;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 320px;
+  }
+
+  .container__card {
+    display: block;
+  }
+}
+
+.card__features {
+  color: $text-gray;
+  display: flex;
+  gap: 0.2rem;
+  justify-content: left;
+}
+
+.card__container-price {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.card--price {
+  color: $red;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.card--info {
+  text-align: justify;
+}
+
+.card__more-info {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+
+  a,i {
+    color: $text-gray;
+    text-decoration: none;
+  }
+}
+
+.star {
+  color: $yellow;
+}
