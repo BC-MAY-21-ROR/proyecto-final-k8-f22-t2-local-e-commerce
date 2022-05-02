@@ -1,6 +1,10 @@
 html {
   box-sizing: border-box;
 }
+body{
+  position: relative;
+  min-height: 100vh;
+}
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
