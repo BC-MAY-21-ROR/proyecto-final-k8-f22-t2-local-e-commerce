@@ -1,0 +1,61 @@
+.user_navbar {
+  align-content: start;
+  background-color: $navbar;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  padding: 24px 16px;
+  position: fixed;
+  top: 0;
+  width: 320px;
+
+  @media screen and (max-width: $mobile) {
+    max-width: 320px;
+    width: 70%;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__image {
+    clip-path: circle();
+    height: 120px;
+    width: 120px;
+  }
+
+  .nav_section {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    list-style-type: none;
+    margin-top: 40px;
+    padding-left: 1rem;
+    width: 100%;
+
+    &__item {
+      align-items: center;
+      display: flex;
+      gap: 20px;
+      justify-content: start;
+      width: 100%;
+    }
+
+    &__icon {
+      color: white;
+      font-size: 40px;
+    }
+
+    &__text {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}

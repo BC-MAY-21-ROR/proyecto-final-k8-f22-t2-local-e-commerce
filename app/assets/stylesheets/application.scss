@@ -1,16 +1,18 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
-@import 'base/reset';
-@import 'base/typography';
-@import 'utils/variables';
-@import 'base/globals';
-@import 'components/buttons';
-@import 'components/logo';
-@import 'components/session_form';
-@import 'layout/header';
-@import 'layout/footer';
-@import 'utils/helpers';
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+@import "base/reset";
+@import "base/typography";
+@import "utils/variables";
+@import "base/globals";
+@import "components/buttons";
+@import "components/logo";
+@import "components/session_form";
+@import "layout/header";
+@import "layout/footer";
+@import "utils/helpers";
+@import "layout/user_navbar";
+@import "components/cards";
 
 main {
-    background-color: $gray;
+  background-color: $gray;
 }
