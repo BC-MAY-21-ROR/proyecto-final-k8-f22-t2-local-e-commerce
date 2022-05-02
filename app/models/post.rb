@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   has_many :orders, through: :order_details
   has_many :schedules
   has_many :reservations 
+  has_many_attached :picture
 end
