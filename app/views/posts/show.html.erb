@@ -9,7 +9,7 @@
     <h1>Principales caracteristicas</h1>
   </div>
   <div class="post__reviews">
-    <h1>Aqui van las reviews</h1>
+    <%= render partial:"comments", locals:{comments: @post.post_comments, post_id: @post.id}%>
   </div>
 </div>
 <div>
