@@ -142,8 +142,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_27_215121) do
   end
 
   create_table "user_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
