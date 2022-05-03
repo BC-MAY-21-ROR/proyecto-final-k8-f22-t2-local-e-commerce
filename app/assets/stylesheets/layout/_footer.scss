@@ -11,6 +11,7 @@
   padding: 32px 50px 16px 50px;
   position: absolute;
   width: 100%;
+  bottom: 0;
   @media screen and (max-width: $mobile) {
     gap: 40px;
     grid-template:
