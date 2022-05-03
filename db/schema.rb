@@ -85,12 +85,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_27_215121) do
   end
 
   create_table "post_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
     t.bigint "post_id", null: false
+    t.string "title"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
