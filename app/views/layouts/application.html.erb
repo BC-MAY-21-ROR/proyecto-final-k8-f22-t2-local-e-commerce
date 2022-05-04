@@ -12,16 +12,13 @@
   </head>
 
   <body>
-  <main>
-    <!--      <p class="notice"><%#= notice %></p>-->
-    <!--      <p class="alert"><%#= alert %></p>-->
-
-  </main>
-  <div class="main-container">
-    <%= yield %>
-  </div>
-
-
-  <%= render 'layouts/footer' %>
+    <main>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </main>
+    <div class="main-container">
+      <%=yield%>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
