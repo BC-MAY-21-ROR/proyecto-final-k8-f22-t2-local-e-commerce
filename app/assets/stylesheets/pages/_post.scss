@@ -1,0 +1,43 @@
+.post {
+  background-color: $white;
+  display: grid;
+  grid-template:  "image info" auto
+                  "features features" auto
+                  "reviews reviews"auto/
+                      50% 50%;
+  height: fit-content;
+  padding: 20px;
+  width: 100%;
+  @media screen and (max-width: $mobile) {
+    grid-template:  "image" auto
+                  "info" auto
+                  "features" auto
+                  "reviews"auto/
+                      100%;
+
+  }
+
+  &__image {
+    grid-area: image;
+  }
+
+  &__info {
+    display: flex;
+    grid-area: info;
+    justify-content: end;
+  }
+
+  &__text {
+    text-align: justify;
+    width: 100%;
+  }
+
+  &__features {
+    grid-area: features;
+  }
+
+  &__reviews {
+    grid-area: reviews;
+  }
+
+}
