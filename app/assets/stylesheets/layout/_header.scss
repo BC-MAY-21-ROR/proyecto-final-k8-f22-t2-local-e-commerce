@@ -47,3 +47,12 @@ a {
     padding: 10px;
     text-align: center;
 }
+
+.navbar-profile-button {
+    width: 114px;
+    height: 45px;
+    border-radius: 10px;
+    background-color: $profile-button;
+    color: $white;
+    margin-right: 40px !important;
+}
