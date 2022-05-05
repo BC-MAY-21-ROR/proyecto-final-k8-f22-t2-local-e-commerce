@@ -27,3 +27,23 @@ a {
 .nav-item, .nav-link {
     color: $white !important;
 }
+
+.form-control {
+    width: 420px;
+    font-weight: 1px;
+    border-radius: 10px;
+}
+
+.icon_placeholder::placeholder {
+    font: var(--fa-font-solid);
+    opacity: 0.6;
+}
+
+
+.navbar-icon-cart {
+    color: $white !important;
+    font: var(--fa-font-solid);
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+}
