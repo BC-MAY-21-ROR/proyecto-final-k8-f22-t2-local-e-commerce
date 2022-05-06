@@ -1,124 +1,103 @@
-<<div>
-  <%=render "user_navbar" %>
- </div>
-<h1>Home</h1>
-
-
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <%=image_tag("Carousel.jpg", class:"d-block w-100",alt: "First slide") %>
-    </div>
-    <div class="carousel-item">
-      <%=image_tag("Carousel.jpg", class:"d-block w-100",alt: "First slide") %>
-    </div>
-    <div class="carousel-item">
-      <%=image_tag("Carousel.jpg", class:"d-block w-100",alt: "First slide") %>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
 <div class="container">
-  <div class="container__card">
-    <div class="card">
-      <%=image_tag("brooms.png", alt: "brooms image") %>
-      <h2>escobas don chuy</h2>
-      <div class="card__features">
-        <i class="fa-solid fa-tag"></i>
-        <p>Hogar,</p>
-        <p>Limpieza </p>
-      </div>
-      <div class="card__container-price">
-        <span class="card--price">$25.00</span>
-        <p>x 1</p>
-      </div>
-      <div class="stars">
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star-half star"></i>
-      </div>
-      <img src="" alt="">
-      <p class="card--info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
-        earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
+  <div class="navbar">
+    <%=render "user_navbar" %>
+  </div>
 
-      <div class="card__more-info">
-        <%= link_to "Ver mas", "/desconocido"%>
-        <i class="fa-solid fa-circle-arrow-down"></i>
-      </div>
+  <div class="carousel">
+    <%=render "image_carousel" %>
+  </div>
 
-    </div>
+  
+  <div class="cards">
+  <h1>Productos en oferta </h1>
+    <div class="container__card">
+      <div class="card">
+        <%=image_tag("brooms.png", alt: "brooms image") %>
+        <h2>escobas don chuy</h2>
+        <div class="card__features">
+          <i class="fa-solid fa-tag"></i>
+          <p>Hogar,</p>
+          <p>Limpieza </p>
+        </div>
+        <div class="card__container-price">
+          <span class="card--price">$25.00</span>
+          <p>x 1</p>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star-half star"></i>
+        </div>
+        <img src="" alt="">
+        <p class="card--info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
+          earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
 
-    <div class="card">
-      <%=image_tag("brooms.png", alt: "brooms image") %>
-      <h2>escobas don chuy</h2>
-      <div class="card__features">
-        <i class="fa-solid fa-tag"></i>
-        <p>Hogar,</p>
-        <p>Limpieza </p>
-      </div>
-      <div class="card__container-price card_price">
-        <span class="card--price">$25.00</span>
-        <p>x 1</p>
-      </div>
-      <div class="stars">
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star-half star"></i>
-      </div>
-      <img src="" alt="">
-      <p class="card--info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
-        earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
-      <div class="card__more-info">
-        <%= link_to "Ver mas", "/desconocido"%>
-        <i class="fa-solid fa-circle-arrow-down"></i>
+        <div class="card__more-info">
+          <%= link_to "Ver mas", "/desconocido"%>
+          <i class="fa-solid fa-circle-arrow-down"></i>
+        </div>
+
       </div>
 
-    </div>
+      <div class="card">
+        <%=image_tag("brooms.png", alt: "brooms image") %>
+        <h2>escobas don chuy</h2>
+        <div class="card__features">
+          <i class="fa-solid fa-tag"></i>
+          <p>Hogar,</p>
+          <p>Limpieza </p>
+        </div>
+        <div class="card__container-price card_price">
+          <span class="card--price">$25.00</span>
+          <p>x 1</p>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star-half star"></i>
+        </div>
+        <img src="" alt="">
+        <p class="card--info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
+          earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
+        <div class="card__more-info">
+          <%= link_to "Ver mas", "/desconocido"%>
+          <i class="fa-solid fa-circle-arrow-down"></i>
+        </div>
 
-    <div class="card">
-      <%=image_tag("brooms.png", alt: "brooms image") %>
-      <h2>escobas don chuy</h2>
-      <div class="card__features">
-        <i class="fa-solid fa-tag"></i>
-        <p>Hogar,</p>
-        <p>Limpieza </p>
       </div>
-      <div class="card__container-price">
-        <span class="card--price">$25.00</span>
-        <p>x 1</p>
-      </div>
-      <div class="stars">
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star star"></i>
-        <i class="fa-solid fa-star-half star"></i>
-      </div>
-      <img src="" alt="">
-      <p class="card__info--resumen">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
-        earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
-      <div class="card__more-info">
-        <%= link_to "Ver mas", "/desconocido"%>
-        <i class="fa-solid fa-circle-arrow-down"></i>
+
+      <div class="card">
+        <%=image_tag("brooms.png", alt: "brooms image") %>
+        <h2>escobas don chuy</h2>
+        <div class="card__features">
+          <i class="fa-solid fa-tag"></i>
+          <p>Hogar,</p>
+          <p>Limpieza </p>
+        </div>
+        <div class="card__container-price">
+          <span class="card--price">$25.00</span>
+          <p>x 1</p>
+        </div>
+        <div class="stars">
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star star"></i>
+          <i class="fa-solid fa-star-half star"></i>
+        </div>
+        <img src="" alt="">
+        <p class="card__info--resumen">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam aspernatur saepe nemo dolor unde,
+          earum quibusdam qui optio consequatur placeat sequi rem, debitis reprehenderit quo soluta odit maxime fuga illum!</p>
+        <div class="card__more-info">
+          <%= link_to "Ver mas", "/desconocido"%>
+          <i class="fa-solid fa-circle-arrow-down"></i>
+        </div>
       </div>
     </div>
   </div>
+  <div>
 </div>
-<div>
