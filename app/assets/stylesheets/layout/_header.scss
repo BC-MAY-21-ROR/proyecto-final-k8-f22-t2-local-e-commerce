@@ -9,20 +9,16 @@ a {
     font-family: $font;
 }
 
-
 .navbar-button {
     background-color: $logo-yellow;
-    border-color: $logo-border;
     border-radius: 10px;
-    border-width: 3px;
+    border: solid $black;
     color: $white;
     font-size: 20px;
     height: 60px;
     margin-left: 40px;
     width: 60px;
 }
-
-
 
 .nav-item, .nav-link {
     color: $white !important;
@@ -39,10 +35,9 @@ a {
     opacity: 0.6;
 }
 
-
-.navbar-icon-cart {
+.fa-solid, .fa-cart-shopping {
     color: $white !important;
-    font: var(--fa-font-solid);
+    font-size: 40px;
     margin: 15px;
     padding: 10px;
     text-align: center;
@@ -51,6 +46,7 @@ a {
 .navbar-profile-button {
     background-color: $profile-button;
     border-radius: 10px;
+    border: solid $profile-button;
     color: $white;
     height: 45px;
     margin-right: 40px !important;
