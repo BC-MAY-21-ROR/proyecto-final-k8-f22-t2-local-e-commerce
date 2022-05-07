@@ -1,0 +1,8 @@
+<% @orders.each do |order|%>
+	<div class="card">
+		<h3><%= order.post.title%></h3>
+		<p>Comprado el: <%= order.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
+		<p>Cantidad: <%= order.quantity%></p>
+		<h4>Importe total: $<%= order.order.total%></h4>
+	</div>
+<% end %>
