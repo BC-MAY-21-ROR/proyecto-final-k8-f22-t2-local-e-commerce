@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   has_many :schedules
   has_many :reservations 
   has_many_attached :picture
+  has_one :user
 end
