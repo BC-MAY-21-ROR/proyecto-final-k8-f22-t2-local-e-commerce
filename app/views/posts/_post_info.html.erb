@@ -16,10 +16,13 @@
     <p class="info__text info__text--green">Punto medio disponible</p>
   </div>
   <div class="info__actions">
-    <button type="button" class="info__button info__button--dark" data-bs-toggle="modal" data-bs-target="#buyModal">
-      Comprar
-    </button>
-    
+    <% if user_signed_in? %>
+      <button type="button" class="info__button info__button--dark" data-bs-toggle="modal" data-bs-target="#buyModal">
+        Comprar
+      </button>
+    <% else %>
+      <%= link_to "Comprar", new_user_session_path, class:"info__button info__button--dark" %>      
+    <% end %>
     <%= link_to "Agregar al carrito", edit_post_path(@post), class:"info__button info__button--light" %>
   </div>
 </div>

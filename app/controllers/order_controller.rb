@@ -1,7 +1,7 @@
 class OrderController < ApplicationController
 
 	def index
-		@orders = OrderDetail.all.order('created_at DESC')#Hay que modificarlo con user.id
+		@orders = current_user.orders.all.order('created_at DESC')#Hay que modificarlo con user.id
 		render 'orders/index'
 	end
 
@@ -20,6 +20,6 @@ class OrderController < ApplicationController
 
 	private
 		def order_details_params
-			params.require(:order_details).permit(:quantity, :post_id, :price)
+			params.require(:order_details).permit(:quantity, :post_id, :price, :user_id)
 		end
 end

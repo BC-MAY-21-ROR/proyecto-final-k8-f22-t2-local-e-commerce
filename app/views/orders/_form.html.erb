@@ -1,8 +1,9 @@
 <%= simple_form_for(:order_details, url: buy_product_path) do |f| %>
 	<div class="modal-body" id="buyModalContent">
   	<%= f.hidden_field :post_id, value:@post.id %>
+  	<%= f.hidden_field :user_id, value: current_user.id %>
   	<%= f.hidden_field :price, value:@post.price %>
-		<%= f.input :quantity%>
+		<%= f.input :quantity, as: :numeric%>
 	</div>
 	<div class="modal-footer">
 		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
