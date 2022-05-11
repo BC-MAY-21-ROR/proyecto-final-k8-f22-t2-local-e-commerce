@@ -64,6 +64,17 @@ a {
 
 .fa-solid, .fa-bell {
     color: $white !important;
-    margin-left: 10px;
     font-size: 25px;
+    margin-left: 10px;
+}
+
+#dropdownMenuButtontwo {
+    background-color: $red;
+    border: none;
+    margin-right: 1100px !important;
+}
+
+#second_dropdown {
+    align-items: flex-start;
+    display: flex;
 }
