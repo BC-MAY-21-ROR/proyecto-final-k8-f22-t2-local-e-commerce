@@ -10,12 +10,24 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">SERVICIOS</a>
         <a class="nav-item nav-link active" href="#">PRODUCTOS</a>
     </div>
   </div>
 
-  <input type="text" class="form-control icon_placeholder d-inline-block align-top " placeholder=" Busca productos, servicios">
+  
+ 
+  <input type="text" class="form-control icon_placeholder d-inline-block align-top " placeholder=" Busca productos">
   <i class="fa-solid fa-cart-shopping"></i>
-  <button class="navbar-profile-button d-inline-block align-top d-sm-none d-md-block d-none d-sm-block">Perfil</button>
+   <i class="fa-solid fa-bell"></i>
+
+  <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    My account
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">My profile</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Sign out</a>
+  </div>
+</div>
 </nav>
