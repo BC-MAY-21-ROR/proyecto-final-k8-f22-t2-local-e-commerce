@@ -8,17 +8,21 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <script src="https://kit.fontawesome.com/dec85c1e0a.js" crossorigin="anonymous"></script>
-    <%# <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true  %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true  %>
   </head>
 
   <body>
     <main>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if alert || notice %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <% end %>
     </main>
     <div class="main-container">
       <%=yield%>
     </div>
     <%= render 'layouts/footer' %>
+
+    <%= javascript_include_tag "addItem"  %>
   </body>
 </html>
