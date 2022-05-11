@@ -21,7 +21,7 @@
   <p class="card--info"><%= post.description %> </p>
 
   <div class="card__more-info">
-    <%= link_to "Ver mas", "/desconocido"%>
+    <%= link_to "Ver mas", post_path(@post.id) %>
     <i class="fa-solid fa-circle-arrow-down"></i>
   </div>
 </div>
