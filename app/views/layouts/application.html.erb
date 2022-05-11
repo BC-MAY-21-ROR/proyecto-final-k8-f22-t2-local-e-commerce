@@ -16,10 +16,11 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </main>
-    <div class="main-container">
-      <%=yield%>
-    </div>
-    <%= render 'layouts/footer' %>
+      <%= render "layouts/header" %>
+      <div class=“mainContainer”>
+      <%= yield %>
+      </div>
+      <%=render 'layouts/footer' %>
 
   </body>
 </html>
