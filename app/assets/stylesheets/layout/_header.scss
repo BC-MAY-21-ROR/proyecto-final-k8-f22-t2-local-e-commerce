@@ -37,20 +37,21 @@ a {
 
 .fa-solid, .fa-cart-shopping {
     color: $white !important;
-    font-size: 40px;
-    margin: 15px;
+    font-size: 25px;
+    margin-right: 10px;
     padding: 10px;
     text-align: center;
 }
 
-.navbar-profile-button {
+.btn, .btn-secondary, .dropdown-toggle {
     background-color: $profile-button;
     border-radius: 10px;
     border: solid $profile-button;
     color: $white;
     height: 45px;
     margin-right: 40px !important;
-    width: 114px;
+    width: 160px;
+    
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -59,4 +60,10 @@ a {
 
 .navbar-light .navbar-toggler {
     border-color: $red;
+}
+
+.fa-solid, .fa-bell {
+    color: $white !important;
+    margin-left: 10px;
+    font-size: 25px;
 }
