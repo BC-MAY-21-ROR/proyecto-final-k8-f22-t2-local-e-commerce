@@ -1,31 +1,31 @@
-<div class="user_navbar">
+<nav class="user_navbar">
   <div class="user_navbar__box">
-    <%= image_tag('test.png', class: "user_navbar__image") %>
+    <%= image_tag('profile.png', class: "user_navbar__image") %>
   </div>
   <ul class="nav_section">
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-person-fill"></i>
-      <p class="nav_section__text">Información</p>
+      <%=link_to "Information","/", class:'nav_section__text'%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-heart-fill"></i>
-      <p class="nav_section__text">Favoritos</p>
+      <%=link_to "Favoritos", "/", class:'nav_section__text'%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bell-fill"></i>
-      <p class="nav_section__text">Notificaciones</p>
+      <%=link_to "Notificaciones", "/", class:'nav_section__text'%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bag-dash-fill"></i>
-      <p class="nav_section__text"> Compras</p>
+    <%=link_to "Compras", "/", class:'nav_section__text'%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bag-dash-fill"></i>
-      <p class="nav_section__text">Ventas</p>
+      <%=link_to "Ventas", "/", class:'nav_section__text'%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-chat-fill"></i>
-      <p class="nav_section__text">Mensajes</p>
+      <%=link_to "Mensajes", "/", class:'nav_section__text'%>
     </li>
   </ul>
-</div>
+</nav>
