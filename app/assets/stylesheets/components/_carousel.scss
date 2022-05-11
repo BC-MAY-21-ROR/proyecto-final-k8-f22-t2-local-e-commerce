@@ -10,10 +10,9 @@
 
   i {
     font-size: 40px;
-    color: #989696;
+    color: $gray;
   }
 }
-
 
 @media screen and (max-width: 700px) {
   .carousel__buttons {
