@@ -18,9 +18,10 @@
         <p class="alert"><%= alert %></p>
       <% end %>
     </main>
-    <div class="main-container">
-      <%=yield%>
-    </div>
-    <%= render 'layouts/footer' %>
+      <%= render "layouts/header" %>
+      <div class=“mainContainer”>
+      <%= yield %>
+      </div>
+      <%=render 'layouts/footer' %>
   </body>
 </html>
