@@ -20,15 +20,6 @@ const showImages = (images) => {
 	}
 }
 
-const removeChilds = (imgs) => {
-  imgs = document.getElementsByClassName('output');
-  let parent = imgs[0].parentNode;
-	let size = imgs.length;
-  for (let key = 0; key <= size; key++) {
-    parent.removeChild(parent.lastChild);
-  }
-}
-
 window.deleteImage = function(position) {
   images.splice(position, 1);
   showImages(images);
