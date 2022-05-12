@@ -1,0 +1,11 @@
+.container {
+  background-color: $gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  .cards {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 85%;
+  }
+}
