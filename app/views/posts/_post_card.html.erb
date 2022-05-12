@@ -1,0 +1,27 @@
+<div class="card">
+  <%= image_tag url_for(post.picture[0]) %>
+  <h2><%= link_to post.title, post_path(post.id) %></h2>
+  <div class="card__features">
+    <i class="fa-solid fa-tag"></i>
+    <p>Hogar,</p>
+    <p>Limpieza </p>
+  </div>
+  <div class="card__container-price">
+    <span class="card--price">$<%= post.price %>.00 </span>
+    <p>x 1</p>
+  </div>
+  <div class="stars">
+    <i class="fa-solid fa-star star"></i>
+    <i class="fa-solid fa-star star"></i>
+    <i class="fa-solid fa-star star"></i>
+    <i class="fa-solid fa-star star"></i>
+    <i class="fa-solid fa-star-half star"></i>
+  </div>
+  <img src="" alt="">
+  <p class="card--info"><%= post.description %> </p>
+
+  <div class="card__more-info">
+    <%= link_to "Ver mas", post_path(post.id) %>
+    <i class="fa-solid fa-circle-arrow-down"></i>
+  </div>
+</div>

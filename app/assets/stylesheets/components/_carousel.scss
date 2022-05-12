@@ -1,0 +1,26 @@
+.render__cards {
+  display: flex;
+  margin: 0 50px;
+  justify-content: space-between;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  width: 30px;
+  margin: 0 10px;
+
+  i {
+    font-size: 40px;
+    color: $gray;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .carousel__buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 30px;
+  }
+  .carousel-control-prev, .carousel-control-next {
+    position: relative;
+  }
+}
