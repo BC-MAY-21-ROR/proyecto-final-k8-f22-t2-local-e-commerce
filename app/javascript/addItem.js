@@ -17,7 +17,7 @@ const showImages = (images) => {
     img = document.getElementsByClassName('output');
     img[i].src = URL.createObjectURL(images[i]);
     img[i].style.display = 'inline';
-	}
+  }
 }
 
 window.deleteImage = function(position) {
