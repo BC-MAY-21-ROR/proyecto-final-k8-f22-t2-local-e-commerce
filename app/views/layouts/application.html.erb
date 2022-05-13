@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <script src="https://kit.fontawesome.com/dec85c1e0a.js" crossorigin="anonymous"></script>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true  %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body>
     <main>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice || alert %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <% end %>
     </main>
-    <div class="main-container">
-      <%=yield%>
-    </div>
-    <%= render 'layouts/footer' %>
+      <%= render "layouts/header" %>
+      <div class=“mainContainer”>
+      <%= yield %>
+      </div>
+      <%=render 'layouts/footer' %>
+
   </body>
 </html>

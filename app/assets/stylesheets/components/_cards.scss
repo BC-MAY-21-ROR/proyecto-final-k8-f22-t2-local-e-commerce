@@ -1,12 +1,22 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 80px;
+}
+
 .container__card {
   display: flex;
+  justify-content: space-between;
   gap: 2rem;
+  padding-bottom: 15px;
 }
 
 .card {
   border-radius: 1rem;
   padding: 2rem;
   width: 400px;
+  height: 600px;
 
   h2 {
     font-weight: 700;
@@ -61,7 +71,8 @@
   gap: 1rem;
   justify-content: end;
 
-  a,i {
+  a,
+  i {
     color: $text-gray;
     text-decoration: none;
   }
