@@ -18,11 +18,11 @@
         <p class="alert"><%= alert %></p>
       <% end %>
     </main>
-      <%= render "layouts/header" %>
-      <div class=“mainContainer”>
+    <%= render "layouts/header" %>
+    <div class=“mainContainer”>
       <%= yield %>
-      </div>
-      <%=render 'layouts/footer' %>
-
+    </div>
+    <%=render 'layouts/footer' %>
+    <%= javascript_include_tag "addItem"  %>
   </body>
 </html>
