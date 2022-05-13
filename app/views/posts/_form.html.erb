@@ -1,8 +1,41 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.file_field :picture, multiple: true %>
-  <%= f.input :price %>
-  <%= f.association :type, as: :radio_buttons,  collection: [[1, 'Producto'], [2, 'Servicio']], label_method: :second, value_method: :first %>
-  <%= f.button :submit %>
+<%= form_for @post do |f| %>
+ <div class="form_new_post">
+
+   <div class="form_new_post__field">
+     <%= f.label "Nombre del producto", class: "bloc"%>
+     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[0] if @post.errors.any? %></span>
+     <%= f.text_field :title, placeholder: "Ej. Controles de xbox" %>
+   </div>
+
+   <div class="form_new_post__field">
+     <%= f.label "Descripción del producto" %>
+     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[1] if @post.errors.any? %></span>
+     <%= f.text_area :description, placeholder: "Ej. Este producto es lo siguiente..."%>
+   </div>
+
+
+   <div class="form_new_post__field">
+     <%= f.label "Precio" %>
+     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[2] if @post.errors.any? %></span>
+     <%= f.number_field :price, placeholder: "Ej. $200.00", class: "ajs" %>
+   </div>
+
+
+   <div class="form_new_post__field">
+     <p>Agregar imagenes</p>
+     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[3] if @post.errors.any? %></span>
+     <div>
+       <%= f.label :picture, class: "form_new_post__field--hover" do %>
+         <span class="form_new_post__add_items" id="add">+</span>
+         <%=  f.file_field :picture, multiple: true,  onchange: 'loadFiles(event)', class: "form_new_post__field--input", accept: 'image/png,image/jpeg' %>
+       <% end %>
+     </div>
+     <div class="form_new_post__show_images" id="upload">
+     </div>
+   </div>
+
+   <div>
+     <%= f.button "Publicar producto", class: "form_new_post__button" %>
+   </div>
+ </div>
 <% end %>
