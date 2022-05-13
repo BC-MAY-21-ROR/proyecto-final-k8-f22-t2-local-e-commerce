@@ -62,8 +62,8 @@
             Mi cuenta
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Mi perfil", "/", class:"dropdown-item" %></li>
-            <li><%= link_to "Cerrar sesión", "/", class:"dropdown-item" %></li>
+            <li><%= link_to "Mi perfil", profile_users_path, class:"dropdown-item" %></li>
+            <li><%= link_to "Cerrar sesión", destroy_user_session_path, class:"dropdown-item" %></li>
           </ul>
         </li>
       </ul>

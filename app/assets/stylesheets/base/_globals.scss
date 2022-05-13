@@ -14,5 +14,6 @@ body {
 }
 
 .main-container {
+  min-height: calc(100vh - $footer-size - 56px);
   margin-top: 56px;
 }
