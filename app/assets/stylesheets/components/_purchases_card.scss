@@ -1,26 +1,31 @@
-.cards {
-    align-items: flex-end;
+.purchases_cards {
     display: flex;
-    height: 10vh;
-    margin-top: 200px;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    padding: 20px;
     line-height: 50px;
+    border: 1px solid grey;
+
+    > div {
+        margin: 10px 0;
+    }
 }
 
-.card {
-    align-items: flex-start;
-    height: 280px;
-    width: 1000px;
-    border-color: $red;
-    border-width: 3px;
+.purchases_card {
+    height: 200px;
+    width: 700px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid $red;
     border-radius: 10px;
-  
 }
 
 .card-body {
     padding: 2px;
 }
 
-.button {
+.purchases_cards__button {
     background-color: $button-yellow;
     border-radius: 20px;
     border: $button-yellow;
@@ -28,6 +33,10 @@
     text-align: center;
     width: 180px;
     margin: 15px;
+
+    > a {
+        text-decoration: none;
+    }
 }
 
 #evaluate {
@@ -46,9 +55,11 @@
     color: $white;
 }
 
-.card-img-top {
+.purchases_card__image {
     width: 135px;
     height: 135px;
+
+    > img {
+        object-fit: cover;
+    }
 }
-
-
