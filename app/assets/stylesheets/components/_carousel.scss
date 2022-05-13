@@ -1,17 +1,19 @@
 .render__cards {
   display: flex;
-  margin: 0 50px;
+  margin: 50px;
   justify-content: space-between;
+  gap: 16px;
 }
 
-.carousel-control-prev, .carousel-control-next {
+.carousel-control-prev,
+.carousel-control-next {
   width: 30px;
   margin: 0 10px;
+}
 
-  i {
-    font-size: 40px;
-    color: $gray;
-  }
+.carousel__icon {
+  font-size: 40px;
+  color: $black;
 }
 
 @media screen and (max-width: 700px) {
@@ -20,7 +22,8 @@
     justify-content: space-evenly;
     margin: 30px;
   }
-  .carousel-control-prev, .carousel-control-next {
+  .carousel-control-prev,
+  .carousel-control-next {
     position: relative;
   }
 }

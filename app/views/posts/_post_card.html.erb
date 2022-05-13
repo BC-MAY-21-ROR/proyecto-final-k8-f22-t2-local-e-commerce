@@ -1,5 +1,7 @@
 <div class="card">
-  <%= image_tag url_for(post.picture[0]) %>
+  <div class="card__image">
+  <%= image_tag url_for(post.picture[0]), class:"image" %>
+  </div>
   <h2><%= link_to post.title, post_path(post.id) %></h2>
   <div class="card__features">
     <i class="fa-solid fa-tag"></i>
@@ -18,7 +20,7 @@
     <i class="fa-solid fa-star-half star"></i>
   </div>
   <img src="" alt="">
-  <p class="card--info"><%= post.description %> </p>
+  <p class="card--info"><%= truncate( post.description, length:85) %> </p>
 
   <div class="card__more-info">
     <%= link_to "Ver mas", post_path(post.id) %>
