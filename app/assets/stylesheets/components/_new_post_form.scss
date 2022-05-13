@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
   }
+
+  @media (min-width: $desktop) {
+    background-color: #9B9191;
+  }
 }
 
 .form_new_post--alert_error {
@@ -142,6 +146,30 @@
     height: 60px;
     width: 330px;
   }
+
+  @media (min-width: $desktop) {
+    background-color: $white-light;
+    margin: 0;
+
+    &__field {
+      input {
+        width: 450px;
+      }
+
+      textarea {
+        width: 450px;
+      }
+
+    }
+
+    &__add_items, &__button {
+      width: 450px;
+    }
+
+    &__show_images {
+      grid-template-columns: repeat(4, calc(450px / 4));
+    }
+  }
 }
 
 .fa-trash {
@@ -151,14 +179,6 @@
 }
 
 @media (min-width: $desktop) {
-  .new_post {
-    background-color: #9B9191;
-  }
-
-  .form_new_post {
-    background-color: $white-light;
-    margin: 0;
-  }
   .new_post__view {
     background-color: $white-light;
     border: 1px solid black;
@@ -166,24 +186,5 @@
     margin: 40px;
     padding: 20px;
     width: 800px;
-  }
-
-  .form_new_post__field {
-    input {
-      width: 450px;
-    }
-
-    textarea {
-      width: 450px;
-    }
-
-  }
-
-  .form_new_post__add_items, .form_new_post__button {
-    width: 450px;
-  }
-
-  .form_new_post__show_images {
-    grid-template-columns: repeat(4, calc(450px / 4));
   }
 }
