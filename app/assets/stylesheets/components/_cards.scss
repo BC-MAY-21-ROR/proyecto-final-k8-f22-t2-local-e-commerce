@@ -22,6 +22,10 @@
     justify-content: center;
     width: 320px;
     height: 300px;
+
+    img {
+      object-fit: cover;
+    }
   }
 
   h2 {
