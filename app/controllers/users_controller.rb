@@ -18,5 +18,8 @@ class UsersController < ApplicationController
 
   def messages
     @user = current_user
+  def sold
+    # @sold = current_user.posts.where
+    @sold = 5
   end
 end
