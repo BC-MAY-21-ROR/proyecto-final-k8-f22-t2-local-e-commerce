@@ -1,7 +1,54 @@
-.purchases_card {
-    color: $purchases-title;
+.cards {
+    align-items: flex-end;
+    display: flex;
+    height: 10vh;
+    margin-top: 200px;
+    line-height: 50px;
 }
 
-.golden {
-    color: $purchases-title;
+.card {
+    align-items: flex-start;
+    height: 280px;
+    width: 1000px;
+    border-color: $red;
+    border-width: 3px;
+    border-radius: 10px;
+  
 }
+
+.card-body {
+    padding: 2px;
+}
+
+.button {
+    background-color: $button-yellow;
+    border-radius: 20px;
+    border: $button-yellow;
+    height: 45px;
+    text-align: center;
+    width: 180px;
+    margin: 15px;
+}
+
+#evaluate {
+    background-color: $profile-button;
+    border: $profile-button;
+}
+
+.card-link {
+    color: $black;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+#second-button {
+    color: $white;
+}
+
+.card-img-top {
+    width: 135px;
+    height: 135px;
+}
+
+
