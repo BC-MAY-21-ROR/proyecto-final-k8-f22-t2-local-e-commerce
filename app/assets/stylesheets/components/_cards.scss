@@ -1,6 +1,14 @@
+.cards {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 80px;
+}
+
 .container__card {
   display: flex;
-  gap: 2rem;
+  width: 100%;
+  padding-bottom: 15px;
 }
 
 .card {
@@ -8,6 +16,17 @@
   padding: 2rem;
   width: 400px;
   height: 600px;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 300px;
+
+    img {
+      object-fit: cover;
+    }
+  }
 
   h2 {
     font-weight: 700;
@@ -62,7 +81,8 @@
   gap: 1rem;
   justify-content: end;
 
-  a,i {
+  a,
+  i {
     color: $text-gray;
     text-decoration: none;
   }
