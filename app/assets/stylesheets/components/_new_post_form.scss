@@ -3,12 +3,12 @@
   background-color: $white-light;
   display: flex;
   flex-direction: column;
-}
 
-.new_post__view {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  &__view {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .form_new_post--alert_error {
@@ -17,131 +17,137 @@
 
 .form_new_post {
   margin: 20px;
-}
 
-.form_new_post__field {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  
+    label, p {
+      font-family: 'Roboto';
+      font-size: 20px;
+      font-weight: 700;
+    }
+  
+    input {
+      border: 2px solid $gray-light;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 700;
+      height: 45px;
+      margin: 10px 0;
+      padding: 10px;
+      width: 330px;
+    }
+  
+    textarea {
+      border: 2px solid $gray-light;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: 700;
+      height: 150px;
+      margin: 10px 0;
+      padding: 10px;
+      width: 330px;
+    }
+  }
 
-  label, p {
+  &__add_items {
+    align-items: center;
+    background-color: $gray;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    font-size: 40px;
+    height: 60px;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 0;
+    width: 330px;
+
+    &:hover {
+      background-color: $gray-light;
+    }
+  }
+
+  &__field--input {
+    display: none;
+  }
+
+  &__message {
+    input {
+      display: none;
+    }
+  }
+
+  &__container {
+    height: 100px;
+    margin: 0 10px 10px 0;
+    position: relative;
+    width: 100px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &__delete {
+    background-color: $red;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: .3s ease;
+    width: 100%;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &__delete__icon {
+    color: white;
+    font-size: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &__picture {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &__show_images {
+    display: grid;
+    grid-template-columns: repeat(3, calc(350px / 3));
+    height: 100%;
+    width: 350px;
+  }
+
+  &__button {
+    background-color: $blue-button-sell;
+    border: 1px solid $blue-button-sell;
+    border-radius: 10px;
+    color: $white;
     font-family: 'Roboto';
     font-size: 20px;
     font-weight: 700;
-  }
-
-  input {
-    border: 2px solid $gray-light;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: 700;
-    height: 45px;
-    margin: 10px 0;
-    padding: 10px;
-    width: 330px;
-  }
-
-  textarea {
-    border: 2px solid $gray-light;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: 700;
-    height: 150px;
-    margin: 10px 0;
-    padding: 10px;
+    height: 60px;
     width: 330px;
   }
 }
 
-.form_new_post__field--input {
-    display: none;
-}
-
-.form_new_post__add_items {
-  align-items: center;
-  background-color: $gray;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  font-size: 40px;
-  height: 60px;
-  justify-content: center;
-  margin-bottom: 10px;
-  padding: 0;
-  width: 330px;
-}
-
-.form_new_post__add_items:hover {
-  background-color: $gray-light;
-}
-
-.form_new_post__message {
-  input {
-    display: none;
+.fa-trash {
+  &:hover {
+    color: $white;
   }
-}
-
-.form_new_post__container {
-  height: 100px;
-  margin: 0 10px 10px 0;
-  position: relative;
-  width: 100px;
-}
-
-.form_new_post__delete {
-  background-color: $red;
-  cursor: pointer;
-  height: 100%;
-  left: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  transition: .3s ease;
-  width: 100%;
-}
-
-.form_new_post__container:hover .form_new_post__delete {
-  opacity: .8;
-}
-
-.fa-trash:hover {
-  color: $white;
-}
-
-.form_new_post__delete__icon {
-  color: white;
-  font-size: 40px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  text-align: center;
-  text-decoration: none;
-}
-
-.form_new_post__picture {
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.form_new_post__show_images {
-  display: grid;
-  grid-template-columns: repeat(3, calc(350px / 3));
-  height: 100%;
-  width: 350px;
-}
-
-.form_new_post__button {
-  background-color: $blue-button-sell;
-  border: 1px solid $blue-button-sell;
-  border-radius: 10px;
-  color: $white;
-  font-family: 'Roboto';
-  font-size: 20px;
-  font-weight: 700;
-  height: 60px;
-  width: 330px;
 }
 
 @media (min-width: $desktop) {
