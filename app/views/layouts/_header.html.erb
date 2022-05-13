@@ -1,47 +1,72 @@
-<nav class="navbar fixed-top navbar-light navbar-expand-md">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" 
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-
+<nav class="navbar fixed-top navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
     <a class="navbar-brand d-sm-none d-md-block d-none d-sm-block" href="#">
-    <button class="navbar-button d-inline-block align-top">Logo</button>
+      Logo
     </a>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">PRODUCTOS</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Productos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Información", "/", class:"dropdown-item" %></li>
+            <li><%= link_to "Favoritos", "/", class:"dropdown-item" %></li>
+            <li><%= link_to "Compras", "/", class:"dropdown-item" %></li>
+            <li><%= link_to "Ventas", "/", class:"dropdown-item" %></li>
+            <li><%= link_to "Mensajes", "/", class:"dropdown-item" %></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="w-25">
+        <input
+          type="text"
+          class="form-control icon_placeholder d-inline-block align-top"
+          placeholder=" Busca productos"
+        />
+      </form>
+      <ul class="navbar-nav d-flex justify-content-between">
+        <li class="nav-item">
+          <i class="fa-solid fa-cart-shopping nav__icon"></i>
+        </li>
+        <li class="nav-item">
+          <i class="fa-solid fa-bell nav__icon"></i>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Mi cuenta
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "Mi perfil", profile_users_path, class:"dropdown-item" %></li>
+            <li><%= link_to "Cerrar sesión", destroy_user_session_path, class:"dropdown-item" %></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtontwo" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    MENU
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Información</a>
-    <a class="dropdown-item" href="#">Favoritos</a>
-    <a class="dropdown-item" href="#">Compras</a>
-    <a class="dropdown-item" href="#">Ventas</a>
-    <a class="dropdown-item" href="#">Mensajes</a>
-  </div>
-</div>
-</div>
- 
-  <input type="text" class="form-control icon_placeholder d-inline-block align-top " placeholder=" Busca productos">
-  <i class="fa-solid fa-cart-shopping"></i>
-   <i class="fa-solid fa-bell"></i>
-
-<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Mi cuenta
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Mi perfil</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">Sign out</a>
-  </div>
-</div>
-</div>
 </nav>

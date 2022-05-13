@@ -1,21 +1,19 @@
 html {
   box-sizing: border-box;
 }
-body{
+body {
+  width: 100%;
   position: relative;
-  min-height: 100vh;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
 
 .main-container {
-  padding-bottom: 260px;
-
-  @media screen and (max-width: $mobile) {
-    padding-bottom: 710px;
-  }
-
+  min-height: calc(100vh - $footer-size - 56px);
+  margin-top: 56px;
 }

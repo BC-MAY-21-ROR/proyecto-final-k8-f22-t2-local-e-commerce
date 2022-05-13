@@ -1,80 +1,21 @@
-a {
-    color: $white;
-    display: flex;
-    justify-content: flex-start;
-}
-
 .navbar {
-    background-color: $red;
-    font-family: $primary-font;
-}
-
-.navbar-button {
-    background-color: $logo-yellow;
-    border-radius: 10px;
-    border: solid $black;
-    color: $white;
-    font-size: 20px;
-    height: 60px;
-    margin-left: 40px;
-    width: 60px;
-}
-
-.nav-item, .nav-link {
-    color: $white !important;
-}
-
-.form-control {
-    border-radius: 10px;
-    font-weight: 1px;
-    width: 420px;
+  background-color: $red;
+  font-family: $primary-font;
 }
 
 .icon_placeholder::placeholder {
-    font: var(--fa-font-solid);
-    opacity: 0.6;
+  font: var(--fa-font-solid);
+  opacity: 0.6;
 }
 
-.fa-solid, .fa-cart-shopping {
-    color: $white !important;
-    font-size: 25px;
-    margin-right: 10px;
-    padding: 10px;
-    text-align: center;
-}
-
-.btn, .btn-secondary, .dropdown-toggle {
-    background-color: $profile-button;
-    border-radius: 10px;
-    border: solid $profile-button;
-    color: $white;
-    height: 45px;
-    margin-right: 40px !important;
-    width: 160px;
-    
+.nav__icon {
+  color: $white;
+  font-size: 25px;
+  margin-right: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
-}
-
-.navbar-light .navbar-toggler {
-    border-color: $red;
-}
-
-.fa-solid, .fa-bell {
-    color: $white !important;
-    font-size: 25px;
-    margin-left: 10px;
-}
-
-#dropdownMenuButtontwo {
-    background-color: $red;
-    border: none;
-    margin-right: 1100px !important;
-}
-
-#second_dropdown {
-    align-items: flex-start;
-    display: flex;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }

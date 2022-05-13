@@ -7,8 +7,7 @@
 
 .container__card {
   display: flex;
-  justify-content: space-between;
-  gap: 2rem;
+  width: 100%;
   padding-bottom: 15px;
 }
 
@@ -17,6 +16,17 @@
   padding: 2rem;
   width: 400px;
   height: 600px;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 300px;
+
+    img {
+      object-fit: cover;
+    }
+  }
 
   h2 {
     font-weight: 700;
