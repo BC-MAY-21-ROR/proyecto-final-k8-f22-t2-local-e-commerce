@@ -11,11 +11,17 @@
   </head>
 
   <body>
+    <main>
+      <% if notice || alert %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+    </main>
     <%= render "layouts/header" %>
     <div class="main-container">
       <%= yield %>
     </div>
     <%=render 'layouts/footer' %>
-
+    <%= javascript_include_tag "addItem"  %>
   </body>
 </html>
