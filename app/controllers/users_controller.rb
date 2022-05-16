@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:profile, :favorites, :notifications]
+  before_action :authenticate_user!, only: [:profile, :favorites, :notifications, :messages]
   def show
     @user = User.find(params[:id])
   end
