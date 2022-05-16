@@ -15,4 +15,8 @@ class UsersController < ApplicationController
   def notifications
     @user = current_user
   end
+
+  def messages
+    @user = current_user
+  end
 end
