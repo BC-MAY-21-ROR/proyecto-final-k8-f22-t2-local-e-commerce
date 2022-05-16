@@ -9,10 +9,10 @@ Rails.application.routes.draw do
       get :favorites
       get :notifications
       get :messages
+      get :sold
     end
   end
   get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'
   post 'post/:id/buy_product', to: 'order#buy', as: 'buy_product' 
-  get 'user/sold', to: 'users#sold', as: 'sold'
   root to: 'home#index'
 end
