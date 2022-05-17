@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get :profile
+      get :favorites
+      get :notifications
+      get :messages
     end
   end
   get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'
