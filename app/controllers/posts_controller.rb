@@ -19,6 +19,11 @@ class PostsController < ApplicationController
   def edit
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+  end
+
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
@@ -36,6 +41,9 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    @old_images = @post.picture.map(&:id)
+    # @post.attach(params[:picture]
+    @post.picture.attach(@old_images)
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
