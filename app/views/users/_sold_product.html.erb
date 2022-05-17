@@ -1,0 +1,18 @@
+<article class="sold__card">
+  <h5 class ="sold__card__title">
+    Vendido el <%= order.created_at.strftime("%d de %B del %Y")%>
+  </h5>
+  <div class="sold__card__description">
+    <%= image_tag url_for(post.picture[0]), class:"sold__card__description__image" %>
+    <div class="sold__card__description__info">
+      <h6>
+        <%= post.title %>
+      </h6>
+      <p>
+        <%= order.quantity %>
+        $<%= order.order.total %>
+        <%= link_to 'Ver articulo', post_path(post.id) %>
+      </p>
+    </div>
+  </div>
+</article>
