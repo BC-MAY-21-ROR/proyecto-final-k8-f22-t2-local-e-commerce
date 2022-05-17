@@ -1,5 +1,9 @@
-<%#= render 'home/user_navbar' %>
+<%= render 'home/user_navbar' %>
 <section class="sold">
+  <div class="sold__title">
+    <h2>Ventas</h2>
+    <hr/>
+  </div>
   <% @sold.each do |s|%>
     <% s.order_details.each do |order|%>
       <%= render 'sold_product', order:order, post: s %>

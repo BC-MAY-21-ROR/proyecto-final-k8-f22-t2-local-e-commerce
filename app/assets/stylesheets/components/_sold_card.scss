@@ -1,7 +1,68 @@
 .sold {
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 320px;
 
-    &__card {
-        background-color: aqua;
+  &__title {
+    width: 40%;
+    margin: 3% 0% 0% 10%;
+
+    h2 {
+      color: $logo-yellow;
     }
+
+    hr {
+      margin-top: 0%;
+    }
+  }
+
+  &__card {
+    background-color: $white;
+    // border: 2px solid $navbar;
+    border: $card-border;
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 10px;
+    width: 80%;
+
+    &__title {
+      margin-left: 4%;
+    }
+
+    &__description {
+      display: flex;
+      margin: 2% 1%;
+      width: 100%;
+
+      &__image {
+        border: $card-border;
+        border-radius: 5px;
+        width: 30%;
+      }
+
+      &__info {
+        margin: auto 3%;
+        width: 70%;
+
+        &__more {
+          align-items: center;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+
+          .btn-info {
+            background-color: $links;
+            border: $card-border;
+            font-weight: 600;
+            
+            &:hover {
+              background-color: $active-yellow;
+            }
+          }
+        }
+      }
+    }
+  }
 }
