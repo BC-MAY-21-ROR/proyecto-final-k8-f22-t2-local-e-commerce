@@ -1,17 +1,13 @@
 <div class="post">
   <div class="post__image">
-    <%= image_tag('postpng.png', class: "image") %>
+    <%= render 'posts/images_carousel' %>
   </div>
   <div class="post__info">
     <%= render 'posts/post_info' %>
   </div>
   <div class="post__features">
     <h1>Principales caracteristicas</h1>
-    <p class="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-      nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <p class="post__text"><%= @post.description %></p>
   </div>
   <div class="post__reviews">
     <%= render partial:"comments", locals:{comments: @post.post_comments, post_id: @post.id}%>
