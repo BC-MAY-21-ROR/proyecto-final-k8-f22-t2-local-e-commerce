@@ -9,5 +9,5 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :picture, presence: true
+  # validates :picture, presence: true
 end
