@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comments_average =  @post.post_comments.average(:ranking)
   end
 
   # GET /posts/new

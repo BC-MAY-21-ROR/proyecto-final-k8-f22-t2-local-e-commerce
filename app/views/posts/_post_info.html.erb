@@ -1,10 +1,10 @@
 <div class="info">
   <h3 class="info__text info__text--title"><%= @post.title %></h3>
   <div class="info__ranking">
-    <% 4.times do %>
+    <% @comments_average.to_i.times do %>
       <i class="fa-solid fa-star info__icon info__icon--yellow"></i>
     <% end %>
-    28 opiniones
+    <%=@post.post_comments.count%> opiniones
   </div>
   <p class="info__text info__text--price">$ <%= @post.price %></p>
   <div class="info__detail">

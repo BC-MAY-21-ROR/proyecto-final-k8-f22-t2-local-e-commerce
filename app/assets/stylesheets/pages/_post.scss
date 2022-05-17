@@ -1,20 +1,21 @@
 .post {
   background-color: $white;
   display: grid;
-  grid-template:  "image info" auto
-                  "features features" auto
-                  "reviews reviews"auto/
-                      50% 50%;
+  grid-template:
+    "image info" 500px
+    "features features" auto
+    "reviews reviews" auto/
+    50% 50%;
   height: fit-content;
   padding: 20px;
   width: 100%;
   @media screen and (max-width: $mobile) {
-    grid-template:  "image" auto
-                  "info" auto
-                  "features" auto
-                  "reviews"auto/
-                      100%;
-
+    grid-template:
+      "image" auto
+      "info" auto
+      "features" auto
+      "reviews" auto/
+      100%;
   }
 
   &__image {
@@ -39,5 +40,4 @@
   &__reviews {
     grid-area: reviews;
   }
-
 }
