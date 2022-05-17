@@ -22,7 +22,6 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    @post.type_id = 1
 
     respond_to do |format|
       if @post.save
