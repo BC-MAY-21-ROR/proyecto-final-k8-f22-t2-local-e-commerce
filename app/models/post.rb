@@ -9,5 +9,12 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  # validates :picture, presence: true
+  validates :stock, presence: true
+  validates :delivery, presence: true
+
+  enum delivery: {
+    "Entrega a domicilio": 0,
+    "Retiro en tienda": 1,
+    "Punto medio": 2
+  }
 end
