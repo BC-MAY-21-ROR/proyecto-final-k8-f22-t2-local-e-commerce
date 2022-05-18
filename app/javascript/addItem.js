@@ -4,12 +4,9 @@ let container = document.getElementById("upload");
 
 window.loadFiles = function(event) {
   const pictures = event.target.files;
-  console.log(pictures);
   for(let i=0; i<pictures.length; i++) {
     images.push(pictures[i]);
   }
-  console.log(images);
-  console.log(event.target.files);
   showImages(images);
 }
 
