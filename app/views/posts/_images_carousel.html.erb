@@ -1,12 +1,12 @@
 <div id="carouselExampleControls" class="carousel slide h-100" data-bs-ride="carousel">
   <div class="carousel-inner">
-		<div class="carousel-item active">
-			<%= image_tag(@post.picture[0], class: "w-100") %>
+		<div class="carousel-item active h-100">
+			<%= image_tag(@post.picture[0], class: "image") %>
    	</div>
 		<%@post.picture.each_with_index do |img, index| %>
 			<% next if index == 0 %>
-			<div class="carousel-item">
-				<%= image_tag(img, class: "w-100 image") %>
+			<div class="carousel-item  h-100">
+				<%= image_tag(img, class: "image") %>
 			</div>
 		<% end %>
   </div>

@@ -2,7 +2,7 @@
   background-color: $white;
   display: grid;
   grid-template:
-    "image info" 500px
+    "image info" 450px
     "features features" auto
     "reviews reviews" auto/
     50% 50%;
@@ -20,6 +20,10 @@
 
   &__image {
     grid-area: image;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
   }
 
   &__info {

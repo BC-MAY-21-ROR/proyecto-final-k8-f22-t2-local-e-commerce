@@ -15,5 +15,8 @@ body {
 
 .main-container {
   min-height: calc(100vh - $footer-size - 56px);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   margin-top: 56px;
 }
