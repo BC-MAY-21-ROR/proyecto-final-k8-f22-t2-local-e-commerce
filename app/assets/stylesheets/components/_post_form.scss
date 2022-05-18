@@ -1,4 +1,4 @@
-.new_post {
+.post_form {
   align-items: center;
   background-color: $white-light;
   display: flex;
@@ -15,17 +15,45 @@
   }
 }
 
-.form_new_post--alert_error {
+.form_post--alert_error {
   color: $red;
 }
 
-.form_new_post {
+.form_post {
   margin: 20px;
 
   &__field {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
+
+    &_radio {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      label:first-child {
+        font-family: 'Roboto';
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      &--buttons{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 16px;
+        justify-content: center;
+
+        label {
+          margin-right: 20px;
+        }
+        input {
+          margin-right: 5px;
+        }
+      }
+    }
   
     label, p {
       font-family: 'Roboto';
@@ -181,9 +209,9 @@
   }
 }
 
-.form_new_post__cont-checkbox {
-  width: 100px;
+.form_post__cont-checkbox {
   height: 100px;
+  width: 100px;
 
   > input {
     display: none;
@@ -193,7 +221,7 @@
     opacity: 0.6;
   }
 
-  input:checked + label .form_new_post__delete {
+  input:checked + label .form_post__delete {
     opacity: .8;
   }
 
@@ -203,15 +231,13 @@
 
   label {
     cursor: pointer;
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 }
 
-
-
 @media (min-width: $desktop) {
-  .new_post__view {
+  .post_form__view {
     background-color: $white-light;
     border: 1px solid black;
     box-shadow: 2px 2px 5px;
