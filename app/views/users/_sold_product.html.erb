@@ -13,7 +13,7 @@
       </p>
       <div class="sold__card__description__info__more">
         <h5> Total de venta: $ <%= order.order.total %></h5>
-        <%= link_to 'Detallles de venta', post_path(post.id), class:"btn btn-info rounded-pill px-4" %>
+        <%= link_to 'Detallles de venta', order_path(id:order.order_id), class:"btn btn-info rounded-pill px-4" %>
       </div>
     </div>
   </div>
