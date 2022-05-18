@@ -11,10 +11,7 @@ Rails.application.routes.draw do
       get :messages
     end
   end
-  # get 'images/delete', to: 'posts#delete_image_attachment'
   get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'
   post 'post/:id/buy_product', to: 'order#buy', as: 'buy_product' 
   root to: 'home#index'
-
-  delete '/delete/image/:id', to: 'posts#delete_image_attachment', as: 'delete_image_attachment'
 end

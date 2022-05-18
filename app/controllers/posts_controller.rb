@@ -25,12 +25,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def delete_image_attachment
-    @image = ActiveStorage::Attachment.find(params[:id])
-    @image.purge
-    # redirect_to edit_post_path(@post)
-  end
-
   # POST /posts or /posts.json
   def create
     @post = current_user.posts.new(post_params)
