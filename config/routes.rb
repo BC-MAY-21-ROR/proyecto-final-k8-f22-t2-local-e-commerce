@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts do
-    member do
-      delete :delete_image_attachment
-    end
-  end
+  resources :posts
   resources :post_comments, only: [:create]
   resources :order, only: [:index, :show]
   resources :users, only: [:show] do
@@ -19,4 +15,6 @@ Rails.application.routes.draw do
   get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'
   post 'post/:id/buy_product', to: 'order#buy', as: 'buy_product' 
   root to: 'home#index'
+
+  delete '/delete/image/:id', to: 'posts#delete_image_attachment', as: 'delete_image_attachment'
 end

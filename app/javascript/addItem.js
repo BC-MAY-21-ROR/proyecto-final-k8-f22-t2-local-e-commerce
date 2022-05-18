@@ -4,18 +4,17 @@ let container = document.getElementById("upload");
 
 window.loadFiles = function(event) {
   const pictures = event.target.files;
+  console.log(pictures);
   for(let i=0; i<pictures.length; i++) {
     images.push(pictures[i]);
   }
+  console.log(images);
+  console.log(event.target.files);
   showImages(images);
 }
 
 const showImages = (images) => {
-  // container.innerHTML = ''
-  console.log(container)
-  // for(let i=0; i<hola.length; i++) {
-  //   container.innerHTML += `<h1>Gilk</h1>`
-  // }
+  container.innerHTML = "";
   for (let i = 0; i < images.length; i++) {
     let img = `<div class="form_new_post__container"><img class="form_new_post__picture output"/><div onclick="deleteImage(${i})" class="form_new_post__delete"><a class="form_new_post__delete__icon"><i class="fa-solid fa-trash"></i></a></div></div>`;
     container.innerHTML += img;
@@ -23,8 +22,6 @@ const showImages = (images) => {
     img[i].src = URL.createObjectURL(images[i]);
     img[i].style.display = 'inline';
   }
-
-  console.log(container);
 }
 
 window.deleteImage = function(position) {

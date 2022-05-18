@@ -1,4 +1,4 @@
-<%= form_for @post do |f| %>
+<%= form_for( @post, method: :patch )do |f| %>
   <div class="form_new_post">
 
     <div class="form_new_post__field">
@@ -32,21 +32,26 @@
       </div>
       <div class="form_new_post__show_images" id="upload">
       </div>
+      <p>Imagenes ya almacenadas</p>
       <div class="form_new_post__show_images">
         <% @post.picture.each do |picture| %>
-          <div class="form_new_post__container" id='database'>
-            <%= image_tag url_for(picture), class: "form_new_post__picture output"%>
-            <div onclick="deleteImage(<%= picture.id %>)" class="form_new_post__delete">
-              <a class="form_new_post__delete__icon" data-method="delete"><i class="fa-solid fa-trash"></i></a>
-              <%#= link_to "<i class="'fa-solid' 'fa-trash'"></i>", delete_image_attachment_post_path(picture.id), method: :delete, class: "form_new_post__delete__icon" %>
-            </div>
+          <div class="form_new_post__container form_new_post__cont-checkbox ">
+            <%= check_box_tag "pictures[#{picture.id}]", picture.id %>
+            <%= label_tag "pictures_#{picture.id}" do %>
+              <%= image_tag url_for(picture), class: "form_new_post__picture" %>
+              <div class="form_new_post__delete">
+                <a class="form_new_post__delete__icon">
+                  <i class="fa-solid fa-trash"></i>
+                </a>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
     </div>
 
     <div>
-      <%= f.button "Publicar producto", class: "form_new_post__button" %>
+      <%= f.button "Actualizar producto", class: "form_new_post__button" %>
     </div>
   </div>
 <% end %>
