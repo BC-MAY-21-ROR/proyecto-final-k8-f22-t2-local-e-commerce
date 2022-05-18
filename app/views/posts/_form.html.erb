@@ -1,41 +1,77 @@
 <%= form_for @post do |f| %>
- <div class="form_new_post">
+ <div class="form_post">
 
-   <div class="form_new_post__field">
+   <div class="form_post__field">
      <%= f.label "Nombre del producto", class: "bloc"%>
-     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[0] if @post.errors.any? %></span>
+     <span class="form_post--alert_error"><%= @post.errors.full_messages[0] if @post.errors.any? %></span>
      <%= f.text_field :title, placeholder: "Ej. Controles de xbox" %>
    </div>
 
-   <div class="form_new_post__field">
+   <div class="form_post__field">
      <%= f.label "Descripción del producto" %>
-     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[1] if @post.errors.any? %></span>
+     <span class="form_post--alert_error"><%= @post.errors.full_messages[1] if @post.errors.any? %></span>
      <%= f.text_area :description, placeholder: "Ej. Este producto es lo siguiente..."%>
    </div>
 
+   <div class="form_post__field">
+     <%= f.label "Piezas disponibles" %>
+     <span class="form_post--alert_error"><%= @post.errors.full_messages[2] if @post.errors.any? %></span>
+     <%= f.number_field :stock, placeholder: "5" %>
+   </div>
 
-   <div class="form_new_post__field">
+   <div class="form_post__field">
      <%= f.label "Precio" %>
-     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[2] if @post.errors.any? %></span>
-     <%= f.number_field :price, placeholder: "Ej. $200.00", class: "ajs" %>
+     <span class="form_post--alert_error"><%= @post.errors.full_messages[2] if @post.errors.any? %></span>
+     <%= f.number_field :price, placeholder: "Ej. $200.00" %>
+   </div>
+
+   <div class="form_post__field_radio">
+     <%= f.label "Tipo de entraga" %>
+     <span class="form_post--alert_error"><%= @post.errors.full_messages[2] if @post.errors.any? %></span>
+     <div class="form_post__field_radio--buttons">
+      <%= f.collection_radio_buttons :delivery, Post.deliveries, :first, :first %>
+     </div>
    </div>
 
 
-   <div class="form_new_post__field">
+   <div class="form_post__field">
      <p>Agregar imagenes</p>
-     <span class="form_new_post--alert_error"><%= @post.errors.full_messages[3] if @post.errors.any? %></span>
+     <span class="form_post--alert_error"><%= @post.errors.full_messages[3] if @post.errors.any? %></span>
      <div>
-       <%= f.label :picture, class: "form_new_post__field--hover" do %>
-         <span class="form_new_post__add_items" id="add">+</span>
-         <%=  f.file_field :picture, multiple: true,  onchange: 'loadFiles(event)', class: "form_new_post__field--input", accept: 'image/png,image/jpeg' %>
+       <%= f.label :picture, class: "form_post__field--hover" do %>
+         <span class="form_post__add_items" id="add">+</span>
+         <%=  f.file_field :picture, multiple: true,  onchange: 'loadFiles(event)', class: "form_post__field--input", accept: 'image/png,image/jpeg' %>
        <% end %>
      </div>
-     <div class="form_new_post__show_images" id="upload">
+     <div class="form_post__show_images" id="upload">
      </div>
+
+     <% if action_name == 'edit' %>
+       <% if @post.picture.attached? %>
+        <p>Imagenes ya almacenadas</p>
+       <% else %>
+         <p>Tu producto cuenta sin imagenes...agrega alagunas!</p>
+       <% end %>
+       <div class="form_post__show_images">
+         <% @post.picture.each do |picture| %>
+           <div class="form_post__container form_post__cont-checkbox ">
+             <%= check_box_tag "pictures[#{picture.id}]", picture.id %>
+             <%= label_tag "pictures_#{picture.id}" do %>
+               <%= image_tag url_for(picture), class: "form_post__picture" %>
+               <div class="form_post__delete">
+                 <a class="form_post__delete__icon">
+                   <i class="fa-solid fa-trash"></i>
+                 </a>
+               </div>
+             <% end %>
+           </div>
+         <% end %>
+       </div>
+     <% end %>
    </div>
 
    <div>
-     <%= f.button "Publicar producto", class: "form_new_post__button" %>
+     <%= f.button "#{action_name != 'edit' ? "Publicar" : "Editar"} producto", class: "form_post__button" %>
    </div>
  </div>
 <% end %>

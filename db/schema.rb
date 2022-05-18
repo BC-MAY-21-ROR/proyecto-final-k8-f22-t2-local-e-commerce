@@ -122,7 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
     t.text "comment"
     t.integer "ranking"
     t.string "title"
-    t.datetime "created_at", null: false
+    t.datetime "cre ated_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_user_comments_on_user_id"

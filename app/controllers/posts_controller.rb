@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show ]
+  before_action :authenticate_user!, except: %i[ index show]
 
   # GET /posts or /posts.json
   def index
@@ -17,13 +18,16 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = current_user.posts.find_by(id: params[:id])
+
+    unless @post
+      redirect_to root_path, alert: 'You can only edit your own posts'
+    end
   end
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
-    @post.type_id = 1
-
+    @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -37,6 +41,11 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    @post = current_user.posts.find_by(id: params[:id])
+    if params[:pictures]
+      attachments = ActiveStorage::Attachment.where(id: params[:pictures].values)
+      attachments.map(&:purge)
+    end
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
@@ -50,6 +59,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @post = current_user.posts.find_by(id: params[:id])
     @post.destroy
 
     respond_to do |format|
@@ -59,13 +69,13 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :description, :price, picture: [])
-    end
+  # Only allow a list of trusted parameters through.
+  def post_params
+    params.require(:post).permit(:title, :description, :price, :stock, :delivery, picture: [])
+  end
 end
