@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show destroy update edit]
+  before_action :set_post, only: %i[ show ]
+  before_action :authenticate_user!, except: %i[ index show]
 
   # GET /posts or /posts.json
   def index
@@ -17,6 +18,11 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
+    @post = current_user.posts.find_by(id: params[:id])
+
+    unless @post
+      redirect_to root_path, alert: 'You can only edit your own posts'
+    end
   end
 
   def delete_image_attachment
@@ -41,6 +47,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    @post = current_user.posts.find_by(id: params[:id])
     if params[:pictures]
       attachments = ActiveStorage::Attachment.where(id: params[:pictures].values)
       attachments.map(&:purge)
@@ -58,6 +65,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @post = current_user.posts.find_by(id: params[:id])
     @post.destroy
 
     respond_to do |format|
