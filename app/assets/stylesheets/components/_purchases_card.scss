@@ -5,10 +5,16 @@
 
 .purchases_title::after {
     content: '';
+<<<<<<< HEAD
     background-color: $icon-yellow;
     width: 160px;
     height: 3px;
     display: block;
+=======
+    display: block;
+    height: 3px;
+    width: 400px;
+>>>>>>> add final styles for purchases cards
 }
 
 .purchases_cards {
@@ -20,22 +26,32 @@
     padding: 20px;
     line-height: 50px;
 
+    
     > div {
         margin: 10px 0;
     }
 }
 
 .purchases_card {
+<<<<<<< HEAD
     height: 200px;
     width: 700px;
     padding: 20px;
     box-sizing: border-box;
     border: 2px solid $red;
     border-radius: 10px;
+=======
+    background-color: $white;
+    border-radius: 10px;
+    border: 2px solid $red;
+    box-sizing: border-box;
+    height: 200px;
+    padding: 8px;
+>>>>>>> add final styles for purchases cards
     position: relative;
 }
 
-.card-body {
+.purchases_card__body {
     padding: 2px;
 
     .buttons__evaluate {
@@ -53,9 +69,15 @@
     border-radius: 20px;
     border: $button-yellow;
     height: 45px;
+<<<<<<< HEAD
     text-align: center;
     width: 180px;
     margin: 15px;
+=======
+    margin: 0px;
+    text-align: center;
+    width: 185px;
+>>>>>>> add final styles for purchases cards
 
     > a {
         text-decoration: none;
@@ -66,20 +88,29 @@
     margin-left: 0;
 }
 
-#evaluate {
+#evaluate_product {
     background-color: $profile-button;
     border: $profile-button;
 }
 
-.card-link {
+#evaluate_seller
+{
+    background-color: $profile-button;
+    border: $profile-button;
+    margin-top: 40px;
+    
+}
+
+.purchases_card__link {
     color: $black;
     justify-content: center;
     text-align: center;
     text-decoration: none;
 }
 
-#second-button {
+#purchases_second_button {
     color: $white;
+    margin: 10px;
 }
 
 .purchases_card__image {
@@ -89,4 +120,32 @@
     > img {
         object-fit: cover;
     }
+}
+
+.purchases_title {
+    margin-top: 70px;
+    font-size: 30px;
+    color: $purchases-title;
+    margin-bottom: 2px;
+}
+
+.purchases_card__title {
+    margin: 0px;
+}
+
+.purchases_card__quantity {
+    margin-top: 0px;
+    font-size: 14px;
+    color: $gray-dark;
+}
+
+.purchases_card__subtitle, .mb-2, .text-muted {
+    margin: 0px;
+    color: $gray;
+}
+
+.purchases_line {
+    width: 420px;
+    margin-top: 0px;
+    color: $black;
 }
