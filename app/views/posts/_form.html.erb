@@ -36,6 +36,7 @@
 
     <div class="form_post__field">
       <p>Agregar imagenes</p>
+      <span class="form_post--alert_error"><%= @post.errors.full_messages_for(:picture)[0] if @post.errors.has_key?(:picture) %></span>
       <div>
         <%= f.label :picture, class: "form_post__field--hover" do %>
           <span class="form_post__add_items" id="add">+</span>
