@@ -1,24 +1,29 @@
 .post {
   background-color: $white;
   display: grid;
-  grid-template:  "image info" auto
-                  "features features" auto
-                  "reviews reviews"auto/
-                      50% 50%;
+  grid-template:
+    "image info" 450px
+    "features features" auto
+    "reviews reviews" auto/
+    50% 50%;
   height: fit-content;
   padding: 20px;
   width: 100%;
   @media screen and (max-width: $mobile) {
-    grid-template:  "image" auto
-                  "info" auto
-                  "features" auto
-                  "reviews"auto/
-                      100%;
-
+    grid-template:
+      "image" auto
+      "info" auto
+      "features" auto
+      "reviews" auto/
+      100%;
   }
 
   &__image {
+    display: flex;
     grid-area: image;
+    height: 90%;
+    justify-content: center;
+    width: 90%;
   }
 
   &__info {
@@ -39,5 +44,4 @@
   &__reviews {
     grid-area: reviews;
   }
-
 }
