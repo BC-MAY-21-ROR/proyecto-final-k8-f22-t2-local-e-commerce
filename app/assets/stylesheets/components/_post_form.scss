@@ -11,7 +11,7 @@
   }
 
   @media (min-width: $desktop) {
-    background-color: #9B9191;
+    background-color: #9b9191;
   }
 }
 
@@ -33,13 +33,13 @@
       justify-content: center;
 
       label:first-child {
-        font-family: 'Roboto';
+        font-family: $primary-font;
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 10px;
       }
 
-      &--buttons{
+      &--buttons {
         align-items: center;
         display: flex;
         flex-direction: row;
@@ -54,13 +54,14 @@
         }
       }
     }
-  
-    label, p {
-      font-family: 'Roboto';
+
+    label,
+    p {
+      font-family: "Roboto";
       font-size: 20px;
       font-weight: 700;
     }
-  
+
     > input {
       border: 2px solid $gray-light;
       border-radius: 5px;
@@ -71,7 +72,7 @@
       padding: 10px;
       width: 330px;
     }
-  
+
     textarea {
       border: 2px solid $gray-light;
       border-radius: 5px;
@@ -120,7 +121,7 @@
     width: 100px;
 
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 
@@ -132,10 +133,10 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: .3s ease;
+    transition: 0.3s ease;
     width: 100%;
     &:hover {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 
@@ -171,7 +172,7 @@
     border: 1px solid $blue-button-sell;
     border-radius: 10px;
     color: $white;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-size: 20px;
     font-weight: 700;
     height: 60px;
@@ -190,10 +191,10 @@
       textarea {
         width: 450px;
       }
-
     }
 
-    &__add_items, &__button {
+    &__add_items,
+    &__button {
       width: 450px;
     }
 
@@ -222,7 +223,7 @@
   }
 
   input:checked + label .form_post__delete {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   &:active {

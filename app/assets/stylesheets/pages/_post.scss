@@ -19,11 +19,11 @@
   }
 
   &__image {
+    display: flex;
     grid-area: image;
     height: 90%;
-    width: 90%;
-    display: flex;
     justify-content: center;
+    width: 90%;
   }
 
   &__info {
