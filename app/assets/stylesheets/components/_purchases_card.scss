@@ -5,16 +5,10 @@
 
 .purchases_title::after {
     content: '';
-<<<<<<< HEAD
     background-color: $icon-yellow;
     width: 160px;
     height: 3px;
     display: block;
-=======
-    display: block;
-    height: 3px;
-    width: 400px;
->>>>>>> add final styles for purchases cards
 }
 
 .purchases_cards {
@@ -33,21 +27,12 @@
 }
 
 .purchases_card {
-<<<<<<< HEAD
     height: 200px;
     width: 700px;
     padding: 20px;
     box-sizing: border-box;
     border: 2px solid $red;
     border-radius: 10px;
-=======
-    background-color: $white;
-    border-radius: 10px;
-    border: 2px solid $red;
-    box-sizing: border-box;
-    height: 200px;
-    padding: 8px;
->>>>>>> add final styles for purchases cards
     position: relative;
 }
 
@@ -69,15 +54,9 @@
     border-radius: 20px;
     border: $button-yellow;
     height: 45px;
-<<<<<<< HEAD
     text-align: center;
     width: 180px;
     margin: 15px;
-=======
-    margin: 0px;
-    text-align: center;
-    width: 185px;
->>>>>>> add final styles for purchases cards
 
     > a {
         text-decoration: none;
