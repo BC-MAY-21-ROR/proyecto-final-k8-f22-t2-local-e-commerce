@@ -284,7 +284,10 @@ GEM
 PLATFORMS
   arm64-darwin-21
   x64-mingw32
+<<<<<<< HEAD
   x86_64-darwin-21
+=======
+>>>>>>> Gemfile modified
   x86_64-linux
 
 DEPENDENCIES
