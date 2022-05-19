@@ -11,6 +11,7 @@ class Post < ApplicationRecord
   validates :price, presence: true
   validates :stock, presence: true
   validates :delivery, presence: true
+  validates :picture, presence: true
 
   enum delivery: {
     "Entrega a domicilio": 0,

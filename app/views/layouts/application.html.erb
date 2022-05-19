@@ -12,10 +12,7 @@
 
   <body>
     <main>
-      <% if notice || alert %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      <% end %>
+      <%= render "shared/alerts_notice" %>
     </main>
     <%= render "layouts/header" %>
     <div class="main-container">
