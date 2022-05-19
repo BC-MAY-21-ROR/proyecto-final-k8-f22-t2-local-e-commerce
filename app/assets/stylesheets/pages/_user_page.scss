@@ -1,0 +1,53 @@
+.user_view {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+
+  &__header {
+    width: 100%;
+    height: 250px;
+    background-color: red;
+  }
+
+  &__section {
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    height: fit-content;
+
+    &--info {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      position: relative;
+      align-items: start;
+      align-content: flex-start;
+    }
+
+    &--comments {
+      justify-content: space-around;
+    }
+  }
+  &__image {
+    position: absolute;
+    background-color: blue;
+    width: 250px;
+    height: 250px;
+    left: 100px;
+    bottom: 50%;
+    border-radius: 100%;
+    border: 8px solid white;
+  }
+  &__text {
+    margin: 0;
+    width: 70%;
+    height: fit-content;
+    font-family: $primary-font;
+
+    &--name {
+      font-size: 32px;
+      font-weight: 700;
+    }
+  }
+}
