@@ -34,7 +34,7 @@
       justify-content: center;
 
       label:first-child {
-        font-family: 'Roboto';
+        font-family: $primary-font;
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 10px;
@@ -57,7 +57,7 @@
     }
 
     label, p {
-      font-family: 'Roboto';
+      font-family: $primary-font;
       font-size: 20px;
       font-weight: 700;
     }
@@ -182,7 +182,7 @@
     border: 1px solid $blue-button-sell;
     border-radius: 10px;
     color: $white;
-    font-family: 'Roboto';
+    font-family: $primary-font;
     font-size: 20px;
     font-weight: 700;
     height: 60px;
