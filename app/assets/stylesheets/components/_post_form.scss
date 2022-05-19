@@ -11,16 +11,17 @@
   }
 
   @media (min-width: $desktop) {
-    background-color: #9b9191;
+    background-color: #9B9191;
   }
 }
 
-.form_post--alert_error {
-  color: $red;
-}
 
 .form_post {
   margin: 20px;
+
+  &--alert_error {
+    color: $red;
+  }
 
   &__field {
     display: flex;
@@ -33,13 +34,13 @@
       justify-content: center;
 
       label:first-child {
-        font-family: $primary-font;
+        font-family: 'Roboto';
         font-size: 20px;
         font-weight: 700;
         margin-bottom: 10px;
       }
 
-      &--buttons {
+      &--buttons{
         align-items: center;
         display: flex;
         flex-direction: row;
@@ -55,26 +56,14 @@
       }
     }
 
-    label,
-    p {
-      font-family: "Roboto";
+    label, p {
+      font-family: 'Roboto';
       font-size: 20px;
       font-weight: 700;
     }
 
-    > input {
-      border: 2px solid $gray-light;
-      border-radius: 5px;
-      font-size: 18px;
-      font-weight: 700;
-      height: 45px;
-      margin: 10px 0;
-      padding: 10px;
-      width: 330px;
-    }
 
     textarea {
-      border: 2px solid $gray-light;
       border-radius: 5px;
       font-size: 18px;
       font-weight: 700;
@@ -85,6 +74,27 @@
       width: 330px;
     }
   }
+
+  &__input {
+
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    height: 45px;
+    margin: 10px 0;
+    padding: 10px;
+    width: 330px;
+  }
+
+  .color__input {
+    border: 2px solid $gray-light;
+  }
+
+  .color__input--error {
+    border: 2px solid $red;
+  }
+
+
 
   &__add_items {
     align-items: center;
@@ -121,7 +131,7 @@
     width: 100px;
 
     &:hover {
-      opacity: 0.8;
+      opacity: .8;
     }
   }
 
@@ -133,10 +143,10 @@
     opacity: 0;
     position: absolute;
     top: 0;
-    transition: 0.3s ease;
+    transition: .3s ease;
     width: 100%;
     &:hover {
-      opacity: 0.8;
+      opacity: .8;
     }
   }
 
@@ -172,7 +182,7 @@
     border: 1px solid $blue-button-sell;
     border-radius: 10px;
     color: $white;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-size: 20px;
     font-weight: 700;
     height: 60px;
@@ -184,17 +194,17 @@
     margin: 0;
 
     &__field {
-      input {
+      .form_post__input {
         width: 450px;
       }
 
       textarea {
         width: 450px;
       }
+
     }
 
-    &__add_items,
-    &__button {
+    &__add_items, &__button {
       width: 450px;
     }
 
@@ -223,7 +233,7 @@
   }
 
   input:checked + label .form_post__delete {
-    opacity: 0.8;
+    opacity: .8;
   }
 
   &:active {
