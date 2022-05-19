@@ -17,6 +17,9 @@ class UsersController < ApplicationController
   end
 
   def messages
+    @user = current_user
+  end
+
   def purchases
     @user = current_user
   end
