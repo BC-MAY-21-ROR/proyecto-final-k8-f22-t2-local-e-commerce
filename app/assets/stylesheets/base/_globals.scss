@@ -4,6 +4,7 @@ html {
 body {
   width: 100%;
   position: relative;
+  background-color: $gray;
 }
 *,
 *:before,
@@ -16,7 +17,7 @@ body {
 .main-container {
   min-height: calc(100vh - $footer-size - 56px);
   width: 100%;
-  max-width: 1400px;
+  max-width: 1480px;
   margin: 0 auto;
   margin-top: 56px;
 }
