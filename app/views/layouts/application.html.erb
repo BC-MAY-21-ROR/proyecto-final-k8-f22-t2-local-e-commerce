@@ -15,9 +15,11 @@
       <%= render "shared/alerts_notice" %>
     </main>
     <%= render "layouts/header" %>
-    <%# <div class="main-container"> %>
+    <div class="main-container">
       <%= yield %>
-    <%# </div> %>
-    <%=render 'layouts/footer' %>
+    </div>
+    <div>
+      <%=render 'layouts/footer' %>
+    </div>
   </body>
 </html>
