@@ -1,0 +1,39 @@
+<div class="ranking-container">
+  <div class="total-ranking">
+    <h3><%= @rank_prom %></h3>
+    <% @rank_prom.to_i.times do%>
+      <i class="fa-solid fa-star"></i>
+    <% end %>
+    <% if (@rank_prom - @rank_prom.to_i) > 0.5 %>
+      <i class="fa-solid fa-star-half"></i>
+    <% end %>
+    <p>Promedio entre <%= @ranking[0] %> opiniones </p>
+  </div>
+  <ul>
+    <li>
+      5 estrellas
+      <progress value="<%= @ranking[5]%>" max="<%= @ranking[0] %>"></progress>
+      <%= @ranking[5]%>
+    </li>
+    <li>
+      4 estrellas
+      <progress value="<%= @ranking[4]%>" max="<%= @ranking[0] %>"></progress>
+      <%= @ranking[4]%>
+    </li>
+    <li>
+      3 estrellas
+      <progress value="<%= @ranking[3]%>" max="<%= @ranking[0] %>"></progress>
+      <%= @ranking[3]%>
+    </li>
+    <li>
+      2 estrellas
+      <progress value="<%= @ranking[2]%>" max="<%= @ranking[0] %>"></progress>
+      <%= @ranking[2]%>
+    </li>
+    <li>
+      1 estrella
+      <progress value="<%= @ranking[1]%>" max="<%= @ranking[0] %>"></progress>
+      <%= @ranking[1]%>
+    </li>
+  </ul>
+</div>

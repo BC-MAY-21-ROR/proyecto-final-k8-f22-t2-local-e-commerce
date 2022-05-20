@@ -9,6 +9,9 @@
     <h1>Principales caracteristicas</h1>
     <p class="post__text"><%= @post.description %></p>
   </div>
+  <div class="post__ranking">
+    <%= render 'post_comments/ranking' %>
+  </div>
   <div class="post__reviews">
     <%= render partial:"comments", locals:{comments: @post.post_comments, post_id: @post.id}%>
   </div>
