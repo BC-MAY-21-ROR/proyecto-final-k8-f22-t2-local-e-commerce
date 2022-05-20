@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show ]
   before_action :authenticate_user!, except: %i[ index show]
-
+  before_action :set_ranking, onlu: %i[ show ]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -72,6 +72,11 @@ class PostsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_ranking
+    @ranking = [926, 13, 8, 23, 84, 798]
+    @rank_prom = (((@ranking[5]*5 + @ranking[4]*4 + @ranking[3]*3 + @ranking[2]*2 + @ranking[1]*1)/@ranking[0].to_f)%5).round(1)
   end
 
   # Only allow a list of trusted parameters through.
