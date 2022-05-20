@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :favorites
       get :notifications
       get :messages
+      get :purchases
       get :sold
     end
   end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:profile, :favorites, :notifications, :messages]
+  before_action :authenticate_user!, only: [:profile, :favorites, :notifications, :messages, :purchases]
   def show
     @user = User.find(params[:id])
   end
@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def purchases
+    @user = current_user
+  end
+    
   def sold
     @sold = current_user.posts.all.select {|p| p.order_details.length >= 1}
   end

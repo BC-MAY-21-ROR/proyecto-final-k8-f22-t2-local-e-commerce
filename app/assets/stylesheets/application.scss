@@ -24,6 +24,7 @@
 @import "components/carousel_images";
 @import "components/sold_card";
 @import "pages/post";
+@import "components/purchases_card";
 main {
   background-color: $gray;
   .postion-alert {
@@ -34,6 +35,7 @@ main {
     z-index: 1;
   }
 }
+
 .main-container {
   background-color: $gray;
 }
