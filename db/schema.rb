@@ -103,6 +103,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
     t.integer "delivery"
     t.index ["status_id"], name: "index_posts_on_status_id"
   end
+
   create_table "statuses", force: :cascade do |t|
     t.string "status"
     t.datetime "created_at", null: false
@@ -112,7 +113,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
   create_table "user_comments", force: :cascade do |t|
     t.string "comment"
     t.integer "ranking"
-    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
