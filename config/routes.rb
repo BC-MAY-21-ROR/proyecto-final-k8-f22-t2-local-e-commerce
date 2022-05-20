@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get :favorites
       get :notifications
       get :messages
+      get :sold
     end
   end
   get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'

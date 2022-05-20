@@ -19,4 +19,8 @@ class UsersController < ApplicationController
   def messages
     @user = current_user
   end
+
+  def sold
+    @sold = current_user.posts.all.select {|p| p.order_details.length >= 1}
+  end
 end

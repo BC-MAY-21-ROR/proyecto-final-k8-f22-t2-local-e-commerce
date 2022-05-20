@@ -1,0 +1,20 @@
+<article class="sold__card">
+  <h3 class ="sold__card__title">
+    Vendido el <%= order.created_at.strftime("%d de %B del %Y")%>
+  </h3>
+  <div class="sold__card__description">
+    <%= image_tag url_for(post.picture[0]), class:"sold__card__description__image" %>
+    <div class="sold__card__description__info">
+      <h4>
+        <%= post.title %>
+      </h4>
+      <p>
+        Cantidad: x.<%= order.quantity %> 
+      </p>
+      <div class="sold__card__description__info__more">
+        <h5> Total de venta: $ <%= order.order.total %></h5>
+        <%= link_to 'Detallles de venta', order_path(id:order.order_id), class:"btn btn-info rounded-pill px-4" %>
+      </div>
+    </div>
+  </div>
+</article>

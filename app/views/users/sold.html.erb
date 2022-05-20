@@ -1,0 +1,16 @@
+<div class="sold-container">
+  <%= render 'home/user_navbar' %>
+  <section class="sold-section">
+    <div class="sold-section__title">
+      <h2>Ventas</h2>
+      <hr/>
+    </div>
+    <div class="sold">
+      <% @sold.each do |s|%>
+        <% s.order_details.each do |order|%>
+          <%= render 'sold_product', order:order, post: s %>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
+</div>
