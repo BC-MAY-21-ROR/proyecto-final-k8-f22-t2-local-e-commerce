@@ -71,8 +71,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "total"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "post_categories", force: :cascade do |t|
@@ -85,23 +87,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
   end
 
   create_table "post_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
     t.bigint "post_id", null: false
+    t.string "title"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "price"
+    t.integer "stock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.bigint "status_id", default: 1, null: false
     t.integer "delivery"
     t.index ["status_id"], name: "index_posts_on_status_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -111,8 +119,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
   end
 
   create_table "user_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
