@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show ]
   before_action :authenticate_user!, except: %i[ index show]
-  before_action :set_ranking, onlu: %i[ show ]
+  before_action :set_ranking, only: %i[ show ]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -75,8 +75,13 @@ class PostsController < ApplicationController
   end
 
   def set_ranking
-    @ranking = [926, 13, 8, 23, 84, 798]
-    # @ranking = [100, 50, 25, 12, 8, 5]
+    # @ranking = [926, 13, 8, 23, 84, 798]
+    @ranking = [0, 0, 0, 0, 0, 0]
+    @post.post_comments.each do |comment|
+      @ranking[comment.ranking] += 1
+      @ranking[0] += 1
+    end
+    
     @rank_prom = (((@ranking[5]*5 + @ranking[4]*4 + @ranking[3]*3 + @ranking[2]*2 + @ranking[1]*1)/@ranking[0].to_f)%5).round(1)
   end
 
