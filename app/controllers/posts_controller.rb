@@ -76,6 +76,7 @@ class PostsController < ApplicationController
 
   def set_ranking
     @ranking = [926, 13, 8, 23, 84, 798]
+    # @ranking = [100, 50, 25, 12, 8, 5]
     @rank_prom = (((@ranking[5]*5 + @ranking[4]*4 + @ranking[3]*3 + @ranking[2]*2 + @ranking[1]*1)/@ranking[0].to_f)%5).round(1)
   end
 
