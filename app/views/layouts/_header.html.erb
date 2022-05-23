@@ -71,12 +71,11 @@
             <li>
                   <%if user_signed_in? %>
                   <%= link_to "Mi perfil", profile_users_path, class:"dropdown-item" %>
-                  <li><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+                  <li><%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
                   <%else%>
                   <%= link_to "Iniciar sesion", new_user_session_path, class:"dropdown-item" %>
                   <%end%>
             </li>
-
           </ul>
         </li>
       </ul>
