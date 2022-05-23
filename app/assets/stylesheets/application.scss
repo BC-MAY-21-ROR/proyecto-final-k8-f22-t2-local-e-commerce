@@ -14,6 +14,7 @@
 @import "layout/user_navbar";
 @import "components/info_post";
 @import "components/image";
+@import "components/ranking";
 @import "pages/post";
 @import "pages/index";
 @import "components/cards";
@@ -26,6 +27,7 @@
 @import "pages/post";
 @import "components/purchases_card";
 @import "pages/user_page";
+
 
 main {
   background-color: $gray;
