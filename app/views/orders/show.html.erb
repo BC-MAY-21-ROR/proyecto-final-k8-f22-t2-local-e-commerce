@@ -1,7 +1,13 @@
-<div class="card">
-	<% @order.order_details.each do |d|%>
-		<p><%= d.post.title%> x. <%= d.quantity%></p>
-	<% end %>
-	<p>Comprado el: <%= @order.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
-	<h4>Importe total: $<%= @order.total%></h4>
+<div class="container__card__order">
+	<h1>Ticket de la orden de la compra</h1>
+	<div>
+		<div class="card__order card">
+			<% @order.order_details.each do |d|%>
+				<h2><%= d.post.title%> </h2>
+				<p>Cantidad: <%= d.quantity%></p>
+			<% end %>
+			<p>Comprado el: <%= @order.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
+			<h4>Importe total: <span>$<%= @order.total%></span></h4>
+		</div>
+	</div>
 </div>
