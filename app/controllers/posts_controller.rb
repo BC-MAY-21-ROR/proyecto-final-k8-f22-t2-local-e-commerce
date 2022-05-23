@@ -82,7 +82,11 @@ class PostsController < ApplicationController
       @ranking[0] += 1
     end
     
-    @rank_prom = (((@ranking[5]*5 + @ranking[4]*4 + @ranking[3]*3 + @ranking[2]*2 + @ranking[1]*1)/@ranking[0].to_f)%5).round(1)
+    @rank_prom = 0
+    (1..5).each do |i|
+      @rank_prom += @ranking[i]*i
+    end
+    @rank_prom = ((@rank_prom/@ranking[0].to_f)%5).round(1) unless @ranking[0].zero?
   end
 
   # Only allow a list of trusted parameters through.
