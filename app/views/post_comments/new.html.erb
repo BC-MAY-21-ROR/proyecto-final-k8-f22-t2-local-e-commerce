@@ -1,9 +1,7 @@
-<h1>New comment</h1>
-
-<%= render 'form' %>
-
-<br>
-
-<div>
-  <%= link_to "Back", post_path(id:@post_comment.post_id) %>
+<div class="form__button--back">
+    <%= link_to "Regresar", post_path(id:@post_comment.post_id) %>
+</div>
+<div class="container__form-comment">
+  <h1>Ingrese un comentario</h1>
+  <%= render 'form' %>
 </div>

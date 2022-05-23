@@ -1,0 +1,59 @@
+.container__form-comment {
+  border-radius: 10px;
+  border: 3px solid $black;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+  margin: 5rem auto;
+  max-width: 50%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form-inputs {
+  p {
+    font-size: .7rem;
+  }
+}
+
+.post_comment_comment {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.3rem 0;
+}
+
+.post_comment_ranking {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.3rem;
+
+  span {
+    margin-right: 1rem;
+  }
+}
+
+.form-actions-comment {
+  .btn {
+    background-color: $links;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+  }
+
+  .btn:hover {
+    background-color: #caa006;
+    transition: all ease .3s;
+  }
+}
+
+.form__button--back {
+  background-color: $red;
+  margin-left: 2rem;
+  margin: 2rem;
+  max-width: 100px;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}

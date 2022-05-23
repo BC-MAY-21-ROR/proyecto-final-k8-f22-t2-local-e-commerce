@@ -4,12 +4,13 @@
 
   <div class="form-inputs">
     <%= f.input :title, label:"Título del comentario:" %>
-    <%= f.input :comment %>
+    <%= f.input :comment, label: "Comentario: ", :input_html => { :rows => 3 , :style => 'width: 100%'} %>
     <%= f.hidden_field :post_id %>
-    <%= f.input :ranking, as: :radio_buttons, collection:[1,2,3,4,5]  %>
+    <%= f.input :ranking, label: "Puntuación: ", as: :radio_buttons, collection:[1,2,3,4,5]  %>
+    <p>1 Pesimo - 5 Excelente</p>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions-comment">
+    <%= f.button :submit, value: "Publicar comentario" %>
   </div>
 <% end %>
