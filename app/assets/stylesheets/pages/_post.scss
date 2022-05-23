@@ -4,7 +4,7 @@
   grid-template:
     "image info" 450px
     "features features" auto
-    "reviews reviews" auto/
+    "ranking reviews" auto/
     50% 50%;
   height: fit-content;
   padding: 20px;
@@ -14,6 +14,7 @@
       "image" auto
       "info" auto
       "features" auto
+      "ranking" auto
       "reviews" auto/
       100%;
   }
@@ -41,6 +42,9 @@
     grid-area: features;
   }
 
+  &__rankings {
+    grid-area: ranking;
+  } 
   &__reviews {
     grid-area: reviews;
   }
