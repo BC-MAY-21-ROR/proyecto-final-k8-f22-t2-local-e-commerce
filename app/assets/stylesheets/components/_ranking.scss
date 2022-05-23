@@ -1,0 +1,60 @@
+
+.ranking {
+	display: flex;
+	&__total {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+
+		h3 {
+			font-size: 3em;
+		}
+
+		&__stars {
+			color: $text-gray;
+
+			&--active {
+				color: $active-yellow;
+			}
+		}
+
+		p {
+			color: $text-gray;
+		}
+	}
+
+	&__list {
+		color: $text-gray;
+		list-style: none;
+
+		p {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		::-moz-progress-bar {
+			background-color: $active-yellow;
+		}
+		progress {
+			-webkit-appearance: none;
+			height: 5px;
+			width: 150px;
+		}
+
+		::-webkit-progress-value {
+			background-color: $active-yellow;
+		}
+		
+		::-webkit-progress-bar {
+			background-color: $gray;
+		}
+	}
+	
+		@media (max-width: 400px) {
+			flex-direction: column;
+			&__total {
+				align-items: flex-start;
+			}
+		}
+}
