@@ -25,9 +25,12 @@
       <button type="button" class="info__button info__button--dark" data-bs-toggle="modal" data-bs-target="#buyModal">
         Comprar
       </button>
+      <button type="button" class="info__button info__button--light" data-bs-toggle="modal" data-bs-target="#buyModal">
+        Agregar al carrito
+      </button>
     <% else %>
       <%= link_to "Comprar", new_user_session_path, class:"info__button info__button--dark" %>
+      <%= link_to "Agregar al carrito", new_user_session_path, class:"info__button info__button--light" %>
     <% end %>
-    <%= link_to "Agregar al carrito", edit_post_path(@post), class:"info__button info__button--light" %>
   </div>
 </div>
