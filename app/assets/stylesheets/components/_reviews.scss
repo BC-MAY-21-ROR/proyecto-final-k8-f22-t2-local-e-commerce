@@ -1,0 +1,30 @@
+.reviews{
+  width: 90%;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__comments {
+    max-height: 38vh;
+    overflow: auto;
+    border-left: solid 1px $gray;
+    
+    .comment {
+      border-top: solid 1px $gray;
+      color: $black;
+      margin: 0 auto;
+      width: 90%;
+
+      h6, p {
+        margin: 2px;
+      }
+
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+}
