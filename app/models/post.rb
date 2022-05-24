@@ -19,4 +19,8 @@ class Post < ApplicationRecord
     "Retiro en tienda": 1,
     "Punto medio": 2
   }
+
+  def get_ranking
+    self.post_comments.average(:ranking)
+  end
 end
