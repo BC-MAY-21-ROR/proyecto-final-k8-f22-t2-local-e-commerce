@@ -24,6 +24,6 @@ class PostCommentsController < ApplicationController
   private
     # Only allow a list of trusted parameters through.
     def post_comment_params
-      params.fetch(:post_comment, {}).permit(:comment, :ranking, :post_id)
+      params.fetch(:post_comment, {}).permit(:title, :comment, :ranking, :post_id)
     end
 end

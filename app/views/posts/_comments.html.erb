@@ -5,7 +5,7 @@
     class:"btn btn-outline-danger rounded-pill px-4 mx-3" %>
   </div>
   <div id="post_comments" class="reviews__comments">
-    <% comments.each do |post_comment| %>
+    <% comments.reverse_order.each do |post_comment| %>
       <%= render post_comment %>
     <% end %>
 </div>
