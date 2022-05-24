@@ -106,3 +106,21 @@
 .color-control-form {
   border-color: $gray-light;
 }
+
+.back__button {
+  background-color: $purchases-title;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  height: 35px;
+  padding: 5px;
+  width: 300px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  &:hover {
+    background-color: $logo-yellow;
+    transition: all 0.3s ease-in-out;
+  }
+
+}
