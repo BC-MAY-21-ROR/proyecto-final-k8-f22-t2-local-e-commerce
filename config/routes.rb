@@ -13,7 +13,8 @@ Rails.application.routes.draw do
       get :sold
     end
     member do
-      get :seller
+      put :update_avatar
+      put :update_cover
     end
   end
   get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'

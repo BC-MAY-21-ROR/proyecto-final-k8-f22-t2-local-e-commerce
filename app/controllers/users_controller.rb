@@ -8,6 +8,20 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def update_avatar
+    @user = current_user
+    @user.avatar = params[:user][:avatar]
+    @user.save
+    redirect_to profile_users_path
+  end
+
+  def update_cover
+    @user = current_user
+    @user.cover_photo = params[:user][:cover_photo]
+    @user.save
+    redirect_to profile_users_path
+  end
+
   def	favorites
     @user = current_user
   end
@@ -26,9 +40,5 @@ class UsersController < ApplicationController
     
   def sold
     @sold = current_user.posts.all.select {|p| p.order_details.length >= 1}
-  end
-
-  def seller
-    @user = User.find(params[:id])
   end
 end

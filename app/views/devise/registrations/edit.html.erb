@@ -57,6 +57,7 @@
     <div class="cancel__account">
       <p>O</p>
       <%= button_to "Cancela my cuenta", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "cancel__account__button"%>
+      <%= button_to "Regresar a mi perfil", profile_users_path, method: :get, class: "back__button"%>
     </div>
 
   </div>
