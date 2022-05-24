@@ -12,6 +12,13 @@
   p {
     font-size: .7rem;
   }
+
+  label {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+
 }
 
 .post_comment_comment {
@@ -29,17 +36,21 @@
   span {
     margin-right: 1rem;
   }
+
+  .radio:first-of-type{
+    margin-left: 1rem;
+  }
 }
 
 .form-actions-comment {
   .btn {
-    background-color: $links;
+    background-color: $icon-yellow;
     font-weight: 700;
     margin-bottom: 1.3rem;
   }
 
   .btn:hover {
-    background-color: #caa006;
+    background-color: $dull-yellow;
     transition: all ease .3s;
   }
 }
@@ -53,7 +64,7 @@
   text-align: center;
 
   a {
-    color: white;
+    color: $white;
     text-decoration: none;
   }
 }
