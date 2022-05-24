@@ -1,14 +1,12 @@
-<div>
+<div class="comment mb-2">
   <div class="rating">
     <% post_comment.ranking.times do%>
       <i class="fa-solid fa-star star--active"></i>
-        
     <% end %>
     <% (5 - post_comment.ranking).times do%>
-      <i class="fa-solid fa-star star"></i>
-        
+      <i class="fa-solid fa-star star"></i>  
     <% end %>
   </div>
-  <h5>Comentario anónimo</h5>
+  <h6>Comentario anónimo</h6>
   <p> <%= post_comment.comment %> </p>
 </div>
