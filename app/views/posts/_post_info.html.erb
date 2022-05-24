@@ -1,7 +1,7 @@
 <div class="info">
   <h3 class="info__text info__text--title"><%= @post.title %></h3>
   <div class="info__ranking">
-    <% @comments_average.to_i.times do %>
+    <% @post.get_ranking.to_i.times do %>
       <i class="fa-solid fa-star info__icon info__icon--yellow"></i>
     <% end %>
     <%=@post.post_comments.count%> opiniones

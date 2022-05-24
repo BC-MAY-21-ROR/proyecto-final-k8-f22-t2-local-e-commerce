@@ -13,11 +13,10 @@
     <p>x 1</p>
   </div>
   <div class="stars">
-    <i class="fa-solid fa-star star"></i>
-    <i class="fa-solid fa-star star"></i>
-    <i class="fa-solid fa-star star"></i>
-    <i class="fa-solid fa-star star"></i>
-    <i class="fa-solid fa-star-half star"></i>
+    <% post.get_ranking.to_i.times do %>
+      <i class="fa-solid fa-star star"></i>
+    <% end %>
+    <%=post.post_comments.count%> opiniones
   </div>
   <img src="" alt="">
   <p class="card--info"><%= truncate( post.description, length:85) %> </p>

@@ -7,3 +7,18 @@
     background-color: $active-red;
   }
 }
+
+.btn-reset-password {
+  background-color: $profile-button;
+  border-radius: 4rem;
+  border: none;
+  color: $white;
+  font-size: large;
+  font-weight: 700;
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+
+  &:hover, &:active {
+    background-color: $blue-button-sell;
+  }
+}

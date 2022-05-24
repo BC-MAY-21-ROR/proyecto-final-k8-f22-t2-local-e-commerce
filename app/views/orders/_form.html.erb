@@ -1,12 +1,13 @@
 <%= simple_form_for(:order_details, url: buy_product_path) do |f| %>
 	<div class="modal-body" id="buyModalContent">
+		<h6> Stock disponible: <%= @post.stock %> </h6>
   	<%= f.hidden_field :post_id, value:@post.id %>
   	<%= f.hidden_field :user_id, value: current_user.id %>
   	<%= f.hidden_field :price, value:@post.price %>
-		<%= f.input :quantity, as: :numeric%>
+		<%= f.input :quantity, as: :numeric, label: "Cantidad a comprar: " %>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		<%= f.button :submit, "Comprar", class:"info__button info__button--dark" %>	
+		<button type="button" class="btn btn-danger px-5" data-bs-dismiss="modal">Cancelar</button>
+		<%= f.button :submit, "Comprar", class:"btn btn-success px-5" %>	
 	</div>
 <% end %>

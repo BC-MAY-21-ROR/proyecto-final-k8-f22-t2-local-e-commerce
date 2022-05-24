@@ -1,0 +1,12 @@
+#buyModal {
+
+  &Content {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    input {
+      width: 70px;
+      margin: 8px;
+    }
+  }
+}
