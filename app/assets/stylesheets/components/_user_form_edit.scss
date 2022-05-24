@@ -98,3 +98,11 @@
       }
   }
 }
+
+.color-control-form--error {
+  border-color: red;
+}
+
+.color-control-form {
+  border-color: $gray-light;
+}

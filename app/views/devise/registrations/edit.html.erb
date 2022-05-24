@@ -3,8 +3,6 @@
     <h2 class="user_edit__title">Edit <%= resource_name.to_s.humanize %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
       <div class="user_edit__form">
         <div class="user_edit__form__field">
           <%= f.label "Nombre:" %><br />
@@ -47,7 +45,8 @@
         <div class="user_edit__form__field">
           <p>Para guardar, introduce tu contraseña actual</p>
           <%= f.label "Contraseña actual:" %> <i>(se necesita la contraseña actual para guardar los cambios)</i><br />
-          <%= f.password_field :current_password, autocomplete: "current-password", class: "user_edit__form__input" %>
+          <span class="session_form--alert_error"><%= resource.errors.full_messages_for(:current_password)[0] if resource.errors.has_key?(:current_password) %></span>
+          <%= f.password_field :current_password, autocomplete: "current-password", class: "user_edit__form__input #{resource.errors.has_key?(:current_password) ? 'color-control-form--error' : 'color-control-form'}" %>
         </div>
 
         <div class="user_edit__form__button">
