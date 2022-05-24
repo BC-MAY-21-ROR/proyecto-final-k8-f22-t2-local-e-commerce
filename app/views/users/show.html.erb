@@ -15,7 +15,8 @@
     <div class="user_view__chart"></div>
     <div class="user_view__comments"> </div>
   </div>
-  <div class="user_view__section user_view__posts">
+  <div class="user_view__section user_view__posts d-flex flex-wrap">
+  <h2>Productos del vendedor</h2>
     <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
       <div class="carousel-inner">
       <% @user.posts.each_with_index do |post,index| %>

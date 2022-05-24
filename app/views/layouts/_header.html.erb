@@ -48,12 +48,14 @@
           />
       </form>
       <ul class="navbar-nav d-flex justify-content-between">
+      <%if user_signed_in? %>
         <li class="nav-item">
           <i class="fa-solid fa-cart-shopping nav__icon"></i>
         </li>
         <li class="nav-item">
           <i class="fa-solid fa-bell nav__icon"></i>
         </li>
+        <%end%>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle text-white"
@@ -66,8 +68,14 @@
             Mi cuenta
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><%= link_to "Mi perfil", profile_users_path, class:"dropdown-item" %></li>
-            <li><%= link_to "Cerrar sesión", destroy_user_session_path, class:"dropdown-item" %></li>
+            <li>
+                  <%if user_signed_in? %>
+                  <%= link_to "Mi perfil", profile_users_path, class:"dropdown-item" %>
+                  <li><%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
+                  <%else%>
+                  <%= link_to "Iniciar sesion", new_user_session_path, class:"dropdown-item" %>
+                  <%end%>
+            </li>
           </ul>
         </li>
       </ul>

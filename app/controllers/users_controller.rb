@@ -27,4 +27,8 @@ class UsersController < ApplicationController
   def sold
     @sold = current_user.posts.all.select {|p| p.order_details.length >= 1}
   end
+
+  def seller
+    @user = User.find(params[:id])
+  end
 end
