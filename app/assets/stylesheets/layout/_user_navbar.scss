@@ -58,6 +58,10 @@
       font-weight: bold;
       margin: 0;
       text-decoration: none;
+
+      &--selected {
+        color: $yellow;
+      }
     }
   }
 }
