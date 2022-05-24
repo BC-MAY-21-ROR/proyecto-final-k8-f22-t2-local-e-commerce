@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_23_204629) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,8 +71,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "total"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "post_categories", force: :cascade do |t|
@@ -85,25 +87,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
   end
 
   create_table "post_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
     t.bigint "post_id", null: false
+    t.string "title"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "price"
-    t.bigint "type_id", null: false
+    t.integer "stock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.bigint "status_id", default: 1, null: false
     t.integer "delivery"
     t.index ["status_id"], name: "index_posts_on_status_id"
-    t.index ["type_id"], name: "index_posts_on_type_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -112,15 +118,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "types", force: :cascade do |t|
-    t.boolean "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "user_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -132,7 +133,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_atd_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
@@ -153,7 +153,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_004500) do
   add_foreign_key "post_categories", "posts"
   add_foreign_key "post_comments", "posts"
   add_foreign_key "posts", "statuses"
-  add_foreign_key "posts", "types"
   add_foreign_key "user_comments", "users"
   add_foreign_key "users", "statuses"
 end
