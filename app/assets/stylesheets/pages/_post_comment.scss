@@ -3,12 +3,23 @@
   border: 3px solid $black;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
   margin: 5rem auto;
-  max-width: 50%;
+  max-width: 70%;
   padding: 2rem;
   text-align: center;
 }
 
+#new_post_comment {
+  display: flex;
+  gap: 1rem;
+}
+
+.product__information {
+  width: 50%;
+}
+
 .form-inputs {
+  width: 50%;
+
   p {
     font-size: .7rem;
   }

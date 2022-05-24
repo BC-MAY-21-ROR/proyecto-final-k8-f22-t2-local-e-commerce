@@ -8,9 +8,16 @@
     <%= f.hidden_field :post_id %>
     <%= f.input :ranking, label: "Puntuación: ", as: :radio_buttons, collection:[1,2,3,4,5]  %>
     <p>1 Pesimo - 5 Excelente</p>
+
+    <div class="form-actions-comment">
+      <%= f.button :submit, value: "Publicar comentario" %>
+    </div>
   </div>
 
-  <div class="form-actions-comment">
-    <%= f.button :submit, value: "Publicar comentario" %>
+  <div class="product__information">
+    <h1>Titulo del producto</h1>
+    <p>Imagen del producto</p>
   </div>
+
+
 <% end %>
