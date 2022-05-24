@@ -10,4 +10,11 @@
 			<h4>Importe total: <span>$<%= @order.total%></span></h4>
 		</div>
 	</div>
+	<div>
+		<% @order.order_details.each do |d|%>
+			<h2><%= d.post.title%> </h2>
+			<%= image_tag url_for(d.post.picture[0]), class:"image" %>
+
+		<% end %>
+	</div>
 </div>
