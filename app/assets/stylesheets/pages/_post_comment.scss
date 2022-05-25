@@ -1,0 +1,99 @@
+.container__form-comment {
+  border-radius: 10px;
+  border: 3px solid $black;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+  margin: 2rem auto;
+  max-width: 70%;
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+  }
+}
+
+#new_post_comment {
+  align-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+}
+
+.product__information {
+  width: 50%;
+}
+
+.form-inputs {
+  width: 50%;
+
+  p {
+    font-size: .7rem;
+  }
+
+  label {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+
+}
+
+.post_comment_title {
+  display: flex;
+  gap: 1rem;
+  margin: 1.3rem 0;
+}
+
+#post_comment_title {
+  width: 64%;
+}
+
+.post_comment_comment {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.3rem 0;
+}
+
+.post_comment_ranking {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.3rem;
+
+  span {
+    margin-right: 1rem;
+  }
+
+  .radio:first-of-type{
+    margin-left: 1rem;
+  }
+}
+
+.form-actions-comment {
+  .btn {
+    background-color: $icon-yellow;
+    border-radius: 20px;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+  }
+
+  .btn:hover {
+    background-color: $dull-yellow;
+    transition: all ease .3s;
+  }
+}
+
+.form__button--back {
+  background-color: $red;
+  margin-left: 2rem;
+  margin: 2rem;
+  max-width: 100px;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}

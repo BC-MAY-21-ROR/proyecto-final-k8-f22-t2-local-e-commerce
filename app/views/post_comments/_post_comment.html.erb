@@ -4,9 +4,9 @@
       <i class="fa-solid fa-star star--active"></i>
     <% end %>
     <% (5 - post_comment.ranking).times do%>
-      <i class="fa-solid fa-star star"></i>  
+      <i class="fa-solid fa-star star"></i>
     <% end %>
   </div>
-  <h6> <%= post_comment.title %> </h6>
+  <h6> <strong> <%= post_comment.title %> </strong> </h6>
   <p> <%= post_comment.comment %> </p>
 </div>

@@ -14,6 +14,10 @@ body {
   padding: 0;
 }
 
+textarea {
+  resize: none;
+}
+
 .main-container {
   min-height: calc(100vh - $footer-size - 66px);
   width: 100%;
