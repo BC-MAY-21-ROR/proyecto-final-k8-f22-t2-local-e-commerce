@@ -81,8 +81,7 @@
   gap: 1rem;
   justify-content: end;
 
-  a,
-  i {
+  a,i {
     color: $text-gray;
     text-decoration: none;
   }
@@ -93,15 +92,16 @@
 }
 
 .container__card__order {
+  margin: 6rem 0;
   text-align: center;
 }
 
 .card__order {
   border: 2px solid $black;
   box-shadow: -4px 11px 32px -2px rgba(0,0,0,0.73);
-  height: 250px;
+  height: 600px;
   margin: 0 auto;
-  width: 700px;
+  width: 500px;
 
   h2 {
     text-transform: capitalize;
