@@ -8,15 +8,11 @@
     <%= f.hidden_field :post_id %>
     <%= f.input :ranking, label: "Puntuación: ", as: :radio_buttons, collection:[1,2,3,4,5]  %>
     <p>1 Pesimo - 5 Excelente</p>
-
     <div class="form-actions-comment">
       <%= f.button :submit, value: "Publicar comentario" %>
     </div>
   </div>
-
   <div class="product__information">
     <%= image_tag(@post.picture[0], class: "image") %>
   </div>
-
-
 <% end %>
