@@ -7,7 +7,7 @@
     </div>
     <div class="profile__main_info">
         <%=  form_with(model: @user, url: "/users/#{@user.id}/update_cover", html:{ method: :put}, id: "form") do |f| %>
-          <%= f.label :cover_photo do %>
+          <%= f.label :cover_photo, class:"w-100" do %>
             <%= f.file_field :cover_photo, class: "hide__field_file", onchange: "form.submit()"  %>
                <div class="profile__main_info__header">
                  <div class="profilepic profilepic__cover">
