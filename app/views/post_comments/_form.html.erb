@@ -1,10 +1,10 @@
+<h2><%= @post.title %></h2>
 <%= simple_form_for(@post_comment) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
   <div class="form-inputs">
-    <%= f.input :title, label:"Título del comentario:" %>
-    <%= f.input :comment, label: "Comentario: ", input_html: { rows: 3 , style: 'width: 100%'} %>
+    <%= f.input :title, label:"Título del comentario:", placeholder: "Excelente Producto" %>
+    <%= f.input :comment, label: "Comentario: ", placeholder: "Buen producto, lo recomiendo totalmente", input_html: { rows: 3 , style: 'width: 100%'} %>
     <%= f.hidden_field :post_id %>
     <%= f.input :ranking, label: "Puntuación: ", as: :radio_buttons, collection:[1,2,3,4,5]  %>
     <p>1 Pesimo - 5 Excelente</p>
@@ -15,7 +15,6 @@
   </div>
 
   <div class="product__information">
-    <h2><%= @post.title %></h2>
     <%= image_tag(@post.picture[0], class: "image") %>
   </div>
 

@@ -2,17 +2,22 @@
   border-radius: 10px;
   border: 3px solid $black;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
-  margin: 5rem auto;
+  margin: 2rem auto;
   max-width: 70%;
   padding: 2rem;
   text-align: center;
+
+  h2 {
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+  }
 }
 
 #new_post_comment {
-  display: flex;
-  gap: 1rem;
   align-items: center;
+  display: flex;
   flex-direction: row-reverse;
+  gap: 1rem;
 }
 
 .product__information {
@@ -68,6 +73,7 @@
 .form-actions-comment {
   .btn {
     background-color: $icon-yellow;
+    border-radius: 20px;
     font-weight: 700;
     margin-bottom: 1.3rem;
   }
