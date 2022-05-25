@@ -28,9 +28,9 @@
       <div class="profile__main_info__data" id="form">
         <%= form_with(model: @user, url: "/users/#{@user.id}/update_avatar", html:{ method: :put}, id: "form") do |f| %>
           <%= f.label :avatar do%>
+              <%= f.file_field :avatar, class: "hide__field_file", onchange: "form.submit()" %>
               <div class="profile__main_info__image profilepic">
-                <% if @user.cover_photo.attached? %>
-                <%= f.file_field :avatar, class: "hide__field_file", onchange: "form.submit()" %>
+                <% if @user.avatar.attached? %>
                   <%= image_tag url_for(@user.avatar), class: "profilepic__image"%>
                 <% else %>
                   <%= image_tag 'default.jpg', class: "profilepic__image" %>
