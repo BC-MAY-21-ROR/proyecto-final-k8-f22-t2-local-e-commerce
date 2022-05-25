@@ -1,13 +1,13 @@
-<div class="profile-container">
+<div class="container-sidebar">
   <%= render 'home/user_navbar' %>
-  <section class="profile-section">
+  <section class="content">
     <div class="profile-section__title">
       <h2>Perfil</h2>
       <hr/>
     </div>
     <div class="profile__main_info">
         <%=  form_with(model: @user, url: "/users/#{@user.id}/update_cover", html:{ method: :put}, id: "form") do |f| %>
-          <%= f.label :cover_photo do %>
+          <%= f.label :cover_photo, class:"w-100" do %>
             <%= f.file_field :cover_photo, class: "hide__field_file", onchange: "form.submit()"  %>
                <div class="profile__main_info__header">
                  <div class="profilepic profilepic__cover">

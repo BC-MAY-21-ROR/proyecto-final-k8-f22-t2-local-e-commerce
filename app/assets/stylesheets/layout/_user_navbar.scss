@@ -9,8 +9,8 @@
   padding: 24px 16px;
   top: 0;
   width: 320px;
-  z-index: 1;
-  overflow: auto;
+  position: absolute;
+  right: 0;
 
   @media screen and (max-width: $mobile) {
     max-width: 320px;
@@ -58,6 +58,10 @@
       font-weight: bold;
       margin: 0;
       text-decoration: none;
+
+      &--selected {
+        color: $yellow;
+      }
     }
   }
 }
