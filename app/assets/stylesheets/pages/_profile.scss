@@ -1,31 +1,14 @@
-.profile-container {
-  display: grid;
-  grid-template-columns: 320px calc(100% - 320px);
-  grid-template-rows: calc(100vh - 56px);
-  grid-template-areas: "nav profile";
-
-  .user_navbar {
-    grid-area: nav;
-  }
-
-  .profile-section {
-    display: flex;
-    flex-direction: column;
-    grid-area: profile;
-    height: 100%;
-    margin: 3% 0 0 10%;
-    width: calc(100% - 320px);
-
-    &__title {
-      width: 40%;
-      h2 {
-        color: $logo-yellow;
-      }
+.profile-section {
+  &__title {
+    width: 40%;
+    h2 {
+      color: $logo-yellow;
     }
   }
 }
 
 .profile__main_info {
+  width: 100%;
   &__header {
     align-items: center;
     display: flex;
@@ -33,23 +16,21 @@
     height: 200px;
     justify-content: center;
     margin-bottom: 2%;
-    position: absolute;
-    width: 950px;
+    width: 100%;
     > img {
       height: 100%;
       object-fit: cover;
-      opacity: .6;
+      opacity: 0.6;
       width: 100%;
     }
   }
 
-
   &__data {
     align-items: center;
     display: flex;
-    margin: 100px 0 0 30px;
-    position: relative;
-
+    margin: 0px 0 0 30px;
+    position: absolute;
+    top: 17%;
     &_params {
       > form {
         margin-left: 10px;
@@ -74,9 +55,7 @@
         margin: 70px 0 0 10px;
       }
     }
-
   }
-
 
   &__image {
     height: 200px;
@@ -92,9 +71,9 @@
   &__content {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 100px;
     padding-left: 50px;
-    width: 118%;
+    width: 100%;
 
     h2 {
       font-size: 25px;
@@ -142,13 +121,13 @@
 }
 
 .profilepic:hover .profilepic__image {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .profilepic__image {
   object-fit: cover;
   opacity: 1;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .profilepic__content {
@@ -163,7 +142,7 @@
   position: absolute;
   right: 0;
   top: 0;
-  transition: opacity .2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .profilepic__icon {
@@ -180,7 +159,7 @@
 }
 
 .profilepic__text__sizes {
-  opacity: .4;
+  opacity: 0.4;
 }
 
 .hide__field_file {

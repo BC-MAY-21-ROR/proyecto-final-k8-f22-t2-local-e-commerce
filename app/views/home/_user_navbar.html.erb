@@ -4,27 +4,27 @@
   <ul class="nav_section">
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-person-fill"></i>
-      <%=link_to "Information", profile_users_path, class:'nav_section__text'%>
+      <%=link_to "Information", profile_users_path, class: "nav_section__text #{request.path == profile_users_path ? "nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-heart-fill"></i>
-      <%=link_to "Favoritos", favorites_users_path, class:'nav_section__text'%>
+      <%=link_to "Favoritos", favorites_users_path, class: "nav_section__text  #{request.path == favorites_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bell-fill"></i>
-      <%=link_to "Notificaciones", notifications_users_path, class:'nav_section__text'%>
+      <%=link_to "Notificaciones", notifications_users_path, class: "nav_section__text  #{request.path == notifications_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bag-dash-fill"></i>
-    <%=link_to "Compras", order_index_path, class:'nav_section__text'%>
+    <%=link_to "Compras", purchases_users_path, class: "nav_section__text  #{request.path == purchases_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bag-dash-fill"></i>
-      <%=link_to "Ventas", sold_users_path, class:'nav_section__text'%>
+      <%=link_to "Ventas", sold_users_path, class: "nav_section__text  #{request.path == sold_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-chat-fill"></i>
-      <%=link_to "Mensajes", messages_users_path, class:'nav_section__text'%>
+      <%=link_to "Mensajes", messages_users_path, class: "nav_section__text  #{request.path == messages_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
   </ul>
 </nav>
