@@ -15,8 +15,8 @@
   </div>
 
   <div class="product__information">
-    <h1>Titulo del producto</h1>
-    <p>Imagen del producto</p>
+    <h2><%= @post.title %></h2>
+    <%= image_tag(@post.picture[0], class: "image") %>
   </div>
 
 

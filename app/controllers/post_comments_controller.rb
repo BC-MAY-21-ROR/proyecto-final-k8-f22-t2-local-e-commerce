@@ -4,11 +4,14 @@ class PostCommentsController < ApplicationController
   def new
     @post_comment = PostComment.new
     @post_comment.post_id = params[:id]
+    @post = Post.find(params[:id])
   end
 
   # POST /post_comments or /post_comments.json
   def create
     @post_comment = PostComment.new(post_comment_params)
+    @posts = Post.all
+    @post = current_user.posts.find_by(id: params[:id])
 
     respond_to do |format|
       if @post_comment.save

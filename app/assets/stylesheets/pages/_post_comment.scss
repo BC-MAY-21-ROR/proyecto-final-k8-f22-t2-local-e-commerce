@@ -11,6 +11,8 @@
 #new_post_comment {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  flex-direction: row-reverse;
 }
 
 .product__information {
@@ -30,6 +32,16 @@
   }
 
 
+}
+
+.post_comment_title {
+  display: flex;
+  gap: 1rem;
+  margin: 1.3rem 0;
+}
+
+#post_comment_title {
+  width: 64%;
 }
 
 .post_comment_comment {
