@@ -7,7 +7,7 @@
     </div>
     <div class="sold">
       <% @sold.each do |s|%>
-        <% s.order_details.each do |order|%>
+        <% s.order_details.order("created_at DESC").each do |order|%>
           <%= render 'sold_product', order:order, post: s %>
         <% end %>
       <% end %>
