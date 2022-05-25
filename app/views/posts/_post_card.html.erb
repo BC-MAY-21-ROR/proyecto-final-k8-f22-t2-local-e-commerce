@@ -14,7 +14,7 @@
   </div>
   <div class="stars">
     <% post.get_ranking.to_i.times do %>
-      <i class="fa-solid fa-star star"></i>
+      <i class="fa-solid fa-star star--active"></i>
     <% end %>
     <%=post.post_comments.count%> opiniones
   </div>

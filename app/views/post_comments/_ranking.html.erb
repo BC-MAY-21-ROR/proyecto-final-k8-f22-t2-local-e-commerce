@@ -4,16 +4,16 @@
     <h3><%= @rank_prom %></h3>
     <div class="ranking__total__stars">
       <% @rank_prom.to_i.times do%>
-        <i class="fa-solid fa-star ranking__total__stars--active"></i>
+        <i class="fa-solid fa-star star--active"></i>
       <% end %>
       <% if (@rank_prom - @rank_prom.to_i) > 0.5 %>
-        <i class="fa-solid fa-star-half-stroke ranking__total__stars--active"></i>
+        <i class="fa-solid fa-star-half-stroke star--active"></i>
         <% (4 - @rank_prom.to_i).times do %>
-          <i class="fa-solid fa-star ranking__total__stars"></i>
+          <i class="fa-solid fa-star star"></i>
         <% end %>
       <% else %>
         <% (5 - @rank_prom.to_i).times do %>
-          <i class="fa-solid fa-star ranking__total__stars"></i>
+          <i class="fa-solid fa-star star"></i>
         <% end %>
       <% end %>
     </div>
