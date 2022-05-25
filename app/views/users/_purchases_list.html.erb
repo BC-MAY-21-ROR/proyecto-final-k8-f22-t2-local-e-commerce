@@ -1,6 +1,8 @@
 <h1 class="purchases_title">Compras</h1>
 <div class="purchases_cards">
-  <% 3.times do |purchase| %>
-      <%= render 'users/purchases_card' %>
+  <% @bought.each do |order| %>
+    <% order.order_details.each do |product| %>
+      <%= render partial:'users/purchases_card', locals:{product:product} %>
+    <% end %>
   <% end %>
 </div>

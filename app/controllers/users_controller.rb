@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def purchases
-    @user = current_user
+    @bought = current_user.orders.all.order("created_at DESC")
   end
     
   def sold
