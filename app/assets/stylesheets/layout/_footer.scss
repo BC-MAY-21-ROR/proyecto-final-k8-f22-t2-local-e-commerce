@@ -9,7 +9,8 @@
   height: $footer-size;
   padding: 32px 50px 16px 50px;
   width: 100%;
-  bottom: 0;
+  position: relative;
+  z-index: 1;
   @media screen and (max-width: $mobile) {
     gap: 40px;
     grid-template:

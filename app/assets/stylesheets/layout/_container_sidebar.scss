@@ -1,0 +1,17 @@
+.container-sidebar {
+  display: grid;
+  grid-template-columns: 320px calc(100% - 320px);
+  grid-template-rows: 100vh;
+  grid-template-areas: "nav content";
+
+  .user_navbar {
+    grid-area: nav;
+  }
+
+  .content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+}
