@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :post_comments, only: [:create]
   resources :order, only: [:show]
+  resources :carts, only: [:index]
   resources :users, only: [:show] do
     collection do
       get :profile
@@ -16,8 +17,9 @@ Rails.application.routes.draw do
       put :update_cover
     end
   end
-  get 'posts/:id/new_comment', to: 'post_comments#new', as: 'new_comment'
-  post 'posts/:id/buy_product', to: 'order#buy', as: 'buy_product' 
+  get 'post/:id/new_comment', to: 'post_comments#new', as: 'new_comment'
+  post 'post/:id/buy_product', to: 'order#buy', as: 'buy_product'
+  post 'post/:id/add_cart', to: 'carts#add', as: 'add_product'
   root to: 'home#index'
   put 'posts/:id/favorite', to: 'favorites#change_favorite', as: 'favorite'
   get '/search', to: 'home#results', as: 'search'
