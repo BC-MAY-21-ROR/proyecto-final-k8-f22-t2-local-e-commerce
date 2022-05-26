@@ -1,19 +1,25 @@
 <div class="purchases_card">
 
   <div class="purchases_card__body row align-items-center">
-    <h5 class="purchases_card__date">Comprado el 6 de abril de 2022</h5>
+    <h5 class="purchases_card__date">Comprado el: <%= product.created_at.strftime("%d de %B del %Y a las %H:%M") %></h5>
     <div class="purchases_card__image">
-      <%= image_tag("german.png", class:"card-img-top col") %>
+      <%= image_tag(url_for(product.post.picture[0]), class:"card-img-top col") %>
     </div>
     <div class="col second_column">
-      <h5 class="purchases_card__title">Camisa original</h5>
-      <h6 class="purchases_card__subtitle mb-2 text-muted">Por: Maria Ochoa</h6>
-      <h6 class="purchases_card__quantity">Cantidad: (1) Total:$300.00</h6>
-      <button class="purchases_cards__button"><a href="#" class="purchases_card__link">Ver artículo</a></button>
+      <h5 class="purchases_card__title">
+        <%= product.post.title %>
+      </h5>
+      <h6 class="purchases_card__subtitle mb-2 text-muted">
+        Vendido por: <%= product.post.user.first_name %> <%= product.post.user.last_name %> 
+      </h6>
+      <h6 class="purchases_card__quantity">
+        Cantidad: (<%= product.quantity %>) Total:$<%= product.order.total%>
+      </h6>
+      <%= link_to 'Ver artículo', post_path(product.post), class:"btn btn-warning px-4 rounded-pill" %>
     </div>
     <div class="col third-column">
-      <button class="purchases_cards__button" id="evaluate_product"><a href="#" class="purchases_card__link" id="purchases_second_button">Evaluar Producto</a></button>
-      <button class="purchases_cards__button" id="evaluate_seller"><a href="#" class="purchases_card__link" id="purchases_second_button">Evaluar Vendedor</a></button>
+      <%= link_to 'Evaluar Producto', new_comment_path(id: product.post.id), class:"btn btn-primary rounded-pill px-5" %>
+      <%= link_to 'Evaluar Vendedor', new_comment_path(id: product.post.id), class:"btn btn-primary rounded-pill px-5" %>  
     </div>
   </div>
 </div>

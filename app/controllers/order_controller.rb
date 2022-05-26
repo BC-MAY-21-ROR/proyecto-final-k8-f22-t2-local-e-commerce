@@ -1,10 +1,5 @@
 class OrderController < ApplicationController
-
-	def index
-		@orders = current_user.orders.all.order('created_at DESC')#Hay que modificarlo con user.id
-		render 'orders/index'
-	end
-
+  
 	def show
 		@order = Order.find(params[:id])
 		render 'orders/show'
