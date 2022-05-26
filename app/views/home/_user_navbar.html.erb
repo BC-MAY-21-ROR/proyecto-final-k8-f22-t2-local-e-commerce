@@ -11,10 +11,6 @@
       <%=link_to "Favoritos", favorites_users_path, class: "nav_section__text  #{request.path == favorites_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
-      <i class="nav_section__icon bi bi-bell-fill"></i>
-      <%=link_to "Notificaciones", notifications_users_path, class: "nav_section__text  #{request.path == notifications_users_path ? " nav_section__text--selected" : ""}"%>
-    </li>
-    <li class="nav_section__item">
       <i class="nav_section__icon bi bi-bag-dash-fill"></i>
     <%=link_to "Compras", purchases_users_path, class: "nav_section__text  #{request.path == purchases_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
