@@ -1,121 +1,59 @@
 .purchases_title {
-  margin: 0 auto;
+  color: $purchases-title;
+  font-size: 30px;
+  margin: 2%;
   max-width: 700px;
+
+  &::after {
+    content: '';
+    background-color: $icon-yellow;
+    display: block;
+    height: 3px;
+    width: 400px;
+  }
 }
 
-.purchases_title::after {
-  content: '';
-  background-color: $icon-yellow;
-  display: block;
-  height: 3px;
-  width: 400px;
-}
 
 .purchases_cards {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  height: fit-content;
+  height: 100%;
   line-height: 50px;
-  margin: 0 auto;
+  overflow: auto;
   padding: 20px;
-  width: fit-content;
-
-    
-  > div {
-    margin: 10px 0;
-    }
+  width: 95%;
 }
 
 .purchases_card {
   border-radius: 10px;
   border: 2px solid $red;
   box-sizing: border-box;
-  height: 200px;
-  padding: 8px;
-  position: relative;
-  width: 700px;
-}
+  height: fit-content;
+  margin: 10px 0;
+  padding: 5px;
+  width: 80%;
 
-.purchases_card__body {
-  padding: 2px;
-
-  .buttons__evaluate {
-    max-width: 230px;
-    position: absolute;
-    right: 0;
-    top: 20px;
+  &__body {
+    padding: 10px;
   }
-}
 
-
-
-.purchases_cards__button {
-  background-color: $button-yellow;
-  border-radius: 20px;
-  border: $button-yellow;
-  height: 45px;
-  margin: 0px;
-  text-align: center;
-  width: 185px;  
-  > a {
-      text-decoration: none;
+  &__image {
+    width: 30%;
   }
-}
-
-.button--article {
-  margin-left: 0;
-}
-
-#evaluate_product {
-  background-color: $profile-button;
-  border: $profile-button;
-}
-
-#evaluate_seller {
-  background-color: $profile-button;
-  border: $profile-button;
-  margin-top: 40px;
-}
-
-.purchases_card__link {
-  color: $black;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-}
-
-#purchases_second_button {
-  color: $white;
-  margin: 10px;
-}
-
-.purchases_card__image {
-  height: 135px;
-  width: 135px;
-
-  > img {
-    object-fit: cover;
+  
+  &__title {
+    margin: 0px;
   }
-}
 
-.purchases_title {
-  color: $purchases-title;
-  font-size: 30px;
-  margin-bottom: 2px;
-  margin-top: 70px;
-}
+  &__quantity {
+    color: $text-gray;
+    font-size: 14px;
+    margin-top: 0px;
+  }
 
-.purchases_card__title {
-  margin: 0px;
-}
-
-.purchases_card__quantity {
-  color: $text-gray;
-  font-size: 14px;
-  margin-top: 0px;
-}
-
-.purchases_card__subtitle, .mb-2, .text-muted {
-  color: $gray;
-  margin: 0px;
+  &__subtitle, .text-muted {
+    color: $gray;
+    margin: 0px;
+  }
 }
