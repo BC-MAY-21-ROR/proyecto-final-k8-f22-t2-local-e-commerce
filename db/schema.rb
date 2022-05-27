@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_27_130737) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "status", default: true
+    t.bigint "user_id"
     t.index ["post_id"], name: "index_carts_on_post_id"
+    t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -156,8 +159,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "carts", "posts"
+<<<<<<< HEAD
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
+=======
+  add_foreign_key "carts", "users"
+>>>>>>> Add userid and status to cart
   add_foreign_key "order_details", "orders"
   add_foreign_key "order_details", "posts"
   add_foreign_key "post_categories", "categories"
