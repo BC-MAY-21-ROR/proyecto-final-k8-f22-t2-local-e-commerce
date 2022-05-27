@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   has_many :reservations 
   has_many_attached :picture
   belongs_to :user
+  has_many :favorites
 
   validates :title, presence: true
   validates :description, presence: true
@@ -13,6 +14,7 @@ class Post < ApplicationRecord
   validates :stock, presence: true
   validates :delivery, presence: true
   validates :picture, presence: true
+  validates :title, length: { maximum: 30 }
 
   enum delivery: {
     "Entrega a domicilio": 0,

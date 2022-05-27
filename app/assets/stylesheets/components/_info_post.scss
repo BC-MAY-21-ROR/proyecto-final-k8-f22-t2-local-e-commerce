@@ -14,6 +14,12 @@
     justify-self: center;
   }
 
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__text {
     font-size: 16px;
     margin: 0;
@@ -77,6 +83,32 @@
       background-color: $secondary-green;
       border: 1px solid $primary-green;
       color: $primary-green;
+    }
+  }
+}
+
+.favorite-button, .unfavorite-button {
+  background-color: transparent;
+  border: transparent;
+}
+.favorite-button {
+  i {
+    color: $red-button;
+    font-size: 30px;
+    &:hover {
+      color: $red;
+      transition:  0.3s ease-in-out;
+    }
+  }
+}
+
+.unfavorite-button {
+  i {
+    color: $gray;
+    font-size: 30px;
+    &:hover {
+      color: $red-favorite-hover;
+      transition:  0.3s ease-in-out;
     }
   }
 }

@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
   def	favorites
     @user = current_user
+    @favorites = Favorite.where(user_id: @user.id).includes(:post)
   end
 
   def notifications
