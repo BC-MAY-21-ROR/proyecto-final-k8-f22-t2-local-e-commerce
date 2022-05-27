@@ -25,9 +25,4 @@ class Post < ApplicationRecord
   def get_ranking
     self.post_comments.average(:ranking)
   end
-
-  def logged?
-    puts user_signed_in?
-    user_signed_in?
-  end
 end
