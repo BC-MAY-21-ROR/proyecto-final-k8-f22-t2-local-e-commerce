@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_ranking, only: %i[ show ]
   # GET /posts or /posts.json
   def index
-    @posts = Post.page params[:page]
+    @posts = Post.all.order(created_at: :desc).page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
