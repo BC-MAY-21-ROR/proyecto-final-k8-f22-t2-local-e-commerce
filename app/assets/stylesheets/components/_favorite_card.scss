@@ -1,0 +1,57 @@
+.favorite_card {
+  border-radius: 10px;
+  width: 800px;
+  height: fit-content;
+  background-color: #fefefe;
+  margin: 20px 0;
+  padding: 10px;
+  display: flex;
+
+  &__image {
+    width: 165px;
+    height: 165px;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    padding: 0 20px;
+    width: 100%;
+    h2 {
+      font-size: 25px;
+      font-weight: bold;
+      font-family: $primary-font;
+      a {
+        text-decoration: none;
+        color: $black
+      }
+    }
+
+    p {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    &__seller {
+      a {
+        text-decoration: none;
+        color: $black;
+      }
+    }
+
+    &__ranking {
+      display: flex;
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__like {
+    align-self: center;
+    padding-right: 10px ;
+  }
+}

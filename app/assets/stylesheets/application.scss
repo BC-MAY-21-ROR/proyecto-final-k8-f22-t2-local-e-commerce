@@ -35,6 +35,8 @@
 @import "pages/profile";
 @import "pages/post_comment";
 @import "layout/container_sidebar";
+@import "pages/favorite_page";
+@import "components/favorite_card";
 
 main {
   background-color: $gray;
