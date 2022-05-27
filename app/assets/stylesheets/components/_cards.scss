@@ -6,7 +6,9 @@
 }
 
 .container__card {
+  align-items: center;
   display: flex;
+  flex-direction: column;
   padding-bottom: 15px;
   width: 100%;
 }
@@ -21,9 +23,13 @@
     display: flex;
     height: 300px;
     justify-content: center;
+    max-height: 247px;
+    max-width: 370px;
     width: 100%;
 
     img {
+      max-height: 247px;
+      max-width: 370px;
       object-fit: cover;
     }
   }
@@ -81,6 +87,18 @@
   gap: 1rem;
   justify-content: end;
 
+  &:hover {
+    a,i {
+      color: $primary-green;
+    }
+
+    i {
+      margin-left: 10px;
+      transform: rotate(-90deg);
+      transition: all ease .5s;
+    }
+  }
+
   a,i {
     color: $text-gray;
     text-decoration: none;
@@ -101,5 +119,23 @@
 
   h2 {
     text-transform: capitalize;
+  }
+}
+
+.posts {
+  flex-wrap: wrap;
+
+  &__title{
+    max-width: 30%;
+  }
+
+  hr {
+    margin-top: 0;
+  }
+
+  h1 {
+    color: $logo-yellow;
+    margin-top: 6rem;
+    margin-bottom: 5px;
   }
 }

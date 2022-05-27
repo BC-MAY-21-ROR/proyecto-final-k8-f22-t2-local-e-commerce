@@ -7,6 +7,8 @@ gem "sass-rails"
 
 gem 'bootstrap-sass', '~> 3.4.1'
 
+gem 'kaminari'
+
 gem 'simple_form'
 
 gem 'jquery-rails'
