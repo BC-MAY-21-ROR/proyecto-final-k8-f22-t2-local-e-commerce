@@ -1,0 +1,50 @@
+.search__view {
+  margin-top: 100px;
+  &__title {
+    width: 86%;
+    margin: 100px 0 0 100px;
+    font-family: $primary-font;
+    h1 {
+      margin: 0;
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.search__results {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search__post {
+  display: grid;
+  margin-bottom: 80px;
+  grid-template-columns: repeat(3, 1fr);
+
+  &__one {
+    margin: 10px;
+  }
+}
+
+.line {
+  width: 100%;
+}
+
+.empty__search {
+  display: flex;
+  flex-direction: column;
+  img {
+    margin-left: 40px;
+  }
+}
+
+.pagination__search {
+  display: flex;
+  justify-content: center;
+}

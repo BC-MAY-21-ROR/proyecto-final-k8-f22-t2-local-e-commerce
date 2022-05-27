@@ -10,8 +10,12 @@
   <section class="footer-nav">
     <p class="footer-nav__text">Enlaces</p>
     <div class="footer-nav__box">
-      <a class="footer-nav__text--yellow">Productos</a>
-      <a class="footer-nav__text--yellow">Sign In</a>
+      <%= link_to "Productos", posts_path, class: "footer-nav__text--yellow" %>
+      <% if user_signed_in? %>
+        <%= link_to "Incio", root_path, class: "footer-nav__text--yellow" %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path, class: "footer-nav__text--yellow" %>
+      <% end %>
     </div>
 
   </section>

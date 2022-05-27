@@ -1,9 +1,7 @@
 <div class="card">
   <div id="<%= dom_id post %>">
     <div class="card__image">
-      <% post.picture.each do |file| %>
-        <%= image_tag url_for(file) %>
-      <% end %>
+      <%= image_tag url_for(post.picture[0]) %>
     </div>
     <h2><%= link_to post.title, post_path(post.id) %></h2>
     <div class="card__features">

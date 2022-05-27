@@ -25,4 +25,14 @@ class Post < ApplicationRecord
   def get_ranking
     self.post_comments.average(:ranking)
   end
+
+  SEARCH_ATTRS = %i[title description]
+  scope :search_query, lambda { |query| self.class.search(query) }
+  def self.search(search)
+    results = []
+    SEARCH_ATTRS.each do |attr|
+      results += self.where("#{attr} ~* ?", search.to_s)
+    end
+    results.uniq
+  end
 end

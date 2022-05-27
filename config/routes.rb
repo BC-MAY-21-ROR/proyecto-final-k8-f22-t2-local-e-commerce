@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     collection do
       get :profile
       get :favorites
-      get :notifications
-      get :messages
       get :purchases
       get :sold
     end
@@ -21,4 +19,5 @@ Rails.application.routes.draw do
   post 'posts/:id/buy_product', to: 'order#buy', as: 'buy_product' 
   root to: 'home#index'
   put 'posts/:id/favorite', to: 'favorites#change_favorite', as: 'favorite'
+  get '/search', to: 'home#results', as: 'search'
 end
