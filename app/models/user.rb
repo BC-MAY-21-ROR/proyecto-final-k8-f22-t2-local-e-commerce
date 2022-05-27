@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_one_attached :cover_photo
   has_many :favorites
 
+  paginates_per 10
+
   def published_products
     self.posts.count
   end

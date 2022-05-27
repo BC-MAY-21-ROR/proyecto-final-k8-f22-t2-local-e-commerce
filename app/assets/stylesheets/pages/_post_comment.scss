@@ -47,6 +47,16 @@
 
 #post_comment_title {
   width: 64%;
+  margin: 5rem auto;
+  max-width: 50%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.form-inputs {
+  p {
+    font-size: .7rem;
+  }
 }
 
 .post_comment_comment {
@@ -67,6 +77,12 @@
 
   .radio:first-of-type{
     margin-left: 1rem;
+    margin-right: 0.6rem;
+
+    label {
+      display: flex;
+      gap: 0.3rem;
+    }
   }
 }
 
