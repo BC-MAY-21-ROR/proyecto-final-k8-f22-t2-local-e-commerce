@@ -1,8 +1,10 @@
 <div class="card">
   <div class="card__image">
-  <%= image_tag url_for(post.picture[0]), class:"image" %>
+    <%= image_tag url_for(post.picture[0]), class:"image" %>
   </div>
-  <h2><%= link_to post.title, post_path(post.id) %></h2>
+  <div class="card__title__post">
+    <h2><%= link_to truncate(post.title, length: 18), post_path(post.id) %></h2>
+  </div>
   <div class="card__features">
     <i class="fa-solid fa-tag"></i>
     <p>Hogar,</p>
@@ -16,10 +18,15 @@
     <% post.get_ranking.to_i.times do %>
       <i class="fa-solid fa-star star--active"></i>
     <% end %>
+    <% (5 - post.get_ranking.to_i).times do %>
+      <i class="fa-solid fa-star star"></i>
+    <% end %>
     <%=post.post_comments.count%> opiniones
   </div>
   <img src="" alt="">
-  <p class="card--info"><%= truncate( post.description, length:85) %> </p>
+  <div class="card__description__post">
+    <p class="card--info"><%= truncate( post.description, length:80) %> </p>
+  </div>
 
   <div class="card__more-info">
     <%= link_to "Ver mas", post_path(post.id) %>

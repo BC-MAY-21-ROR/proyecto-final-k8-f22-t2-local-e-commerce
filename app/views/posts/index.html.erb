@@ -1,13 +1,13 @@
 <div class="posts">
   <div class="posts__title">
-    <h1>Publicaciones</h1>
+    <h1>Ultimas publicaciones</h1>
     <hr>
   </div>
 
   <div class="container__card">
     <div class="render__cards posts">
       <% @posts.each do |post| %>
-        <%= render post %>
+        <%= render 'posts/post_card', post: post %>
       <% end %>
     </div>
     <%= paginate @posts%>

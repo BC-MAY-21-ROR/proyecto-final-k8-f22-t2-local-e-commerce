@@ -1,0 +1,33 @@
+<div class="search__view">
+  <div class="search__view__title">
+    <div class="search__view__title__header">
+      <% if params[:search] ==""   %>
+        <h1>Todos los productos</h1>
+      <% else %>
+        <h1>Resultados de <strong><%= params[:search] %></strong></h1>
+      <% end %>
+      <%= button_to "Volver al inicio", root_path, method: :get, class: "btn btn-primary" %>
+    </div>
+    <p>Se encontraron <%= @posts.count %> resultados</p>
+    <hr class="line">
+  </div>
+  <div class="search__results">
+    <% if @posts.empty? %>
+      <div class="empty__search">
+        <h1>No se encontraron resultados</h1>
+        <%= image_tag url_for('empty.png') %>
+      </div>
+    <% else %>
+      <div class="search__post">
+        <% @posts.each do | post | %>
+          <div class="search__post__one">
+            <%= render 'posts/post_card', post: post %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="pagination__search">
+    <%= paginate @posts %>
+  </div>
+</div>

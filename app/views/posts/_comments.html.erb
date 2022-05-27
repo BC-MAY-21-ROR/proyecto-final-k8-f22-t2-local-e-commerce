@@ -11,8 +11,12 @@
   <% end %>
   </div>
   <div id="post_comments" class="reviews__comments">
-    <% comments.reverse_order.each do |post_comment| %>
-      <%= render post_comment %>
+    <% if comments.empty? %>
+      <p>No hay comentarios</p>
+    <% else %>
+      <% comments.reverse_order.each do |post_comment| %>
+        <%= render post_comment %>
+      <% end %>
     <% end %>
 </div>
 </section>
