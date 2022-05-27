@@ -1,11 +1,11 @@
 .favorite_card {
-  border-radius: 10px;
-  width: 800px;
-  height: fit-content;
   background-color: #fefefe;
+  border-radius: 10px;
+  display: flex;
+  height: fit-content;
   margin: 20px 0;
   padding: 10px;
-  display: flex;
+  width: 800px;
 
   &__image {
     height: 165px;
