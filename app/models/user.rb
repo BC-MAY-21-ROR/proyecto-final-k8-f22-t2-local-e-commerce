@@ -28,5 +28,19 @@ class User < ApplicationRecord
     @orders = self.orders
     OrderDetail.where(order_id: @orders.ids).count
   end
+
+  SEARCH_ATTRS = %i[first_name last_name]
+
+  scope :search_query, lambda { |query| self.class.search(query) }
+
+  def self.search(search)
+    results = []
+
+    SEARCH_ATTRS.each do |attr|
+      results += self.where("#{attr} ~* ?", search.to_s)
+    end
+
+    results
+  end
 end
 
