@@ -1,0 +1,27 @@
+<div class="favorite_card">
+  <div>
+    <div class="favorite_card__image">
+      <%= image_tag url_for(favorite.post.picture[0]) %>
+    </div>
+  </div>
+  <div class="favorite_card__info">
+    <h2><%= link_to truncate(favorite.post.title, length: 30), post_path(favorite.post.id) %></h2>
+    <p><%= truncate( favorite.post.description, length: 65) %></p>
+    <p class="favorite_card__info__seller">Vendido por: <%= link_to "#{favorite.user.first_name} #{favorite.user.last_name}", user_path(favorite.user.id) %></p>
+
+    <div class="favorite_card__info__ranking">
+      <div>
+        <% favorite.post.get_ranking.to_i.times do %>
+          <i class="fa-solid fa-star info__icon star--active"></i>
+        <% end %>
+        <% (5 - favorite.post.get_ranking.to_i).times do %>
+          <i class="fa-solid fa-star star"></i>
+        <% end %>
+      </div>
+      <span><%= favorite.post.post_comments.count%> opiniones</span>
+    </div>
+  </div>
+  <div class="favorite_card__like">
+    <%= link_to_favorite(favorite.post) %>
+  </div>
+</div>

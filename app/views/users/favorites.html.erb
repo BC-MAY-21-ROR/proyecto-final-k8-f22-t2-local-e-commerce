@@ -2,8 +2,23 @@
 <div class="container-sidebar">
   <%= render 'home/user_navbar' %>
   <section class="content">
-  <div>
-    <h1>Favoritos de <%= @user.first_name %></h1>
-  </div>
+    <div class="favorite-section__title">
+      <h2>Favoritos</h2>
+      <hr>
+    </div>
+    <div>
+      <h4>Tienes <%= @favorites.count %> articulos agregados: </h4>
+    </div>
+    <div class="favorite-section__container">
+      <%# if @favorites.empty? %>
+<!--        <p>No hay favoritos</p>-->
+      <%# else %>
+        <div class="favorite-section__cards">
+          <% @favorites.each do |favorite| %>
+            <%= render "users/favorite_card", favorite: favorite %>
+          <% end %>
+        </div>
+      <%# end %>
+    </div>
   </section>
 </div>
