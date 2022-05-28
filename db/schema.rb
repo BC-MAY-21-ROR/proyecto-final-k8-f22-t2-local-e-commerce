@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_28_003152) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,8 +80,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "total"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "post_categories", force: :cascade do |t|
@@ -94,23 +96,29 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
   end
 
   create_table "post_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
     t.bigint "post_id", null: false
+    t.string "title"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_comments_on_post_id"
+    t.index ["user_id"], name: "index_post_comments_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "price"
+    t.integer "stock"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.bigint "status_id", default: 1, null: false
     t.integer "delivery"
     t.index ["status_id"], name: "index_posts_on_status_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "statuses", force: :cascade do |t|
@@ -120,8 +128,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
   end
 
   create_table "user_comments", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "ranking"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
@@ -147,13 +156,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_215426) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "carts", "posts"
-  add_foreign_key "favorites", "posts"
-  add_foreign_key "favorites", "users"
+  add_foreign_key "favorites", "posts", on_delete: :cascade
+  add_foreign_key "favorites", "users", on_delete: :cascade
   add_foreign_key "order_details", "orders"
-  add_foreign_key "order_details", "posts"
+  add_foreign_key "order_details", "posts", on_delete: :cascade
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
-  add_foreign_key "post_comments", "posts"
+  add_foreign_key "post_comments", "posts", on_delete: :cascade
   add_foreign_key "posts", "statuses"
   add_foreign_key "user_comments", "users"
   add_foreign_key "users", "statuses"
