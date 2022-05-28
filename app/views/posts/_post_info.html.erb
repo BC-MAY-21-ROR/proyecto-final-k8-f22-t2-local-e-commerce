@@ -1,13 +1,16 @@
 <div class="info">
   <div class="info__header">
     <h3 class="info__text info__text--title"><%= @post.title %></h3>
-    <% if user_signed_in? %>
+    <% if user_signed_in? && !@post.owner?(current_user)%>
       <%= link_to_favorite(@post) %>
     <% end %>
   </div>
   <div class="info__ranking">
     <% @post.get_ranking.to_i.times do %>
       <i class="fa-solid fa-star info__icon star--active"></i>
+    <% end %>
+    <% (5 - @post.get_ranking.to_i).times do %>
+      <i class="fa-solid fa-star info__icon star"></i>
     <% end %>
     <%=@post.post_comments.count%> opiniones
   </div>
@@ -22,12 +25,20 @@
   </div>
   <div class="info__actions">
     <% if user_signed_in? %>
-      <button type="button" class="info__button info__button--dark" data-bs-toggle="modal" data-bs-target="#buyModal">
-        Comprar
-      </button>
+      <% if @post.owner?(current_user) %>
+        <%= button_to "Editar publicación", edit_post_path(@post.id), class: "info__button info__button--owner", method: :get %>
+      <% else %>
+        <button type="button" <%= 'disabled' if @post.stock <= 0  %> class="info__button info__button--dark <%= 'disabled__button__stock' if @post.stock <= 0 %>" data-bs-toggle="modal" data-bs-target="#buyModal">
+          Comprar
+        </button>
+      <% end %>
     <% else %>
       <%= link_to "Comprar", new_user_session_path, class:"info__button info__button--dark" %>
     <% end %>
-    <%= link_to "Agregar al carrito", edit_post_path(@post), class:"info__button info__button--light" %>
+   <% if !@post.owner?(current_user) %>
+      <% if @post.stock > 0 %>
+        <%= link_to "Agregar al carrito", edit_post_path(@post), class:"info__button info__button--light" %>
+      <% end %>
+    <% end %>
   </div>
 </div>
