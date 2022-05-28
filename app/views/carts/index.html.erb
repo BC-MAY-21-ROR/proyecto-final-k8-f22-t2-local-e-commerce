@@ -1,9 +1,9 @@
-<% @orders.each do |order|%>
+<% @carts.each do |carts|%>
 	<div class="card">
-		<% order.order_details.each do |d|%>
-			<p><%= d.post.title%> x. <%= d.quantity%></p>
-		<% end %>
-		<p>Comprado el: <%= order.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
-		<h4>Importe total: $<%= order.total%></h4>
+		<p>Agregado el: <%= carts.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
+		<h2><%= Post.find(carts.post_id).title%> </h2>
+				<%= image_tag url_for(Post.find(carts.post_id).picture[0]), class:"image" %>
+				<p>Cantidad: <%= carts.quantity%></p>
+		<h4>Importe total: $<%= carts.quantity*carts.price%></h4>
 	</div>
 <% end %>

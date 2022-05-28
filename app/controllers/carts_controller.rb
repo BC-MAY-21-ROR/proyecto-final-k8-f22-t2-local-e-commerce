@@ -1,11 +1,11 @@
 class CartsController < ApplicationController
     def index
-		@carts = current_user.carts.all.order('created_at DESC')#Hay que modificarlo con user.id
+		@carts = Cart.all.order('created_at DESC')#Hay que modificarlo con user.id
 		render 'carts/index'
 	end
 
 	def show
-		@order = Cart.find(params[:id])
+		@carts = Cart.find(params[:id])
 		render 'carts/show'
 	end
 
@@ -13,10 +13,10 @@ class CartsController < ApplicationController
 		@carts = Cart.new(carts_params)
 		respond_to do |format|
 			if @carts.save
-				post = @carts.post
+				post = Post.find(@carts.post_id)
 				stock = post.stock - @carts.quantity
 				post.update(stock: stock)
-				format.html { redirect_to carts_path(@carts.order_id), notice: "Los productos se agregaron al carrito con exito" }
+				format.html { redirect_to carts_path, notice: "Los productos se agregaron al carrito con exito" }
 				format.json { render :show, status: :created, location:carts }
 			else
 				format.html { redirect_to post_url(@carts.post), status: :unprocessable_entity, alert: @carts.errors[:quantity][0] }
@@ -27,6 +27,6 @@ class CartsController < ApplicationController
 
 	private
 		def carts_params
-			params.require(:carts).permit(:quantity, :post_id, :price)
+			params.require(:carts).permit(:quantity, :post_id, :price, :user_id)
 		end
 end
