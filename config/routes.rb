@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :profile
       get :favorites
       get :purchases
+      get :posts
       get :sold
     end
     member do
