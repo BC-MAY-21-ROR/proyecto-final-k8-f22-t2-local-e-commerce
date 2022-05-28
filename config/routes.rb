@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts
   resources :post_comments, only: [:create]
+  resources :carts, only: [:show, :index]
   resources :order, only: [:show]
   resources :users, only: [:show] do
     collection do

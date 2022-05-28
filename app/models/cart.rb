@@ -10,8 +10,9 @@ class Cart < ApplicationRecord
                           post_id:params[:post_id], order_id:order.id)
     order_detail
   end
-
-
+  def self.post(post_id)
+    post = Post.find(post_id)
+  end
   def validate_stock
     post = Post.find(post_id)
     if post.stock >= quantity && quantity > 0
