@@ -34,7 +34,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><%= link_to "Información", "/", class:"dropdown-item" %></li>
             <li><%= link_to "Favoritos", "/", class:"dropdown-item" %></li>
-            <li><%= link_to "Compras", order_index_path, class:"dropdown-item" %></li>
+            <li><%= link_to "Compras", purchases_users_path, class:"dropdown-item" %></li>
             <li><%= link_to "Ventas", sold_users_path, class:"dropdown-item" %></li>
             <li><%= link_to "Mensajes", "/", class:"dropdown-item" %></li>
           </ul>
@@ -51,9 +51,6 @@
       <%if user_signed_in? %>
         <li class="nav-item">
           <i class="fa-solid fa-cart-shopping nav__icon"></i>
-        </li>
-        <li class="nav-item">
-          <i class="fa-solid fa-bell nav__icon"></i>
         </li>
         <%end%>
         <li class="nav-item dropdown">

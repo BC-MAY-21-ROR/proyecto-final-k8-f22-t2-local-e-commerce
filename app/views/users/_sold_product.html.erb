@@ -9,7 +9,9 @@
         <%= post.title %>
       </h4>
       <p>
-        Cantidad: x.<%= order.quantity %> 
+        Vendido a: <%= order.order.user.first_name %> <%= order.order.user.last_name %>
+        <br/>
+        Cantidad: x.<%= order.quantity %>
       </p>
       <div class="sold__card__description__info__more">
         <h5> Total de venta: $ <%= order.order.total %></h5>

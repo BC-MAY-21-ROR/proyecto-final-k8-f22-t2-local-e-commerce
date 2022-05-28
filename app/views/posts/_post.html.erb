@@ -1,8 +1,30 @@
-<div id="<%= dom_id post %>">
-    <%= post.title%>
-    <%= post.description%>
-    <% post.picture.each do |file| %>
+<div class="card">
+  <div id="<%= dom_id post %>">
+    <div class="card__image">
+      <% post.picture.each do |file| %>
         <%= image_tag url_for(file) %>
-    <% end %>
-    <%= post.price%>
+      <% end %>
+    </div>
+    <h2><%= link_to post.title, post_path(post.id) %></h2>
+    <div class="card__features">
+      <i class="fa-solid fa-tag"></i>
+      <p>Hogar,</p>
+      <p>Limpieza </p>
+    </div>
+    <div class="card__container-price">
+      <span class="card--price">$<%= post.price %>.00 </span>
+    </div>
+    <div class="stars">
+      <% post.get_ranking.to_i.times do %>
+        <i class="fa-solid fa-star star--active"></i>
+      <% end %>
+      <%=post.post_comments.count%> opiniones
+    </div>
+    <p class="card--info"><%= truncate( post.description, length:85) %> </p>
+    <div class="card__more-info">
+      <%= link_to "Ver mas", post_path(post.id) %>
+      <i class="fa-solid fa-circle-arrow-down"></i>
+    </div>
+
+  </div>
 </div>

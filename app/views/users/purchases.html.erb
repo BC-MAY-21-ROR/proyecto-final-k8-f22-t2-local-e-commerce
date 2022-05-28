@@ -1,3 +1,13 @@
-<div>
-    <%= render 'users/purchases_list' %>
+<div class="container-sidebar">
+  <%= render 'home/user_navbar' %>
+  <section class="content">
+    <h2 class="purchases_title">Compras</h2>
+    <div class="purchases_cards">
+      <% @bought.each do |order| %>
+        <% order.order_details.each do |product| %>
+          <%= render partial:'users/purchases_card', locals:{product:product} %>
+        <% end %>
+      <% end %>
+    </div>
+  </section>
 </div>

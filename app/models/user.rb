@@ -11,4 +11,21 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_one_attached :cover_photo
+
+  paginates_per 10
+
+  def published_products
+    self.posts.count
+  end
+
+  def sold_products
+    @posts = self.posts
+    OrderDetail.where(post_id: @posts.ids).count
+  end
+
+  def bought_produtcs
+    @orders = self.orders
+    OrderDetail.where(order_id: @orders.ids).count
+  end
 end
+

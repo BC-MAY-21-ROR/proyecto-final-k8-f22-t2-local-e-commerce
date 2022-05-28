@@ -14,7 +14,9 @@
 @import "layout/user_navbar";
 @import "components/info_post";
 @import "components/image";
+@import "components/stars";
 @import "components/ranking";
+@import "components/reviews";
 @import "pages/post";
 @import "pages/index";
 @import "components/cards";
@@ -30,7 +32,9 @@
 @import "pages/user_page";
 @import "pages/new_password";
 @import "components/user_form_edit";
-
+@import "pages/profile";
+@import "pages/post_comment";
+@import "layout/container_sidebar";
 
 main {
   background-color: $gray;
