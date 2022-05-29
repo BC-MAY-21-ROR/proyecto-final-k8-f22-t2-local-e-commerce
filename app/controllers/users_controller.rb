@@ -39,6 +39,10 @@ class UsersController < ApplicationController
     @bought = current_user.orders.all.order("created_at DESC")
   end
 
+  def posts
+    @user_posts = current_user.posts.all.order("created_at DESC")
+  end
+
   def sold
     @sold = current_user.posts.all.order("created_at DESC").select {|p| p.order_details.length >= 1}
   end

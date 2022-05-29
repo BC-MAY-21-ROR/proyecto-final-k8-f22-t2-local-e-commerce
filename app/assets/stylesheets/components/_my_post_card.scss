@@ -1,0 +1,65 @@
+.posts-section {
+  &__title {
+    width: 40%;
+
+    h2 {
+      color: $logo-yellow;
+    }
+  }
+
+  &__action {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+
+    form {
+      width: fit-content;
+    }
+  }
+
+  &__posts {
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 100vh;
+    justify-content: center;
+    margin-top: 30px;
+    overflow-y: auto;
+    width: 100%;
+  }
+}
+
+.own-post-card {
+  background-color: $white-light;
+  border-radius: 10px;
+  border: 1px solid $border;
+  display: grid;
+  grid-template: "image description actions" 100% / 1fr 2fr 1fr;
+  height: 150px;
+  padding: 16px;
+  width: 600px;
+
+  &--sold {
+    border-color: rgba(255, 0, 0, 0.65);
+    box-shadow: -1px 0px 20px -9px rgba(255, 0, 0, 0.65);
+  }
+  &__image {
+    grid-area: image;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    grid-area: info;
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    grid-area: actions;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="own-post-card <%= post.stock == 0 ? "own-post-card--sold" : ""%>">
+  <div class="ownn-post-card__image">
+     <%= image_tag url_for(post.picture[0]), class: "image" %>
+  </div>
+  <div class="ownn-post-card__info">
+    <h2 class="own-post-card__text--title own-post-card__text">
+      <%= post.title %>
+    </h2>
+    <p class="own-post-card__text">
+      <%= post.description %>
+    </p>
+
+    <p class="own-post-card__text">
+      Stock: <%= post.stock %>
+    </p>
+  </div>
+  <div class="own-post-card__actions">
+  <%=button_to "Editar", edit_post_path(post.id), method: :get, class:"btn btn-primary"%>
+  <%=button_to "Eliminar", post_path(post.id), method: :delete , class:"btn btn-danger"%>
+  </div>
+</div>

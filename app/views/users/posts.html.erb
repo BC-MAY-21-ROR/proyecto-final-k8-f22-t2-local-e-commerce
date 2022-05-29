@@ -1,0 +1,18 @@
+<div class="container-sidebar">
+  <%= render 'home/user_navbar' %>
+  <section class="content">
+    <div class="posts-section posts-section__title">
+      <h2>Mis publicaciones</h2>
+      <hr/>
+    </div>
+    <div class="posts-section__action">
+    <%=button_to "Agregar producto +", new_post_path, method: :get, class:"btn btn-primary"%>
+    </div>
+      
+    <div class="posts-section posts-section__posts">
+    <% @user_posts.each do |post| %>
+      <%= render 'users/my_product', post:post%>
+    <% end %>
+    </div>
+  </section>
+</div>
