@@ -24,7 +24,12 @@ class CartsController < ApplicationController
 			end
 		end
 	end
-
+	def buy
+		Cart.buy(current_user)
+		respond_to do |format|
+		format.html { redirect_to carts_path, notice: "Los productos se compraron con exito" }
+		end
+	end
 	private
 		def carts_params
 			params.require(:carts).permit(:quantity, :post_id, :price, :user_id)

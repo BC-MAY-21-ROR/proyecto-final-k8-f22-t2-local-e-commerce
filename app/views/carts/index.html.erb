@@ -1,9 +1,23 @@
+<%total=0%>
+<div class="container__card">
 <% @carts.each do |carts|%>
+<%if carts.status%>
 	<div class="card">
 		<p>Agregado el: <%= carts.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
 		<h2><%= Post.find(carts.post_id).title%> </h2>
 				<%= image_tag url_for(Post.find(carts.post_id).picture[0]), class:"image" %>
 				<p>Cantidad: <%= carts.quantity%></p>
+				<p>Precio: $<%= carts.price%></p>
 		<h4>Importe total: $<%= carts.quantity*carts.price%></h4>
 	</div>
+	<%total+=carts.quantity*carts.price%>
+	<%end%>
 <% end %>
+</div>
+<%if total==0%>
+<h1> Tu carrito esta vacio :) </h1>
+<%else%>
+<h3> Total del carrito $<%=total%></h3>
+<%=button_to "Comprar carrito", buy_cart_path, method: :put%>
+
+<%end%>
