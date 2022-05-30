@@ -37,6 +37,7 @@ class CartsController < ApplicationController
 		@cart = Cart.find(params[:id])
 		post = Post.find(@cart.post_id)
 		stock = post.stock + @cart.quantity
+		post.update(stock: stock)
         Cart.eliminate(@cart.id)
 
        redirect_to carts_path, status: :see_other
