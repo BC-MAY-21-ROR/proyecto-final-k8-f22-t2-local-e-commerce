@@ -9,3 +9,14 @@
     width: 85%;
   }
 }
+
+.index__main_title {
+  display: flex;
+  justify-content: center;
+
+  > h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+}
