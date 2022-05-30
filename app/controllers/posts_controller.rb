@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Producto eliminado exitosamente." }
+      format.html { redirect_to root_path, notice: "Producto eliminado exitosamente." }
       format.json { head :no_content }
     end
   end

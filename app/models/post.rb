@@ -36,4 +36,8 @@ class Post < ApplicationRecord
     end
     results.uniq
   end
+
+  def owner?(current_user)
+    self.user == current_user
+  end
 end

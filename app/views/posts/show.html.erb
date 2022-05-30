@@ -1,3 +1,18 @@
+<% if @post.stock <= 0 %>
+  <div class="alert alert-danger alert-dismissible fade show postion-alert" role="alert" style="margin: 0;">
+    <% if @post.owner?(current_user)%>
+      <div class="words__message__stock">
+        <p>No tienes mas stock de este producto.</p>
+        <a style="text-decoration: none; color: inherit" href="/posts/<%= @post.id %>/edit">&nbsp;Edita</a>
+        &nbsp;o&nbsp;
+        <%= button_to "Elimina", "/posts/#{@post.id}", method: :delete, class: 'button__show__post' %>
+      </div>
+    <% else %>
+      Actualmente no hay stock disponible para este productos.
+    <% end %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
 <div class="post">
   <div class="post__image">
     <%= render 'posts/images_carousel' %>
@@ -13,7 +28,7 @@
     <%= render 'post_comments/ranking' %>
   </div>
   <div class="post__reviews">
-    <%= render partial:"comments", locals:{comments: @post.post_comments, post_id: @post.id}%>
+    <%= render partial:"comments", locals:{comments: @post.post_comments, post_id: @post.id, owner: @post.owner?(current_user)}%>
   </div>
 </div>
 <div>
