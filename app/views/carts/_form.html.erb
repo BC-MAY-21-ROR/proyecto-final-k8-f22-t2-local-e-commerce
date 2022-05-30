@@ -1,0 +1,13 @@
+<%= simple_form_for(:carts, url: add_product_path) do |f| %>
+	<div class="modal-body" id="buyModalContent">
+		<h6> Stock disponible: <%= @post.stock %> </h6>
+  	<%= f.hidden_field :post_id, value:@post.id %>
+  	<%= f.hidden_field :user_id, value: current_user.id %>
+  	<%= f.hidden_field :price, value:@post.price %>
+	<%= f.input :quantity, as: :numeric, label: "Cantidad a agregar: " %>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-danger px-5" data-bs-dismiss="modal">Cancelar</button>
+		<%= f.button :submit, "Agregar al carrito", class:"btn btn-success px-5" %>	
+	</div>
+<% end %>
