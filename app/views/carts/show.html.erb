@@ -8,7 +8,7 @@
 				<p>Cantidad: <%= @cart.quantity%></p>
 			<p>Comprado el: <%= @cart.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
 			<h4>Importe total: <span>$<%=  @total%></span></h4>
-			<h4>Tienes: <span><%=  @products%></span> producto<%= @products>1 ? "s" : ""%> en tu carrito</h4>
+			<h4>Tienes <span><%=  @products%></span> producto<%= @products>1 ? "s" : ""%> en tu carrito</h4>
 			<%=button_to "Ver carrito", carts_path, method: :get, class: "btn btn-success px-5"%>
 			<%=button_to "Comprar carrito", buy_cart_path, method: :put, class: "btn btn-outline-success px-5"%>
 		</div>
