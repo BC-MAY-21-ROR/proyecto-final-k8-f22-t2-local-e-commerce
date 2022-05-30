@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :posts
   resources :post_comments, only: [:create]
-  resources :carts, only: [:show, :index]
+  resources :carts, only: [ :index]
   resources :order, only: [:show]
   resources :carts, only: [:index]
   resources :users, only: [:show] do
@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   post 'post/:id/buy_product', to: 'order#buy', as: 'buy_product'
   post 'post/:id/add_cart', to: 'carts#add', as: 'add_product'
   put 'carts/buy', to: 'carts#buy', as: 'buy_cart'
+  delete 'carts/delete/:id', to: 'carts#delete', as: 'delete_product'
+  get 'carts/show/:id', to: 'carts#show', as: 'show_product_cart'
   root to: 'home#index'
   put 'posts/:id/favorite', to: 'favorites#change_favorite', as: 'favorite'
   get '/search', to: 'home#results', as: 'search'

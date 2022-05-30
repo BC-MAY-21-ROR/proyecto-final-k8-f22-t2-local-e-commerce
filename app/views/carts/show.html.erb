@@ -1,4 +1,16 @@
-<div class="card">
-	<p>Comprado el: <%= @carts.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
-	<h4>Importe total: $<%= @carts.total%></h4>
+<div class="container__card__order">
+
+	<h1>El siguiente producto se agrego al carrito</h1>
+	<div>
+		<div class="card__order card">
+				<h2><%= Post.find(@cart.post_id).title%> </h2>
+				<%= image_tag url_for(Post.find(@cart.post_id).picture[0]), class:"image" %>
+				<p>Cantidad: <%= @cart.quantity%></p>
+			<p>Comprado el: <%= @cart.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
+			<h4>Importe total: <span>$<%=  @total%></span></h4>
+			<h4>Tienes: <span><%=  @products%></span> producto<%= @products>1 ? "s" : ""%> en tu carrito</h4>
+			<%=button_to "Ver carrito", carts_path, method: :get, class: "btn btn-success px-5"%>
+			<%=button_to "Comprar carrito", buy_cart_path, method: :put, class: "btn btn-outline-success px-5"%>
+		</div>
+	</div>
 </div>
