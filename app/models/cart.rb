@@ -2,6 +2,7 @@ class Cart < ApplicationRecord
   has_and_belongs_to_many :posts
   has_and_belongs_to_many :users
   before_validation :validate_stock
+<<<<<<< HEAD
   def self.buy(user)
     carts= Cart.where(status: true, user_id: user.id)
     carts.each do |cart|
@@ -27,6 +28,15 @@ class Cart < ApplicationRecord
   end
   def self.products(user)
     Cart.where(status: true, user_id: user.id).count
+=======
+
+  def self.buy(user)
+    puts(user)
+    Cart.where(status: true, user_id: user.id).update_all(status: false)
+  end
+  def self.post(post_id)
+    post = Post.find(post_id)
+>>>>>>> 009dafa2134cb69d2b1177b2a92c92a3620a822c
   end
   def validate_stock
     post = Post.find(post_id)
