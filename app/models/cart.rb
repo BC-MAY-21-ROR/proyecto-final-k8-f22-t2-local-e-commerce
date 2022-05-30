@@ -6,10 +6,9 @@ class Cart < ApplicationRecord
     carts= Cart.where(status: true, user_id: user.id)
     carts.each do |cart|
       total = cart.price*cart.quantity
-    order = Order.create(total:total, user_id:user.id)
-    order_detail = OrderDetail.create(price:cart.price, quantity:cart.quantity,
-                          post_id:cart.post_id, order_id:order.id)
-    order_detail
+      order = Order.create(total:total, user_id:user.id)
+      order_detail = OrderDetail.create(price:cart.price, quantity:cart.quantity, post_id:cart.post_id, order_id:order.id)
+      order_detail
     end
     Cart.where(status: true, user_id: user.id).update_all(status: false)
   end
