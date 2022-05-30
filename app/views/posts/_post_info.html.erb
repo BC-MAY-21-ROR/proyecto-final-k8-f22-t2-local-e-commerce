@@ -32,7 +32,6 @@
           Comprar
         </button>
       <% end %>
-<<<<<<< HEAD
       <% if !@post.owner?(current_user) %>
         <% if @post.stock > 0 %>
           <button type="button" class="info__button info__button--light" data-bs-toggle="modal" data-bs-target="#cartModal">
@@ -40,19 +39,9 @@
           </button>
         <% end %>
       <% end %>
-=======
->>>>>>> 0155af1159485530ebfba49408a9286da986095a
     <% else %>
       <%= link_to "Comprar", new_user_session_path, class:"info__button info__button--dark" %>
       <%= link_to "Agregar al carrito", new_user_session_path, class:"info__button info__button--light" %>
     <% end %>
-<<<<<<< HEAD
-=======
-   <% if !@post.owner?(current_user) %>
-      <% if @post.stock > 0 %>
-        <%= link_to "Agregar al carrito", edit_post_path(@post), class:"info__button info__button--light" %>
-      <% end %>
-    <% end %>
->>>>>>> 0155af1159485530ebfba49408a9286da986095a
   </div>
 </div>
