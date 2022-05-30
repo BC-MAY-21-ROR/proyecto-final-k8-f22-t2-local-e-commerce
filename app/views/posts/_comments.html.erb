@@ -1,9 +1,11 @@
 <section class="reviews">
   <div class="reviews__header mb-1">
     <h2>Reviews</h2>
-  <% if user_signed_in? %>
-    <%= link_to "Añadir Review", new_comment_path(id: post_id), 
-    class:"btn btn-outline-danger rounded-pill px-4 mx-3"%>
+  <% if user_signed_in?%>
+    <% if !owner %>
+        <%= link_to "Añadir Review", new_comment_path(id: post_id),
+                    class:"btn btn-outline-danger rounded-pill px-4 mx-3"%>
+    <% end %>
   <% else %>
     <%= link_to "Añadir Review", new_user_session_path, 
     class:"btn btn-outline-secondary rounded-pill px-4 mx-3"%>

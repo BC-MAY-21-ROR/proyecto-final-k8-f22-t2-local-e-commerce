@@ -5,7 +5,9 @@
 		<div class="card__order card">
 			<% @order.order_details.each do |d|%>
 				<h2><%= d.post.title%> </h2>
-				<%= image_tag url_for(d.post.picture[0]), class:"image" %>
+				<div class="order__image_to_show">
+					<%= image_tag url_for(d.post.picture[0]), class:"image" %>
+				</div>
 				<p>Cantidad: <%= d.quantity%></p>
 			<% end %>
 			<p>Comprado el: <%= @order.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
