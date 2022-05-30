@@ -45,14 +45,10 @@
        <li class="nav-item">
           <span><%=button_to "Crear publicacion", new_post_path, class:"btn btn-success", method: :get%>
        </li>
+       <li class="nav-item">
+          <span><%=button_to "Mis publicacion", posts_users_path, class:"btn btn-success", method: :get%>
+       </li>
       </ul>
-      <form class="w-25">
-        <input
-          type="text"
-          class="form-control icon_placeholder d-inline-block align-top"
-          placeholder=" Busca productos"
-          />
-      </form>
       <ul class="navbar-nav d-flex justify-content-between">
       <%if user_signed_in? %>
         <li class="nav-item">
