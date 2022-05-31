@@ -1,0 +1,9 @@
+<div class="form__button--back">
+    <%= link_to "Regresar", user_path(id: @user_comment.user_id) %>
+</div>
+
+<h1 style="text-align: center;font-weight: 700;">Agregar reseña a vendedor</h1>
+
+<div class="container__form-comment">
+  <%= render 'form_user_comment' %>
+</div>
