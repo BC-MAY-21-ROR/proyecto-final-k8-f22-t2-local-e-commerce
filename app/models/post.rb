@@ -9,6 +9,9 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :favorites
 
+  scope :active, -> { where(:status_id => 1)}
+  # Ex:- scope :active, -> {where(:active => true)}
+
   validates :title, presence: true
   validates :description, presence: true
   validates :price, presence: true
@@ -26,7 +29,9 @@ class Post < ApplicationRecord
   def get_ranking
     self.post_comments.average(:ranking)
   end
-
+  def self.delete(post)
+    Post.where(id: post.id).update(status_id: 2)
+  end
   SEARCH_ATTRS = %i[title description]
   scope :search_query, lambda { |query| self.class.search(query) }
   def self.search(search)

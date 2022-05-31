@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :set_ranking, only: %i[ show ]
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc).page(params[:page])
+    @posts = Post.active.order(created_at: :desc).page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
@@ -58,9 +58,9 @@ class PostsController < ApplicationController
   end
 
   # DELETE /posts/1 or /posts/1.json
-  def destroy
+  def delete
     @post = current_user.posts.find_by(id: params[:id])
-    @post.destroy
+    Post.delete(@post)
 
     respond_to do |format|
       format.html { redirect_to root_path, notice: "Producto eliminado exitosamente." }

@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
 
   def posts
-    @user_posts = current_user.posts.all.order("created_at DESC")
+    @user_posts = current_user.posts.active.order("created_at DESC")
   end
 
   def sold
