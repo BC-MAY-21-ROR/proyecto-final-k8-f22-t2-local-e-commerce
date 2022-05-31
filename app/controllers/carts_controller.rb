@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
     def index
-		@carts = Cart.all.order('created_at DESC')#Hay que modificarlo con user.id
+		@carts = Cart.user(current_user).order('created_at DESC')#Hay que modificarlo con user.id
 		@total = Cart.total(current_user);
 		render 'carts/index'
 	end
@@ -37,6 +37,7 @@ class CartsController < ApplicationController
 		@cart = Cart.find(params[:id])
 		post = Post.find(@cart.post_id)
 		stock = post.stock + @cart.quantity
+		post.update(stock: stock)
         Cart.eliminate(@cart.id)
 
        redirect_to carts_path, status: :see_other

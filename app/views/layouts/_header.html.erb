@@ -41,14 +41,16 @@
       <%= form_tag(search_path, method: :get, class: "w-25" ) do %>
         <%=  text_field_tag(:search, params[:search], class: "form-control icon_placeholder d-inline-block align-top", placeholder: " Busca productos") %>
       <% end %>
+      <%if user_signed_in?%>
       <ul class="navbar-nav d-flex justify-content-start ">
        <li class="nav-item">
-          <span><%=button_to "Crear publicacion", new_post_path, class:"btn btn-success", method: :get%>
+          <span><%=button_to "Crear publicación", new_post_path, class:"btn btn-outline-light mx-3", method: :get%>
        </li>
        <li class="nav-item">
-          <span><%=button_to "Mis publicacion", posts_users_path, class:"btn btn-success", method: :get%>
+          <span><%=button_to "Mis publicaciones", posts_users_path, class:"btn btn-outline-light", method: :get%>
        </li>
       </ul>
+      <%end%>
       <ul class="navbar-nav d-flex justify-content-between">
       <%if user_signed_in? %>
         <li class="nav-item">
