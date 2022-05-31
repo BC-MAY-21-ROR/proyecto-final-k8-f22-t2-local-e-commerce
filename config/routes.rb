@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   root to: 'home#index'
   put 'posts/:id/favorite', to: 'favorites#change_favorite', as: 'favorite'
   get '/search', to: 'home#results', as: 'search'
+  put 'posts/delete/:id', to: 'posts#delete', as: 'delete_post'
 end
