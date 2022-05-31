@@ -44,10 +44,10 @@
       <%if user_signed_in?%>
       <ul class="navbar-nav d-flex justify-content-start ">
        <li class="nav-item">
-          <span><%=button_to "Crear publicacion", new_post_path, class:"btn btn-success", method: :get%>
+          <span><%=button_to "Crear publicación", new_post_path, class:"btn btn-outline-light mx-3", method: :get%>
        </li>
        <li class="nav-item">
-          <span><%=button_to "Mis publicacion", posts_users_path, class:"btn btn-success", method: :get%>
+          <span><%=button_to "Mis publicaciones", posts_users_path, class:"btn btn-outline-light", method: :get%>
        </li>
       </ul>
       <%end%>
