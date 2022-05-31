@@ -1,15 +1,8 @@
 .purchases_title {
-  color: $purchases-title;
-  font-size: 30px;
-  margin: 2%;
-  max-width: 700px;
+  width: 40%;
 
-  &::after {
-    content: '';
-    background-color: $icon-yellow;
-    display: block;
-    height: 3px;
-    width: 400px;
+  h2 {
+    color: $logo-yellow;
   }
 }
 
@@ -32,14 +25,22 @@
   height: fit-content;
   margin: 10px 0;
   padding: 5px;
-  width: 80%;
+  width: 800px;
+  background-color: $white;
+
 
   &__body {
     padding: 10px;
   }
 
   &__image {
-    width: 30%;
+    height: 165px;
+    width: 195px;
+    > img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
   }
   
   &__title {

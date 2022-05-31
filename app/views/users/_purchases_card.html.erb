@@ -1,7 +1,7 @@
 <div class="purchases_card">
 
   <div class="purchases_card__body row align-items-center">
-    <h5 class="purchases_card__date">Comprado el: <%= product.created_at.strftime("%d de %B del %Y a las %H:%M") %></h5>
+    <h5 class="purchases_card__date">Comprado el <%= product.created_at.strftime("%d de %B del %Y a las %H:%M") %></h5>
     <div class="purchases_card__image">
       <%= image_tag(url_for(product.post.picture[0]), class:"card-img-top col") %>
     </div>
@@ -19,7 +19,7 @@
     </div>
     <div class="col third-column">
       <%= link_to 'Evaluar Producto', new_comment_path(id: product.post.id), class:"btn btn-primary rounded-pill px-5" %>
-      <%= link_to 'Evaluar Vendedor', new_comment_path(id: product.post.id), class:"btn btn-primary rounded-pill px-5" %>  
+      <%= link_to 'Evaluar Vendedor', new_comment_user_path(id: product.post.user_id), class:"btn btn-primary rounded-pill px-5" %>
     </div>
   </div>
 </div>
