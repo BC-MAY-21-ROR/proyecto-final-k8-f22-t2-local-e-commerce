@@ -2,6 +2,8 @@ class Cart < ApplicationRecord
   has_and_belongs_to_many :posts
   has_and_belongs_to_many :users
   before_validation :validate_stock
+  scope :user, -> (user){ where(:user_id => user.id)}
+  # Ex:- scope :active, -> {where(:active => true)}
   def self.buy(user)
     carts= Cart.where(status: true, user_id: user.id)
     carts.each do |cart|
