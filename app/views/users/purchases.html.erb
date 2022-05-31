@@ -1,7 +1,10 @@
 <div class="container-sidebar">
   <%= render 'home/user_navbar' %>
   <section class="content">
-    <h2 class="purchases_title">Compras</h2>
+    <div class="purchases_title">
+      <h2>Compras</h2>
+      <hr>
+    </div>
     <div class="purchases_cards">
       <% @bought.each do |order| %>
         <% order.order_details.each do |product| %>
