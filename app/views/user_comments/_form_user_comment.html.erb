@@ -1,0 +1,15 @@
+<h2>Agregar reseña para <%= @user.first_name %> <%= @user.last_name %></h2>
+<%= simple_form_for(@user_comment) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="form-inputs__user">
+    <%= f.input :title, label:"Título del comentario:", placeholder: "Excelente Producto" %>
+    <%= f.input :comment, label: "Comentario: ", placeholder: "Buen vendedor, lo recomiendo totalmente", input_html: { rows: 3 , style: 'width: 100%'} %>
+    <%= f.hidden_field :user_id %>
+    <%= f.input :ranking, label: "Puntuación: ", as: :radio_buttons, collection:[1,2,3,4,5] %>
+    <p>1 Pesimo - 5 Excelente</p>
+    <div>
+      <%= f.button :submit, value: "Publicar comentario" %>
+    </div>
+  </div>
+<% end %>

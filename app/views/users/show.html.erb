@@ -1,43 +1,59 @@
 <div class="user_view">
   <div class="user_view__header">
-    <%= image_tag('header_user.png', class: "image") %>
+    <% if @user.cover_photo.attached? %>
+      <%= image_tag url_for(@user.cover_photo), class: "image" %>
+    <% else %>
+      <%= image_tag 'cover_default.png', class: "image" %>
+    <% end %>
   </div>
   <div class=" user_view__section user_view__section--info">
     <div class="user_view__image">
-      <%= image_tag('profile.png', class: "image") %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag url_for(@user.avatar), class: "image"%>
+      <% else %>
+        <%= image_tag 'default.jpg', class: "image" %>
+      <% end %>
     </div>
     <h3 class="user_view__text user_view__text--name"><%= @user.first_name + ' ' + @user.last_name%></h3>
     <p class="user_view__text user_view__text--description">
       <%= @user.bio%>
     </p>
   </div>
-  <div class=" user_view__section user_view__section--comments">
-    <div class="user_view__chart"></div>
-    <div class="user_view__comments"> </div>
+  <div class="user_view__section user_view__section--comments">
+    <div class="user__ranking">
+      <%= render 'user_comments/ranking', user: @user %>
+    </div>
+    <div class="user__reviews">
+      <%= render partial:"comments", locals:{comments: @user.user_comments, user_id: @user.id}%>
+    </div>
   </div>
   <div class="user_view__section user_view__posts d-flex flex-wrap">
-  <h2>Productos del vendedor</h2>
-    <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
-      <div class="carousel-inner">
-      <% @user.posts.each_with_index do |post,index| %>
-        <div class="carousel-item  <%= index == 0 ? "active" : "" %>">
-          <div class="render__cards">
-            <% @user.posts.each_with_index do |post, i| %>
-              <% if (i+1 > ( ( index + 1 ) * 3) - 3 ) && (i+1 <= ( index + 1) * 3) %>
-                <%= render 'posts/post_card', post: post%>
-              <% end %>
-            <% end %>
-          </div>
+    <h2 style="margin-left: 50px">Productos del vendedor</h2>
+    <% if @user.published_products == 0%>
+      <p style="margin-left: 50px;">No hay productos</p>
+    <% else %>
+      <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <% @user.posts.each_with_index do |post,index| %>
+            <div class="carousel-item  <%= index == 0 ? "active" : "" %>">
+              <div class="render__cards">
+                <% @user.posts.each_with_index do |post, i| %>
+                  <% if (i+1 > ( ( index + 1 ) * 3) - 3 ) && (i+1 <= ( index + 1) * 3) %>
+                    <%= render 'posts/post_card', post: post%>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-    <div class="carousel__buttons">
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <i class="fa-solid fa-circle-arrow-left carousel__icon"></i>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <i class="fa-solid fa-circle-arrow-right carousel__icon"></i>
-      </button>
-    </div>
+        <div class="carousel__buttons">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <i class="fa-solid fa-circle-arrow-left carousel__icon"></i>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <i class="fa-solid fa-circle-arrow-right carousel__icon"></i>
+          </button>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>

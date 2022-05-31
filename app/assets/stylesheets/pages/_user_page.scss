@@ -29,15 +29,29 @@
       justify-content: space-around;
     }
   }
+
+  &__posts {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    gap: 20px;
+    flex-direction: column;
+  }
   &__image {
     position: absolute;
-    background-color: blue;
+    background-color: white;
     width: 250px;
     height: 250px;
     left: 100px;
     bottom: 50%;
     border-radius: 100%;
     border: 8px solid white;
+    > img {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+    }
   }
   &__text {
     margin: 0;
@@ -50,4 +64,16 @@
       font-weight: 700;
     }
   }
+}
+
+.user_reviews {
+  width: 600px;
+}
+
+.user_comment {
+  text-align: justify;
+}
+
+.input_user_comments {
+  display: flex;
 }

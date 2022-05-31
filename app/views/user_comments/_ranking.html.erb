@@ -1,0 +1,59 @@
+<h2>Puntuación</h2>
+<div class="ranking">
+  <div class="ranking__total">
+    <h3><%= @rank_prom.truncate(1) %></h3>
+    <div class="ranking__total__stars">
+      <% @rank_prom.to_i.times do%>
+        <i class="fa-solid fa-star start_user--active"></i>
+      <% end %>
+      <% if (5 - @rank_prom.to_i) > 0.5 %>
+        <i class="fa-solid fa-star-half-stroke start_user--active"></i>
+        <% (4 - @rank_prom.to_i).times do %>
+          <i class="fa-solid fa-star star"></i>
+        <% end %>
+      <% else %>
+        <% (5 - @rank_prom.to_i).times do %>
+          <i class="fa-solid fa-star star"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <p>Promedio entre <%= @ranking_user[0] %> opiniones </p>
+  </div>
+  <ul class="ranking__list__user">
+    <li>
+      <p>5 estrellas</p>
+      <p>
+        <progress value="<%= @ranking_user[5]%>" max="<%= @ranking_user[0] %>"></progress>
+        <%= @ranking_user[5]%>
+      </p>
+    </li>
+    <li>
+      <p>4 estrellas</p>
+      <p>
+        <progress value="<%= @ranking_user[4]%>" max="<%= @ranking_user[0] %>"></progress>
+        <%= @ranking_user[4]%>
+      </p>
+    </li>
+    <li>
+      <p> 3 estrellas</p>
+      <p>
+        <progress value="<%= @ranking_user[3]%>" max="<%= @ranking_user[0] %>"></progress>
+        <%= @ranking_user[3]%>
+      </p>
+    </li>
+    <li>
+      <p> 2 estrellas</p>
+      <p>
+        <progress value="<%= @ranking_user[2]%>" max="<%= @ranking_user[0] %>"></progress>
+        <%= @ranking_user[2]%>
+      </p>
+    </li>
+    <li>
+      <p> 1 estrellas</p>
+      <p>
+        <progress value="<%= @ranking_user[1]%>" max="<%= @ranking_user[0] %>"></progress>
+        <%= @ranking_user[1]%>
+      </p>  
+    </li>
+  </ul>
+</div>

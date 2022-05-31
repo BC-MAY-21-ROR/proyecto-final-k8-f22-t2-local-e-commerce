@@ -5,3 +5,11 @@
         color: $active-yellow;
     }
 }
+
+.start_user {
+    color: $text-gray;
+
+    &--active {
+        color: $links;
+    }
+}

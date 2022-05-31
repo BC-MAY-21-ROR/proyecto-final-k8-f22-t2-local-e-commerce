@@ -42,6 +42,34 @@
 			background-color: $gray;
 		}
 	}
+
+	&__list__user {
+		color: $text-gray;
+		list-style: none;
+
+		p {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		::-moz-progress-bar {
+			background-color: $links;
+		}
+		progress {
+			-webkit-appearance: none;
+			height: 5px;
+			width: 150px;
+		}
+
+		::-webkit-progress-value {
+			background-color: $links;
+		}
+
+		::-webkit-progress-bar {
+			background-color: $gray;
+		}
+	}
 	
 		@media (max-width: 400px) {
 			flex-direction: column;

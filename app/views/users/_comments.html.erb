@@ -1,0 +1,21 @@
+<section class="user_reviews">
+  <div class="reviews__header mb-1">
+    <h2>Reseñas</h2>
+    <% if user_signed_in? %>
+      <%= link_to "Añadir Review", new_comment_user_path(id: user_id),
+                  class:"btn btn-outline-danger rounded-pill px-5 mx-3"%>
+    <% else %>
+      <%= link_to "Añadir Review", new_user_session_path,
+                  class:"btn btn-outline-secondary rounded-pill px-4 mx-3"%>
+    <% end %>
+  </div>
+  <div id="post_comments" class="reviews__comments">
+    <% if comments.empty? %>
+      <p>No hay comentarios</p>
+    <% else %>
+      <% comments.reverse_order.each do |user_comment| %>
+        <%= render user_comment %>
+      <% end %>
+    <% end %>
+  </div>
+</section>

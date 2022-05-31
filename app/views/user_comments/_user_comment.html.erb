@@ -1,0 +1,16 @@
+<div class="user_comment mb-2">
+  <div class="rating">
+    <% user_comment.ranking.times do %>
+      <i class="fa-solid fa-star start_user--active"></i>
+    <% end %>
+    <% (5 - user_comment.ranking).times do%>
+      <i class="fa-solid fa-star start_user"></i>
+    <% end %>
+  </div>
+  <h6> <strong> <%= user_comment.title %> </strong> </h6>
+  <div class="user_comment_main">
+    <p style="overflow-wrap: break-word; padding: 0 10px;">
+      <%= user_comment.comment %>
+    </p>
+  </div>
+</div>
