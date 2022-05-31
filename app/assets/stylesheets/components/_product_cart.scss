@@ -1,0 +1,85 @@
+.container-cart {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+.product-cart {
+  background-color: $white-light;
+  border-radius: 10px;
+  border: 1px solid $border;
+  display: grid;
+  grid-template: "image details actions" 100% / 1fr 2fr 1fr;
+  height: 150px;
+  padding: 16px;
+  width: 750px;
+
+  &--sold {
+    border-color: rgba(255, 0, 0, 0.65);
+    box-shadow: -1px 0px 20px -9px rgba(255, 0, 0, 0.65);
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__image {
+    grid-area: image;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    text-align: left;
+    &--title {
+      display: flex;
+      justify-content: start;
+      > a {
+        width: 100%;
+        color: $black;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__details {
+    grid-area: details;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 16px;
+  }
+
+  &__actions {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    height: 20px;
+    grid-area: actions;
+  }
+}
+.product-cart__text {
+  width: 100%;
+
+  &--title {
+    text-align: center;
+  }
+}
+.product-cart__payment {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  padding: 16px;
+  background-color: $white;
+  flex-wrap: wrap;
+  border-radius: 10px;
+}

@@ -1,23 +1,31 @@
-<div class="container__card">
-<% @carts.each do |carts|%>
-<%if carts.status%>
-	<div class="card">
-		<p>Agregado el: <%= carts.created_at.strftime("%d de %B del %Y a las %H:%M") %></p>
-		<h2><%= Post.find(carts.post_id).title%> </h2>
-				<%= image_tag url_for(Post.find(carts.post_id).picture[0]), class:"image" %>
-				<p>Cantidad: <%= carts.quantity%></p>
-				<p>Precio: $<%= carts.price%></p>
-		<h4>Importe total: $<%= carts.quantity*carts.price%></h4>
-	  <%= button_to "Eliminar del carrito", delete_product_path(carts), class:"btn btn-danger px-5", method: :delete%>	
+<div class="container-cart">
+  <div class="product-cart__wrapper">
+    <% @carts.each do |carts|%>
+      <%if carts.status%>
+        <div class="product-cart">
+          <div class="product-cart__image">
+            <%= image_tag url_for(Post.find(carts.post_id).picture[0]), class:"image" %>
+          </div>
+          <div class="product-cart__details">
+            <h3 class=" product-cart__text product-cart__text--title"> <%= link_to truncate(Post.find(carts.post_id).title, length: 25), post_path(carts.id) %></h3>
+            <p class=" product-cart__text ">Cantidad: <%= carts.quantity%></p>
+            <p class=" product-cart__text ">Precio: $<%= carts.price%></p>
+          </div>
+          <div class="product-cart__actions d-flex flex-wrap">
+            <h4>Importe total: $<%= carts.quantity*carts.price%></h4>
+            <%= button_to "Eliminar", delete_product_path(carts), class:"btn btn-danger w-100", method: :delete%>
+          </div>
+        </div>
+      <%end%>
+    <% end %>
+  </div>
+  <%if @total==0%>
+  <h1> Tu carrito esta vacio : </h1>
+  <%else%>
+  <div class="product-cart__payment">
+    <h6 class=" product-cart__text "> Total del carrito $<%=@total%></h6>
+    <%=button_to "Comprar carrito", buy_cart_path, method: :put, class: "btn btn-success px-5"%>
+  </div>
 
-	</div>
-	<%end%>
-<% end %>
+  <%end%>
 </div>
-<%if @total==0%>
-<h1> Tu carrito esta vacio :) </h1>
-<%else%>
-<h3> Total del carrito $<%=@total%></h3>
-<%=button_to "Comprar carrito", buy_cart_path, method: :put, class: "btn btn-success px-5"%>
-
-<%end%>
