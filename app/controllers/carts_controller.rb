@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
     def index
-		@carts = Cart.all.order('created_at DESC')#Hay que modificarlo con user.id
+		@carts = Cart.user(current_user).order('created_at DESC')#Hay que modificarlo con user.id
 		@total = Cart.total(current_user);
 		render 'carts/index'
 	end
