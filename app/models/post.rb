@@ -25,6 +25,19 @@ class Post < ApplicationRecord
     "Retiro en tienda": 1,
     "Punto medio": 2
   }
+  
+  enum city: {
+    "Armería": 0,
+    "Colima": 1,
+    "Comala": 2,
+    "Coquimatlán": 3,
+    "Cuauhtemoc": 4,
+    "Ixtlahuacán": 5,
+    "Manzanillo": 6,
+    "Minatitlán": 7,
+    "Tecomán": 8,
+    "Villa de Álvarez": 9
+  }
 
   def get_ranking
     self.post_comments.average(:ranking)
