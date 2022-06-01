@@ -2,7 +2,8 @@
   background-color: $white;
   display: grid;
   grid-template:
-    "image info" 450px
+    "image info" 400px
+    "seller seller" 50px
     "features features" auto
     "ranking reviews" auto/
     50% 50%;
@@ -22,7 +23,7 @@
   &__image {
     display: flex;
     grid-area: image;
-    height: 90%;
+    height: 95%;
     justify-content: center;
     width: 90%;
   }
@@ -33,9 +34,21 @@
     justify-content: end;
   }
 
+  &__seller {
+    grid-area: seller;
+  }
+
   &__text {
     text-align: justify;
     width: 100%;
+
+    &--name {
+      margin-top: -20px;
+      font-weight: bold;
+      font-size: 28px;
+      color: $black;
+      text-decoration: none;
+    }
   }
 
   &__features {
@@ -44,7 +57,7 @@
 
   &__rankings {
     grid-area: ranking;
-  } 
+  }
   &__reviews {
     grid-area: reviews;
   }

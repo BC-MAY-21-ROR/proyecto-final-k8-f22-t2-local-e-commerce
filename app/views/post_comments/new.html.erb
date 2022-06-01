@@ -1,9 +1,9 @@
-<div class="form__button--back">
+<div class="new-comment">
+  <div class="form__button--back new-comment__button">
     <%= link_to "Regresar", post_path(id:@post_comment.post_id) %>
-</div>
-
-<h1 style="text-align: center;font-weight: 700;">Agregar Reseña</h1>
-
-<div class="container__form-comment">
-  <%= render 'form' %>
+  </div>
+  <h1 style="text-align: center;font-weight: 700;" class="w-100">Agregar Reseña</h1>
+  <div class="container__form-comment">
+    <%= render 'form' %>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 .container__form-comment {
   border-radius: 10px;
   border: 3px solid $black;
-  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.38);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
   margin: 2rem auto;
   max-width: 70%;
   padding: 2rem;
@@ -34,7 +34,7 @@
   width: 50%;
 
   p {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 
   label {
@@ -45,8 +45,6 @@
   .title__comment {
     border: red;
   }
-
-
 }
 
 .post_comment_title {
@@ -65,7 +63,7 @@
 
 .form-inputs {
   p {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -85,7 +83,7 @@
     margin-right: 1rem;
   }
 
-  .radio:first-of-type{
+  .radio:first-of-type {
     margin-left: 1rem;
     margin-right: 0.6rem;
 
@@ -106,18 +104,13 @@
 
   .btn:hover {
     background-color: $dull-yellow;
-    transition: all ease .3s;
+    transition: all ease 0.3s;
   }
 }
 
 .form__button--back {
-  background-color: $red;
   margin-left: 2rem;
-  margin: 2rem;
-  max-width: 100px;
-  padding: 0.5rem 0.5rem;
   text-align: center;
-
   a {
     color: $white;
     text-decoration: none;
@@ -133,7 +126,7 @@
     font-weight: 700;
   }
 
-  input[type=text] {
+  input[type="text"] {
     border-radius: 20px;
     border: 1px solid $black;
     font-size: 1.2rem;
@@ -149,7 +142,6 @@
     padding: 10px;
     width: 100%;
     margin: 20px 0;
-
   }
 
   span {
@@ -160,7 +152,7 @@
     }
   }
 
-  input[type=submit] {
+  input[type="submit"] {
     background-color: $icon-yellow;
     border-radius: 20px;
     font-weight: 700;
@@ -171,7 +163,6 @@
   }
 }
 
-
 .button__show__post {
   background-color: transparent;
   border: transparent;
@@ -180,4 +171,24 @@
 
 .words__message__stock {
   display: flex;
+}
+
+.new-comment {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &__button {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+    > a {
+      width: 100px;
+      background-color: $red;
+      padding: 0.5rem 0.5rem;
+    }
+  }
 }
