@@ -20,6 +20,9 @@
   <div class="post__info">
     <%= render 'posts/post_info' %>
   </div>
+  <div class="post__seller">
+    <h4>Vendedor:  <%= link_to @post.user.first_name, user_path(@post.user_id), class:"post__text post__text--name"%></h4>
+  </div>
   <div class="post__features">
     <h1>Principales caracteristicas</h1>
     <p class="post__text"><%= @post.description %></p>
