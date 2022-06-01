@@ -4,7 +4,7 @@
 	<div>
 		<div class="card__order card">
 			<% @order.order_details.each do |d|%>
-				<h2><%= d.post.title%> </h2>
+				<h2><%= truncate(d.post.title, length:18)%> </h2>
 				<div class="order__image_to_show">
 					<%= image_tag url_for(d.post.picture[0]), class:"image" %>
 				</div>

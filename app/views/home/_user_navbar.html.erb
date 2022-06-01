@@ -4,10 +4,10 @@
   <ul class="nav_section">
     <li class="nav_section__item">
       <i class="nav_section__icon bi bi-person-fill"></i>
-      <%=link_to "Information", profile_users_path, class: "nav_section__text #{request.path == profile_users_path ? "nav_section__text--selected" : ""}"%>
+      <%=link_to "Información", profile_users_path, class: "nav_section__text #{request.path == profile_users_path ? "nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
-      <i class="nav_section__icon bi bi-heart-fill"></i>
+      <i class="nav_section__icon bi bi-file-post"></i>
       <%=link_to "Mis publicaciones", posts_users_path, class: "nav_section__text  #{request.path == posts_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
@@ -19,7 +19,7 @@
     <%=link_to "Compras", purchases_users_path, class: "nav_section__text  #{request.path == purchases_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
-      <i class="nav_section__icon bi bi-bag-dash-fill"></i>
+      <i class="nav_section__icon bi bi-receipt-cutoff"></i>
       <%=link_to "Ventas", sold_users_path, class: "nav_section__text  #{request.path == sold_users_path ? " nav_section__text--selected" : ""}"%>
     </li>
     <li class="nav_section__item">
