@@ -52,6 +52,17 @@
     }
   }
 
+  &__text {
+
+    &--title {
+      a {
+        text-decoration: none;
+        color: $logo-yellow;
+        font-size: 30px;
+      }
+    }
+  }
+
   &__info {
     grid-area: info;
   }
