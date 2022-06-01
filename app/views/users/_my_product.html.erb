@@ -3,11 +3,11 @@
      <%= image_tag url_for(post.picture[0]), class: "image" %>
   </div>
   <div class="ownn-post-card__info" style="margin-left: 30px;">
-    <h2 class="own-post-card__text--title own-post-card__text">
-      <%= post.title %>
-    </h2>
-    <p class="own-post-card__text">
-      <%= post.description %>
+    <div class="own-post-card__text--title">
+      <%= link_to "#{post.title}", post_path(post.id) %>
+    </div>
+    <p class="own-post-card__text__description" style=" width: 90%; overflow-wrap: break-word;">
+      <%= truncate(post.description, length: 50) %>
     </p>
 
     <p class="own-post-card__text">
