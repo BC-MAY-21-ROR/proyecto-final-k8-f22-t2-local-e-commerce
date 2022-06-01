@@ -19,6 +19,7 @@ class Post < ApplicationRecord
   validates :delivery, presence: true
   validates :picture, presence: true
   validates :title, length: { maximum: 30 }
+  validates :city, presence: true
 
   enum delivery: {
     "Entrega a domicilio": 0,
