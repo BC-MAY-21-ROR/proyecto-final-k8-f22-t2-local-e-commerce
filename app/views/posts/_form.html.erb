@@ -26,7 +26,7 @@
     </div>
 
     <div class="form_post__field_radio">
-      <%= f.label "Tipo de entraga" %>
+      <%= f.label "Tipo de entrega" %>
       <span class="form_post--alert_error"><%= @post.errors.full_messages_for(:delivery)[0] if @post.errors.has_key?(:delivery) %></span>
       <div class="form_post__field_radio--buttons">
         <%= f.collection_radio_buttons :delivery, Post.deliveries, :first, :first, class: "form_post__input #{@post.errors.has_key?(:delivery) ? 'color__input--error' : 'color__input' }" %>
