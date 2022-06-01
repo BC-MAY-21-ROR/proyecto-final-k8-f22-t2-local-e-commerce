@@ -1,7 +1,11 @@
 <h2>Puntuación</h2>
 <div class="ranking">
   <div class="ranking__total">
-    <h3><%= @rank_prom.truncate(1) %></h3>
+    <% if @rank_prom.nil? %>
+      <h3>0</h3>
+    <% else %>
+      <h3><%= @rank_prom.truncate(1) %></h3>
+    <% end %>
     <div class="ranking__total__stars">
       <% @rank_prom.to_i.times do%>
         <i class="fa-solid fa-star start_user--active"></i>

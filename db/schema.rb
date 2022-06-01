@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_28_003152) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_025515) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -120,6 +120,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_003152) do
     t.bigint "user_id"
     t.bigint "status_id", default: 1, null: false
     t.integer "delivery"
+    t.integer "city"
     t.index ["status_id"], name: "index_posts_on_status_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

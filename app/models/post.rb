@@ -19,11 +19,25 @@ class Post < ApplicationRecord
   validates :delivery, presence: true
   validates :picture, presence: true
   validates :title, length: { maximum: 30 }
+  validates :city, presence: true
 
   enum delivery: {
     "Entrega a domicilio": 0,
     "Retiro en tienda": 1,
     "Punto medio": 2
+  }
+  
+  enum city: {
+    "Armería": 0,
+    "Colima": 1,
+    "Comala": 2,
+    "Coquimatlán": 3,
+    "Cuauhtemoc": 4,
+    "Ixtlahuacán": 5,
+    "Manzanillo": 6,
+    "Minatitlán": 7,
+    "Tecomán": 8,
+    "Villa de Álvarez": 9
   }
 
   def get_ranking

@@ -33,6 +33,14 @@
       </div>
     </div>
 
+    <div class="form_post__field_radio">
+      <span class="form_post--alert_error"><%= @post.errors.full_messages_for(:city)[0] if @post.errors.has_key?(:city) %></span>
+      <div class="select_post_form">
+        <%= f.label "Municipio" %>
+        <%= f.select :city, options_for_select(Post.cities.map { |w,k| [w, w ]}, id: :city )%>
+      </div>
+    </div>
+
 
     <div class="form_post__field">
       <p>Agregar imagenes <span>(370 x 247)</span></p>
