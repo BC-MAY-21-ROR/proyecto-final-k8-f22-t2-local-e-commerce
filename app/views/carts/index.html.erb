@@ -1,4 +1,5 @@
 <div class="container-cart">
+ <%if @total!=0%>
   <div class="product-cart__wrapper">
     <% @carts.each do |carts|%>
       <%if carts.status%>
@@ -19,8 +20,17 @@
       <%end%>
     <% end %>
   </div>
+  <% end %>
   <%if @total==0%>
-  <h1> Tu carrito esta vacio : </h1>
+  <div class="empty-cart">
+    <div class="empty-cart__image">
+      <%= image_tag url_for("empty-cart.png"), class:"image" %>
+    </div>
+    <h1 class="empty-cart__text"> Tu carrito esta vacio </h1>
+    <li class="nav_section__item">
+      <%= button_to "Volver al incio", root_path, class: "btn btn-primary navbar-button" , method: :get%>
+    </li>
+  </div>
   <%else%>
   <div class="product-cart__payment">
     <h6 class=" product-cart__text "> Total del carrito $<%=@total%></h6>
